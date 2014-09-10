@@ -3,11 +3,17 @@ Definition of views.
 """
 
 from django.shortcuts import render
-from django.http import HttpRequest
-from django.template import RequestContext
+from django.http import HttpResponseRedirect,HttpRequest, HttpResponse
+from django.template import loader,RequestContext
+from django.shortcuts import render_to_response
 from datetime import datetime
+from django import *
+from app.forms import *
+from django.views.decorators.csrf import csrf_protect
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout, authenticate, login
 
-def home(request):
+def home(request):     
     """Renders the home page."""
     assert isinstance(request, HttpRequest)
     return render(
@@ -46,3 +52,4 @@ def about(request):
             'year':datetime.now().year,
         }
     )
+

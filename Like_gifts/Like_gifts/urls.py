@@ -3,9 +3,11 @@ Definition of urls for Like_gifts.
 """
 
 from datetime import datetime
-from django.conf.urls import patterns, url
+from django.conf.urls import patterns, include, url
 from app.forms import BootstrapAuthenticationForm
 
+from app.views import *
+from app.controller.HomeController import usersignup , userlogin
 # Uncomment the next lines to enable the admin:
 # from django.conf.urls import include
 # from django.contrib import admin
@@ -14,12 +16,14 @@ from app.forms import BootstrapAuthenticationForm
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'app.views.home', name='home'),
-    url(r'^contact$', 'app.views.contact', name='contact'),
-    url(r'^about', 'app.views.about', name='about'),
+    url(r'^contact$', contact, name='contact'),
+    url(r'^about', about, name='about'),
+    url(r'^userlogin', userlogin, name='userlogin'),
+    url(r'^usersignup', usersignup, name='usersignup'),
     url(r'^login/$',
         'django.contrib.auth.views.login',
         {
-            'template_name': 'app/login.html',
+            'template_name': 'app/page_login.html',
             'authentication_form': BootstrapAuthenticationForm,
             'extra_context':
             {
