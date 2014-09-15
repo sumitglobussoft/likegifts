@@ -13,10 +13,7 @@
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico">
-    {% load staticfiles %}
-    <!-- CSS Global Compulsory -->
-  <!-- CSS Implementing Plugins -->
-    
+ {% load staticfiles %}
     <!-- CSS Page Style -->    
     <link rel="stylesheet" href="{% static 'assets/css/pages/page_log_reg_v2.css' %}">    
     <link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
@@ -47,10 +44,11 @@
 
     <!-- CSS Customization -->
     <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+ 
 </head> 
 
-<body>
-  <!--=== Style Switcher ===-->    
+<body >
+<!--=== Style Switcher ===-->    
 <i class="style-switcher-btn fa fa-cogs hidden-xs"></i>
 <div class="style-switcher animated fadeInRight">
     <div class="theme-close"><i class="icon-close"></i></div>
@@ -98,9 +96,13 @@
                     <li class="topbar-devider"></li>   
                     <li><a href="">HOW IT WORKS</a></li>  
                     <li class="topbar-devider"></li>   
-                    <li><a href="">Browse</a></li>  
-                    <li class="topbar-devider"></li>   
-                    <li><i class="fa fa-sign-in fa-fw"></i><a href="/userlogin">Login / REGISTER</a></li>   
+                    <li><a href="">Browse{{ request.session.user }}</a></li>  
+                    <li class="topbar-devider"></li> 
+                    {%if request.session.user %}  
+                    <li><i class="fa fa-sign-in fa-fw"></i><a href="/userlogout">LogOut</a></li>  
+                    {%else%} 
+                    <li><i class="fa fa-sign-in fa-fw"></i><a href="/userlogin">LogIn</a></li> 
+                    {% endif %}
                 </ul>
                 <!-- End Topbar Navigation -->
             </div>
@@ -140,7 +142,7 @@
         <!-- End Topbar -->
     
         <!-- Navbar -->
-        <div class="navbar navbar-default" role="navigation">
+        <div class="navbar navbar-inverse" role="navigation">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -149,7 +151,7 @@
                         <span class="fa fa-bars"></span>
                     </button>
                     <a class="navbar-brand" href="index.html">
-                        <img id="logo-header" src="{% static 'assets/img/logo1-default.png' %}" alt="Logo">
+                        <i id="logo-header" class="fa fa-home fa-3x active color-light" alt="Logo"></i>
                     </a>
                 </div>
 
@@ -157,114 +159,87 @@
                 <div class="collapse navbar-collapse navbar-responsive-collapse">
                     <ul class="nav navbar-nav">
                         <!-- Home -->
-                        <li class="dropdown active">
-                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                                OCCATION
+                        <li class="active">
+                            <a href="/gifts">
+                                SPA
                             </a>
-                             <ul class="dropdown-menu">
-                                <li><a href="portfolio_text_blocks.html">O1</a></li>
-                                <li><a href="portfolio_2_column.html">O2</a></li>
-                                <li><a href="portfolio_3_column.html">O3</a></li>
-                                <li><a href="portfolio_4_column.html">O4</a></li>
-                                <li><a href="portfolio_item.html">O5</a></li>
-                                <li><a href="portfolio_item1.html">O6</a></li>
-                            </ul> 
                         </li>
                         <!-- End Home -->
-
                         <!-- Pages -->                        
-                        <li class="dropdown">
-                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                                CATEGORY
+                        <li>
+                            <a href="/gifts">
+                                DINING
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="portfolio_text_blocks.html">C1</a></li>
-                                <li><a href="portfolio_2_column.html">C2</a></li>
-                                <li><a href="portfolio_3_column.html">C3</a></li>
-                                <li><a href="portfolio_4_column.html">C4</a></li>
-                                <li><a href="portfolio_item.html">C5</a></li>
-                                <li><a href="portfolio_item1.html">C6</a></li>
-                            </ul> 
                         </li>
                         <!-- End Pages -->
-
                         <!-- Features -->
-                        <li class="dropdown">
-                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                                FOR MAN
+                        <li>
+                            <a href="/gifts">
+                                APPAREL
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="portfolio_text_blocks.html">MC1</a></li>
-                                <li><a href="portfolio_2_column.html">MC2</a></li>
-                                <li><a href="portfolio_3_column.html">MC3</a></li>
-                                <li><a href="portfolio_4_column.html">MC4</a></li>
-                                <li><a href="portfolio_item.html">MC5</a></li>
-                                <li><a href="portfolio_item1.html">MC6</a></li>
-                            </ul> 
                         </li>
                         <!-- End Features -->
-
                         <!-- Portfolio -->
-                        <li class="dropdown">
-                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                                FOR WOMAN
+                        <li>
+                            <a href="/gifts">
+                                GETAWAYS
                             </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="portfolio_text_blocks.html">FC1</a></li>
-                                <li><a href="portfolio_2_column.html">FC2</a></li>
-                                <li><a href="portfolio_3_column.html">FC3</a></li>
-                                <li><a href="portfolio_4_column.html">FC4</a></li>
-                                <li><a href="portfolio_item.html">FC5</a></li>
-                                <li><a href="portfolio_item1.html">FC6</a></li>
-                            </ul> 
                         </li>
                         <!-- Ens Portfolio -->
-
                         <!-- Blog -->
                         <li>
-                            <a onclick="javascript:sendgift();" class="dropdown-toggle" data-toggle="dropdown">
-                                SEND GIFT
+                            <a href="/gifts">
+                                ACTIVITIES
                             </a>
-                            <!-- <ul class="dropdown-menu">
-                                <li><a href="blog_page.html">Blog Page</a></li>
-                                <li><a href="blog_large.html">Blog Large</a></li>
-                                <li><a href="blog_medium.html">Blog Medium</a></li>
-                                <li><a href="blog_full_width.html">Blog Full Width</a></li>
-                                <li><a href="blog_timeline.html">Blog Timeline</a></li>
-                                <li><a href="blog_right_sidebar.html">Blog Right Sidebar</a></li>
-                                <li><a href="blog_left_sidebar.html">Blog Left Sidebar</a></li>
-                                <li><a href="blog_item_option1.html">Blog Item Option 1</a></li>
-                                <li><a href="blog_item_option2.html">Blog Item Option 2</a></li>
-                            </ul> -->
                         </li>
                         <!-- End Blog -->
-
                         <!-- Contacts -->
                         <li>
-                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                                REDEEM GIFT
+                            <a href="/gifts">
+                                ADVENTURE
                             </a>
-                           <!--  <ul class="dropdown-menu">
-                                <li><a href="page_contact1.html">Contacts Default</a></li>
-                                <li><a href="page_contact2.html">Contacts Option 1</a></li>
-                                <li><a href="page_contact3.html">Contacts Option 2</a></li>
-                            </ul> -->
-                        </li>                    
+                        </li>   
+                        <li>
+                            <a href="/gifts">
+                                LIFESTYLE
+                            </a>
+                        </li>
+                        <!-- End Home -->
+                        <!-- Pages -->                        
+                        <li>
+                            <a href="/gifts">
+                                HOME
+                            </a>
+                        </li>
+                        <!-- End Pages -->
+                        <!-- Features -->
+                        <li>
+                            <a href="/gifts">
+                                FASHION
+                            </a>
+                        </li>
+                        <!-- End Features -->
+                        <!-- Portfolio -->
+                        <li>
+                            <a href="/gifts">
+                                SPECIAL TREAT
+                            </a>
+                        </li>
+                        <!-- Ens Portfolio -->
+                        <!-- Blog -->
+                        <li>
+                            <a href="/gifts">
+                                KIDS
+                            </a>
+                        </li>
+                        <!-- End Blog -->
+                        <!-- Contacts -->
+                        <li>
+                            <a href="/gifts">
+                                SHOWS
+                            </a>
+                        </li>                  
                         <!-- End Contacts -->
-
-                        <!-- Search Block -->
-                       <!--  <li>
-                            <i class="search fa fa-search search-btn"></i>
-                            <div class="search-open">
-                                <div class="input-group animated fadeInDown">
-                                    <input type="text" class="form-control" placeholder="Search">
-                                    <span class="input-group-btn">
-                                        <button class="btn-u" type="button">Go</button>
-                                    </span>
-                                </div>
-                            </div>    
-                        </li> -->
-                        <!-- End Search Block -->
                     </ul>
                 </div><!--/navbar-collapse-->
             </div>    
@@ -273,7 +248,7 @@
     </div>
     <!--=== End Header ===-->    
 {% block content %}{% endblock %}
-      
+
     <!--=== Footer ===-->
     <div class="footer">
         <div class="container">
@@ -339,7 +314,7 @@
                             </span>
                         </div>                  
                     </form> 
-                    <ul class="social-icons">
+                    <ul class="social-icons" style="margin-top: 15px;">
                         <!-- <li><a href="#" data-original-title="Feed" class="social_rss"></a></li> -->
                         <li><a href="#" data-original-title="Linkedin" class="social_linkedin"></a></li>
                         <li><a href="#" data-original-title="Facebook" class="social_facebook"></a></li>
@@ -401,7 +376,7 @@
                 </div>
                 <div class="col-md-6">  
                     <a href="index.html">
-                        <img id="logo-footer" src="{% static 'assets/img/logo1-default.png' %}" class="pull-right" alt="" />
+                        <img id="logo-footer" src="assets/img/logo1-default.png" class="pull-right" alt="" />
                     </a>
                 </div>
             </div>
@@ -427,26 +402,42 @@
 <script type="text/javascript" src="{% static 'assets/js/app.js' %}"></script>
 <script type="text/javascript" src="{% static 'assets/js/plugins/owl-carousel.js' %}"></script>
 <script type="text/javascript" src="{% static 'assets/plugins/fancybox/source/jquery.fancybox.pack.js' %}"></script>
+
+
+
+<!-- Checkout Form -->
+<script src=""></script>
+<script src="{% static 'assets/plugins/sky-forms/version-2.0.1/js/jquery.validate.min.js' %}"></script>
+<!-- Order Form -->
+<script src="{% static 'assets/plugins/sky-forms/version-2.0.1/js/jquery-ui.min.js' %}"></script>
+<script src="{% static 'assets/plugins/sky-forms/version-2.0.1/js/jquery.form.min.js' %}"></script>
+<!-- JS Page Level -->           
+<script type="text/javascript" src="{% static 'assets/js/app.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/js/forms/order.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/js/forms/review.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/js/forms/checkout.js' %}"></script>
+
 <script type="text/javascript">
     jQuery(document).ready(function() {
         App.init();
         App.initCounter();
         App.initParallaxBg();
         OwlCarousel.initOwlCarousel();
-        App.initFancybox();   
+        App.initFancybox(); 
+
+        OrderForm.initOrderForm();        
+        ReviewForm.initReviewForm();        
+        CheckoutForm.initCheckoutForm(); 
     });
-</script>
-<script type="text/javascript">
-    function sendgift(){
-    alert("fdgf");
-window.location.href="/sendgift";
-}
 </script>
 <!--[if lt IE 9]>
     <script src="assets/plugins/respond.js"></script>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="assets/plugins/sky-forms/version-2.0.1/js/sky-forms-ie8.js"></script>
 <![endif]-->
 
-{% block scripts %}{% endblock %}
-
+<!--[if lt IE 10]>
+    <script src="assets/plugins/sky-forms/version-2.0.1/js/jquery.placeholder.min.js"></script>
+<![endif]-->
 </body>
-</html>
+</html> 

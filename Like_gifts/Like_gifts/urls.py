@@ -7,7 +7,8 @@ from django.conf.urls import patterns, include, url
 from app.forms import BootstrapAuthenticationForm
 
 from app.views import *
-from app.controller.HomeController import usersignup , userlogin
+from app.controller.HomeController import usersignup , userlogin ,userlogout
+from app.controller.ProductController import gifts
 # Uncomment the next lines to enable the admin:
 # from django.conf.urls import include
 # from django.contrib import admin
@@ -17,9 +18,11 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'app.views.home', name='home'),
     url(r'^contact$', contact, name='contact'),
-    url(r'^about', about, name='about'),
+    url(r'^sendgift', sendgift, name='sendgift'),
     url(r'^userlogin', userlogin, name='userlogin'),
+    url(r'^userlogout', userlogout, name='userlogout'),
     url(r'^usersignup', usersignup, name='usersignup'),
+    url(r'^gifts', gifts, name='gifts'),
     url(r'^login/$',
         'django.contrib.auth.views.login',
         {

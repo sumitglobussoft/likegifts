@@ -39,12 +39,12 @@ def contact(request):
         }
     )
 
-def about(request):
+def sendgift(request):
     """Renders the about page."""
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/about.html',
+        'app/send_gift.html',
         
         {
             'title':'About',

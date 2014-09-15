@@ -69,7 +69,8 @@ def userlogin(request):
              if new_user is not None:
                 if new_user.is_active:
                     login(request, new_user)
-                    return HttpResponseRedirect('/')
+                    request.session['user'] = new_user.id
+                    return HttpResponseRedirect('/sendgift')
                 else:
                     template=loader.get_template("app/page_login.html")
                     rc=RequestContext(request,{'username':'Your account has been disabled!'})
@@ -85,7 +86,7 @@ def userlogin(request):
            return HttpResponse(template.render(rc))
     else:
         template=loader.get_template("app/page_login.html")
-        rc=RequestContext(request,{'username':'nitin'})
+        rc=RequestContext(request,{'username':''})
         return HttpResponse(template.render(rc))
 
 
@@ -105,7 +106,7 @@ def usersignup(request):
         if new_user is not None:
             if new_user.is_active:
                 login(request, new_user)
-                return HttpResponseRedirect('/usersignup')
+                return HttpResponseRedirect('/sendgift')
             else:
                 request.session['err_data'] = "Your account has been disabled!"
                 return HttpResponseRedirect('/usersignup')
@@ -114,5 +115,13 @@ def usersignup(request):
             return HttpResponseRedirect('/usersignup')
     else:
      template=loader.get_template("app/page_registration.html")
-     rc=RequestContext(request,{'username':'nitin'})
+     rc=RequestContext(request,{'username':''})
      return HttpResponse(template.render(rc))
+
+
+@login_required
+def userlogout(request):
+    del request.session["user"]
+    logout(request)
+    return HttpResponseRedirect('/')
+
