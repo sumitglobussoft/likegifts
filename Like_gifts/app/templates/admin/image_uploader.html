@@ -1,0 +1,24 @@
+{% extends "admin/index.html" %}
+
+{% block content %}
+{% load staticfiles %}
+
+<!-- Fine Uploader DOM Element
+====================================================================== -->
+<!-- Fine Uploader template
+====================================================================== -->
+
+<script type="text/template" id="qq-template-bootstrap"></script>
+	<div class="qq-uploader-selector qq-uploader span12">
+		<div class="qq-upload-drop-area-selector qq-upload-drop-area span12">
+		</div>
+		<div class="qq-upload-button-selector qq-upload-button btn btn-success" style="width: auto;">
+			<div><i class="fa fa-upload icon-white"></i>Upload My Files
+                <form enctype="multipart/form-data" action="/saveproductimage" method="post">{% csrf_token %}
+                    <input type="file" name="image_files" multiple="true"/>
+                    <input type="submit" name="upload" value="Upload">
+                </form>
+            </div>
+        </div>	
+	</div>
+{% endblock %}

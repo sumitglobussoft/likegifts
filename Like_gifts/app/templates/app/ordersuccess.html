@@ -1,0 +1,105 @@
+﻿{% extends "app/guestbase.html" %}
+
+{% block content %}
+{% load staticfiles %}
+<!--     <div class="search-block parallaxBg"> -->
+         <div class="container content">
+             <div class="title-box-v2">
+                <div class="row">
+                <div class="col-md-9 animated fadeInLeft">
+                    <h1 class="pull-left color-green"><i class="fa fa-search fa-fw"></i>Заказать Успех</h1><h1 class="pull-left"> &nbsp;----Oredr Id:{{orderid}}</h1>
+                </div>            
+                <div class="col-md-3 btn-buy animated fadeInRight">
+                    <a href="/gifts" class="btn btn-lg btn-android btn-u"><i class="fa fa-lightbulb-o"></i> New Order </a>
+                </div>
+            </div>
+            </div>
+        </div>       
+ <!--    </div>/container   -->   
+
+        <div class="container content hiw">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="headline"><h2><i class="fa fa-sliders fa-fw"></i>Фильтр Результат</h2></div>  
+                    <section>
+                        <label class="checkbox ca1"><input type="checkbox" id="0" name="checkbox" checked=""><i></i>Все категории</label>
+                        <label class="checkbox ca1"><input type="checkbox" id="1" name="checkbox"><i></i>СПА</label>
+                        <label class="checkbox ca1"><input type="checkbox" id="2" name="checkbox"><i></i>РЕСТОРАНЫ</label>
+                        <label class="checkbox ca1"><input type="checkbox" id="3" name="checkbox"><i></i>ОДЕЖДА</label>
+                        <label class="checkbox ca1"><input type="checkbox" id="4" name="checkbox"><i></i>ОТДЫХ</label>
+                        <label class="checkbox ca1"><input type="checkbox" id="5" name="checkbox"><i></i>ХОББИ</label>
+                        <label class="checkbox ca1"><input type="checkbox" id="6" name="checkbox"><i></i>ПРИКЛЮЧЕНИЯ</label>
+                        <label class="checkbox ca1"><input type="checkbox" id="7" name="checkbox"><i></i>СТИЛЬ ЖИЗНИ</label>
+                        <label class="checkbox ca1"><input type="checkbox" id="8" name="checkbox"><i></i>ДОМ</label>
+                        <label class="checkbox ca1"><input type="checkbox" id="9" name="checkbox"><i></i>МОДА</label>
+                        <label class="checkbox ca1"><input type="checkbox" id="10" name="checkbox"><i></i>ОСОБЫЕ ПОДАРКИ</label>
+                        <label class="checkbox ca1"><input type="checkbox" id="11" name="checkbox"><i></i>ДЕТЯМ</label>
+                        <label class="checkbox ca1"><input type="checkbox" id="12" name="checkbox"><i></i>СОБЫТИЯ</label>
+                    </section>
+                    <div class="headline"><h2><i class="fa fa-globe fa-fw"></i>Расположение</h2></div>  
+                    <section>
+                        <label class="checkbox lo1"><input type="checkbox" name="checkbox" checked=""><i></i>Любой Расположение</label>
+                        <label class="checkbox lo1"><input type="checkbox" name="checkbox"><i></i>Москва</label>
+                        <label class="checkbox lo1"><input type="checkbox" name="checkbox"><i></i>Санкт-Петербург</label>
+                        <label class="checkbox lo1"><input type="checkbox" name="checkbox"><i></i>Loream ipsun</label>
+                        <label class="checkbox lo1"><input type="checkbox" name="checkbox"><i></i>Новосибирск</label>
+                        <label class="checkbox lo1"><input type="checkbox" name="checkbox"><i></i>Беатрис</label>
+                    </section>
+                    <div class="headline"><h2><i class="fa fa-money fa-fw"></i>Цена</h2></div>  
+        <!-- Rounded Slider Forms -->
+        <form action="" id="sky-form" class="sky-form label-rounded">
+            <div id="slider2-rounded"></div>
+            <label class="label rounded-x">ЦЕНА руб (<span id="slider2-value1-rounded">500</span> - <span id="slider2-value2-rounded">3000</span>)
+            </label>  
+        </form>
+        <!-- End Rounded Slider Forms -->
+                   
+                </div>
+                <div class="col-md-10">
+                <div class="row">
+<section class="col col-md-8">
+            <div class="input-group">
+                <input type="text" id="SearchWordSecond" class="form-control" placeholder="Введите слово ...">
+                    <span class="input-group-btn">
+                        <button onclick="searchfunction()" class="btn-u" type="button"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
+        </section>
+        <section class="col col-md-4">
+            <select class="form-control">
+                <option value="0" selected="" disabled="">Сортировать результат по ...</option>
+                <option>СПА</option>
+                <option>ДЕТЯМ</option>
+                <option>ДОМ</option>
+                <option>МОДА</option>
+                <option>смотреть</option>
+            </select>
+        </section>
+<div id="gifts">
+{% for product in products %}
+                     <div class="col-md-3">
+                        <div class="thumbnails thumbnail-style thumbnail-kenburn">
+                            <div class="thumbnail-img">
+                                <div class="overflow-hidden">
+                                    <img class="img-responsive" src="/static/{{product.productimage}}" alt="">
+                                </div>
+                                <a class="btn-more hover-effect" href="/selgift/{{product.productid}}">Отправить как ПОДАРОК+</a>                   
+                            </div>
+                            <div class="caption">
+                                <h3><a class="hover-effect" href="#">{{product.productname}}</a></h3>
+                                <p>{{product.productprice}}</p>
+                            </div>
+                        </div>
+                    </div>
+{% endfor %}
+</div>
+</div>
+
+                
+                </div>
+            </div>
+        </div>
+
+
+
+{% endblock %}

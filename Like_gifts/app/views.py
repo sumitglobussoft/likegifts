@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Definition of views.
 """
@@ -14,13 +15,14 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout, authenticate, login
 
 def home(request):     
+    #print ('hiiii')
     """Renders the home page."""
     assert isinstance(request, HttpRequest)
     return render(
         request,
         'app/index.html',
        {
-            'title':'Home Page',
+            'title':'Welcome',
             'year':datetime.now().year,
         }
     )
@@ -49,7 +51,11 @@ def sendgift(request):
         {
             'title':'About',
             'message':'Your application description page.',
-            'year':datetime.now().year,
         }
     )
+
+def howitworks(request):
+    template=loader.get_template("app/how_it_works.html")
+    rc=RequestContext(request,{'username':'Please do sigh up first'})
+    return HttpResponse(template.render(rc))
 

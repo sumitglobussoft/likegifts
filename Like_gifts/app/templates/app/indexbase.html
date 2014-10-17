@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
 <head>
-    <title>Like Gifts | Welcome...</title>
+    <title>Like Gift | {{title}}</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -50,24 +50,10 @@
 </head> 
 
 <body>
-  <!--=== Style Switcher ===-->    
+<!--=== Style Switcher ===-->    
 <i class="style-switcher-btn fa fa-cogs hidden-xs"></i>
 <div class="style-switcher animated fadeInRight">
     <div class="theme-close"><i class="icon-close"></i></div>
-    <div class="theme-heading">Theme Colors</div>
-    <ul class="list-unstyled">
-        <li class="theme-default theme-active" data-style="default" data-header="light"></li>
-        <li class="theme-blue" data-style="blue" data-header="light"></li>
-        <li class="theme-orange" data-style="orange" data-header="light"></li>
-        <li class="theme-red" data-style="red" data-header="light"></li>
-        <li class="theme-light last" data-style="light" data-header="light"></li>
-
-        <li class="theme-purple" data-style="purple" data-header="light"></li>
-        <li class="theme-aqua" data-style="aqua" data-header="light"></li>
-        <li class="theme-brown" data-style="brown" data-header="light"></li>
-        <li class="theme-dark-blue" data-style="dark-blue" data-header="light"></li>
-        <li class="theme-light-green last" data-style="light-green" data-header="light"></li>
-    </ul>
     <div style="margin-bottom:18px;"></div>
     <div class="theme-heading">Layouts</div>
     <div class="text-center">
@@ -85,215 +71,106 @@
             <div class="container">
                 <!-- Topbar Navigation -->
                 <ul class="loginbar pull-left">
-                    <li><a href="">24x7 CUSTOMER SUPPORT</a></li>  
+                    <li><a href="mailto:support@likegift.ru">24x7 CUSTOMER SUPPORT</a></li>  
                     <li class="topbar-devider"></li>   
-                    <li><a href=""><i class="fa fa-phone fa-fw"></i>+88124/5678</a></li>  
+                    <li><a href="tel:+88124/5678"><i class="fa fa-phone fa-fw"></i>+88124/5678</a></li>  
                     <li class="topbar-devider"></li>   
-                    <li><a href=""><i class="fa fa-envelope-o fa-fw"></i>support@likegift.ru</a></li>  
+                    <li><a href="mailto:support@likegift.ru"><i class="fa fa-envelope-o fa-fw"></i>support@likegift.ru</a></li>  
                 </ul>
-                <ul class="loginbar pull-right">
-                    <li><a href="">SEND GIFT</a></li>  
+                 <ul class="loginbar pull-right">
+                    <li class="greenhff"><a href="/sendgift">Послать подарок</a></li>  
                     <li class="topbar-devider"></li>   
-                    <li><a href="">RECEIVE GIFT</a></li>  
+                    <li class="greenhff"><a href="" data-toggle="modal" data-target="#receivegift">ПОЛУЧИТЬ ПОДАРОК</a></li>  
                     <li class="topbar-devider"></li>   
-                    <li><a href="">HOW IT WORKS</a></li>  
+                    <li class="greenhff"><a href="/howitworks">КАК ЭТО РАБОТАЕТ</a></li>  
                     <li class="topbar-devider"></li>   
-                    <li><a href="">Browse</a></li>  
+                    <li class="greenhff"><a href="/gifts">Обзор</a></li>  
                     <li class="topbar-devider"></li>   
-                    <li><i class="fa fa-sign-in fa-fw"></i><a href="/userlogin">Login / REGISTER</a></li>   
+                   {% if request.session.user %}  
+                    <li class="greenhff"><i class="fa fa-sign-in fa-fw"></i><a href="/userlogout">LogOut</a></li>  
+                    {% else %} 
+                    <li class="greenhff"><i class="fa fa-sign-in fa-fw"></i><a href="/userlogin">Resiter / Войти</a></li> 
+                    {% endif %}    
                 </ul>
                 <!-- End Topbar Navigation -->
             </div>
-            <div class="container">
+            <div class="container content">
                 <!-- Topbar Navigation -->
-                <ul class="loginbar pull-left">
-                    <li>
+                <ul class="loginbar">
+                    <li class="col-md-offset-3 pull-left">
                         <select class="form-control">
-                            <option value="none" selected disabled>Product</option>
-                            <option value="design">design</option>
-                            <option value="development">development</option>
-                            <option value="illustration">illustration</option>
-                            <option value="branding">branding</option>
-                            <option value="video">video</option>
+                            <option>Все товаров</option>
+                            <option>СПА</option>
+                            <option>РЕСТОРАНЫ</option>
+                            <option>ОДЕЖДА</option>
+                            <option>ОТДЫХ</option>
+                            <option>ХОББИ</option>
+                            <option>ПРИКЛЮЧЕНИЯ</option>
+                            <option>СТИЛЬ ЖИЗНИ</option>
+                            <option>ДОМ</option>
+                            <option>МОДА</option>
+                            <option>ОСОБЫЕ ПОДАРКИ</option>
+                            <option>ДЕТЯМ</option>
+                            <option>СОБЫТИЯ</option>
                         </select>
                     </li>
-                     <!-- Search Block -->
-                        <li>
-                            <i class="search fa fa-search search-btn"></i>
-                            <div class="search-open">
-                                <div class="input-group animated fadeInDown">
-                                    <input type="text" class="form-control" placeholder="Search">
-                                    <span class="input-group-btn">
-                                        <button class="btn-u" type="button">Go</button>
-                                    </span>
-                                </div>
-                            </div>    
-                        </li>
-                        <!-- End Search Block -->  
-                </ul>
-                <ul class="loginbar pull-right">
-                    <button class="btn-u btn-brd rounded-4x btn-u-green btn-u-sm" type="button"><i class="fa fa-shopping-cart"></i> RUB 8800</button>  
+                    <li>
+                        <section class="col col-md-5">
+                            <div class="input-group">
+                                <input type="text" id="SearchWord" class="form-control" placeholder="поиск ...">
+                                <span class="input-group-btn">
+                                    <button  onclick="searchfunction()" class="btn-u" type="button"><i class="fa fa-search"></i></button>
+                                </span>
+                            </div>
+                        </section>
+                    </li>
+                    <li class="pull-right">
+                        <button class="btn-u btn-brd rounded-4x btn-u-green btn-u-sm" type="button" data-toggle="modal" data-target="#receivegift">
+                            <span class="badge badge-green rounded-x">3</span>
+                            <i class="fa fa-shopping-cart"></i> Мои подарки 
+                        </button>
+                       
+                    </li>
                 </ul>
                 <!-- End Topbar Navigation -->
+
+              
+
             </div>
+
         </div>
         <!-- End Topbar -->
-    
-        <!-- Navbar -->
-        <div class="navbar navbar-default" role="navigation">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="fa fa-bars"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.html">
-                        <img id="logo-header" src="{% static 'assets/img/logo1-default.png' %}" alt="Logo">
-                    </a>
-                </div>
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse navbar-responsive-collapse">
-                    <ul class="nav navbar-nav">
-                        <!-- Home -->
-                        <li class="dropdown active">
-                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                                OCCATION
-                            </a>
-                             <ul class="dropdown-menu">
-                                <li><a href="portfolio_text_blocks.html">O1</a></li>
-                                <li><a href="portfolio_2_column.html">O2</a></li>
-                                <li><a href="portfolio_3_column.html">O3</a></li>
-                                <li><a href="portfolio_4_column.html">O4</a></li>
-                                <li><a href="portfolio_item.html">O5</a></li>
-                                <li><a href="portfolio_item1.html">O6</a></li>
-                            </ul> 
-                        </li>
-                        <!-- End Home -->
-
-                        <!-- Pages -->                        
-                        <li class="dropdown">
-                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                                CATEGORY
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="portfolio_text_blocks.html">C1</a></li>
-                                <li><a href="portfolio_2_column.html">C2</a></li>
-                                <li><a href="portfolio_3_column.html">C3</a></li>
-                                <li><a href="portfolio_4_column.html">C4</a></li>
-                                <li><a href="portfolio_item.html">C5</a></li>
-                                <li><a href="portfolio_item1.html">C6</a></li>
-                            </ul> 
-                        </li>
-                        <!-- End Pages -->
-
-                        <!-- Features -->
-                        <li class="dropdown">
-                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                                FOR MAN
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="portfolio_text_blocks.html">MC1</a></li>
-                                <li><a href="portfolio_2_column.html">MC2</a></li>
-                                <li><a href="portfolio_3_column.html">MC3</a></li>
-                                <li><a href="portfolio_4_column.html">MC4</a></li>
-                                <li><a href="portfolio_item.html">MC5</a></li>
-                                <li><a href="portfolio_item1.html">MC6</a></li>
-                            </ul> 
-                        </li>
-                        <!-- End Features -->
-
-                        <!-- Portfolio -->
-                        <li class="dropdown">
-                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                                FOR WOMAN
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="portfolio_text_blocks.html">FC1</a></li>
-                                <li><a href="portfolio_2_column.html">FC2</a></li>
-                                <li><a href="portfolio_3_column.html">FC3</a></li>
-                                <li><a href="portfolio_4_column.html">FC4</a></li>
-                                <li><a href="portfolio_item.html">FC5</a></li>
-                                <li><a href="portfolio_item1.html">FC6</a></li>
-                            </ul> 
-                        </li>
-                        <!-- Ens Portfolio -->
-
-                        <!-- Blog -->
-                        <li>
-                            <a onclick="javascript:sendgift();" class="dropdown-toggle" data-toggle="dropdown">
-                                SEND GIFT
-                            </a>
-                            <!-- <ul class="dropdown-menu">
-                                <li><a href="blog_page.html">Blog Page</a></li>
-                                <li><a href="blog_large.html">Blog Large</a></li>
-                                <li><a href="blog_medium.html">Blog Medium</a></li>
-                                <li><a href="blog_full_width.html">Blog Full Width</a></li>
-                                <li><a href="blog_timeline.html">Blog Timeline</a></li>
-                                <li><a href="blog_right_sidebar.html">Blog Right Sidebar</a></li>
-                                <li><a href="blog_left_sidebar.html">Blog Left Sidebar</a></li>
-                                <li><a href="blog_item_option1.html">Blog Item Option 1</a></li>
-                                <li><a href="blog_item_option2.html">Blog Item Option 2</a></li>
-                            </ul> -->
-                        </li>
-                        <!-- End Blog -->
-
-                        <!-- Contacts -->
-                        <li>
-                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-                                REDEEM GIFT
-                            </a>
-                           <!--  <ul class="dropdown-menu">
-                                <li><a href="page_contact1.html">Contacts Default</a></li>
-                                <li><a href="page_contact2.html">Contacts Option 1</a></li>
-                                <li><a href="page_contact3.html">Contacts Option 2</a></li>
-                            </ul> -->
-                        </li>                    
-                        <!-- End Contacts -->
-
-                        <!-- Search Block -->
-                       <!--  <li>
-                            <i class="search fa fa-search search-btn"></i>
-                            <div class="search-open">
-                                <div class="input-group animated fadeInDown">
-                                    <input type="text" class="form-control" placeholder="Search">
-                                    <span class="input-group-btn">
-                                        <button class="btn-u" type="button">Go</button>
-                                    </span>
-                                </div>
-                            </div>    
-                        </li> -->
-                        <!-- End Search Block -->
-                    </ul>
-                </div><!--/navbar-collapse-->
-            </div>    
-        </div>            
-        <!-- End Navbar -->
+ </div>
     </div>
     <!--=== End Header ===-->    
+
+
+
+                        </div>
+
 {% block content %}{% endblock %}
       
-    <!--=== Footer ===-->
+<!--=== Footer ===-->
     <div class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 md-margin-bottom-40">
                     <!-- About -->
-                    <div class="headline"><h2>More About Like Gift</h2></div>  
+                    <div class="headline"><h2>Больше О такой же дар,</h2></div>  
                     <table class="table">
                         <tbody>
                             <tr>
-                                <td>Company History</td>
+                                <td>История компании</td>
                             </tr>
                             <tr>
-                                <td>Investors Relations</td>
+                                <td>Связи с инвесторами</td>
                             </tr>
                             <tr>
-                                <td>Our Partners</td>
+                                <td>Наши партнеры</td>
                             </tr>
                             <tr>
-                                <td>Press Coverages</td>
+                                <td>Пресс Покрытия</td>
                             </tr>
                         </tbody>
                     </table>
@@ -301,28 +178,28 @@
 
                 <div class="col-md-3 md-margin-bottom-40">
                   <!--   <div class="headline"><h2></h2></div>   -->
-                    <table class="table">
+                   <table class="table">
                         <tbody>
+                            <!--<tr>
+                                <td href="#">Merchant registration</td>
+                            </tr>-->
                             <tr>
-                                <td>Merchant registration</td>
+                                <td><a href="/faq">ЧаВО</a></td>
                             </tr>
                             <tr>
-                                <td>FAQ</td>
+                                <td><a href="/aboutus">Вакансии</a></td>
                             </tr>
                             <tr>
-                                <td>Careers</td>
+                                <td><a href="/terms">Условия</a></td>
                             </tr>
                             <tr>
-                                <td>Terms &amp; Conditions</td>
+                                <td><a href="/privacy">Политика конфиденциальности</a></td>
                             </tr>
                             <tr>
-                                <td>Privacy Policy</td>
+                                <td><a href="/contact">Контакты</a></td>
                             </tr>
                             <tr>
-                                <td>Contact Us</td>
-                            </tr>
-                            <tr>
-                                <td>Blog</td>
+                                <td ><a href="/blog">Блог</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -330,16 +207,16 @@
                 
                 <div class="col-md-3 md-margin-bottom-40">
                     <!-- Social Links -->
-                    <div class="headline"><h2>Get Connected</h2></div> 
+                    <div class="headline"><h2>Присоединиться</h2></div> 
                     <form class="footer-subsribe">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Your Email Address">                            
                             <span class="input-group-btn">
-                                <button class="btn-u" type="button">Subscribe</button>
+                                <button class="btn-u" href="/contact" type="button">Подписаться</button>
                             </span>
                         </div>                  
                     </form> 
-                    <ul class="social-icons">
+                    <ul class="social-icons" style="margin-top: 15px;">
                         <!-- <li><a href="#" data-original-title="Feed" class="social_rss"></a></li> -->
                         <li><a href="#" data-original-title="Linkedin" class="social_linkedin"></a></li>
                         <li><a href="#" data-original-title="Facebook" class="social_facebook"></a></li>
@@ -353,33 +230,33 @@
 
                 <div class="col-md-3 md-margin-bottom-40">
                     <!-- Contact Us -->
-                    <div class="headline"><h2><i class="fa fa-gift fa-fw"></i>Like Gift's Statistic</h2></div> 
+                    <div class="headline"><h2><i class="fa fa-gift fa-fw"></i>Как Statistic подарок в</h2></div> 
                     <div class="row">
                         <div class="col-sm-6 col-xs-6">
                             <div class="counters">
                                 <span class="counter">10000</span>   
-                                <h4>Members</h4>
+                                <h4>Члены</h4>
                             </div>    
                         </div>
                         <div class="col-sm-6 col-xs-6">
                             <div class="counters">
                                 <span class="counter">8008</span> 
-                                <h4>Merchants</h4>
+                                <h4>Торговые фирмы</h4>
                             </div>    
                         </div>
                         <div class="col-sm-6 col-xs-6">
                             <div class="counters">
                                 <span class="counter">80000</span>
-                                <h4>Gifts for sale</h4>
+                                <h4>Подарки в продаже</h4>
                             </div>    
                         </div>
                         <div class="col-sm-6 col-xs-6">
                             <div class="counters">
                                 <span class="counter">150000</span>
-                                <h4>Gifts sent</h4>
+                                <h4>Отправленные подарки</h4>
                             </div>    
                         </div>
-                    </div>          
+                    </div>           
                     <!-- End Contact Us -->
 
                     
@@ -393,15 +270,15 @@
     <div class="copyright">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">                      
+                 <div class="col-md-6">                      
                     <p class="copyright-space">
-                        Copyright &copy; 2015 <span class="color-green">Like Gift, Ltd.</span> ALL Rights Reserved. 
+                        Copyright &copy; 2015 <span class="color-green">Like Gift, Ltd.</span> Все права защищены. 
                     <br>
-                    No part of this website may be copied, duplicated and/or re-distribcted in anyway.<br>By using this website. you agree with our Terms of Use.</p>
+                    Никакая часть данного веб-сайта не может быть скопирована, дублирована или распространена в какой бы то ни было форме.<br> Используя данный веб-сайт, вы принимаете наши Условия пользования.</p>
                 </div>
                 <div class="col-md-6">  
                     <a href="index.html">
-                        <img id="logo-footer" src="{% static 'assets/img/logo1-default.png' %}" class="pull-right" alt="" />
+                        <img id="logo-footer" src="assets/img/logo1-default.png" class="pull-right" alt="" />
                     </a>
                 </div>
             </div>
@@ -436,10 +313,52 @@
         App.initFancybox();   
     });
 </script>
+
+<script type="text/javascript">
+function searchfunction() 
+{
+var searchKey = document.getElementById("SearchWord").value;
+//alert(searchKey)
+var url="/search/"+searchKey;
+window.location.href=url;
+}  
+
+</script>
+
 <script type="text/javascript">
     function sendgift(){
-    alert("fdgf");
+    //alert("fdgf");
 window.location.href="/sendgift";
+}
+
+
+function receivegift(){
+    var trackcode = document.getElementById('trackcode').value;
+    //alert(trackcode);
+    $.ajax({
+        type: 'GET',
+        url: '/receivegift',
+        dataType: "json",
+        async: true,
+        data: { trackcode: trackcode
+        },
+        success: function(response){
+                console.log(response);
+                var obj = response;
+                 console.log(obj.result);
+                if(obj.result == "success") {
+                    var sendername = obj.sendername;
+                    var cost = obj.ordercost;
+                    var desc = $.parseJSON(obj.orderdesc);
+                    document.getElementById('Pdescription').innerHTML = 'Sender: '+sendername + '</br>Cost: '+cost + 
+                            '</br>Gift ID: '+ desc.Productid + '</br>Size: '+ desc.Size + '</br>Color: '+ desc.Color +
+                            '</br>Qantity: '+ desc.Qty;
+                } else {
+                    var unauth = obj.result;
+                    document.getElementById('Pdescription').innerHTML = unauth;
+                }
+        }
+    });
 }
 </script>
 <!--[if lt IE 9]>

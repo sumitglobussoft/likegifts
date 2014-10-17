@@ -1,31 +1,55 @@
-{% extends "app/guestbase.html" %}
+﻿{% extends "app/guestbase.html" %}
 
 {% block content %}
  {% load staticfiles %}
-
-
     <!--=== send gift===-->
 <!--     <div class="search-block parallaxBg"> -->
         <div class="container">
             <div class="title-box-v2">
-                <h1 class="pull-left color-green"><i class="fa fa-gift fa-fw"></i>Send A Gifts</h1><h1 class="pull-left"> &nbsp;Find this from to send gift</h1>
-                <h6 class="color-green"><i class="fa fa-exclamation-circle fa-3x"></i>need help?</h6>
+                <h1 class="pull-left color-green"><i class="fa fa-gift fa-fw"></i>Отправить подарок</h1><h1 class="pull-left"> &nbsp;Найти это от направить подарок</h1>
+                <h6 class="color-green"><i class="fa fa-exclamation-circle fa-3x"></i>нужна помощь?</h6>
             </div>
         </div>    
  <!--    </div>/container   -->   
     <!--=== End Send gift ===-->
 
-
-<div class="container">
+<div class="container content">
 <div class="row">
-    <div class="col-md-6"></div>
+    <div class="col-md-6 shadow-wrapper">
+            <div class="servive-block rounded-2x send_gift">   
+                <i class="icon-custom icon-blg rounded-5x icon-bg-u">{{ammount}}$</i>
+                <!--ribbon-->
+                <div id="ribbon">
+                  <div class="container">
+                        <!-- <div class="number">ojksssf</div> -->
+                    <div class="base"></div>
+                    <div class="left_corner"></div>
+                    <div class="right_corner"></div>
+                </div>
+                </div>
+                   <hr>
+                 <dl class="dl-horizontal pull-left color-light">
+                        <dt>To: </dt>
+                        <dd id="togift"></dd>
+                        <dt>From: </dt>
+                        <dd id="fromgift"></dd>
+                    </dl>
+                    <dl>
+                        <span class="color-light id="readmeat">Voucher can be redeemed at Bangalore,India<br> between 9/9/2014 to 10/10/2014</span>
+                    </dl>
+            </div>
+        <h4 class="col-lg-offset-3">Это предварительный просмотр своей подарочной карты</h4>
+    </div>
+
     <div class="col-md-6">
             <div class="panel-group acc-v1" id="accordion-1">
+  <form action="/saveorderdetails" method="post" enctype="multipart/form-data" id="order_form" class="sky-form">{% csrf_token %}
+           <fieldset>                                   
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-One">
-                                   #1 Tell us about the recipient and the gift
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-1" id="recipter" href="#collapse-One">
+                                   #1 Расскажите нам о получателе и даром
                                 </a>
                             </h4>
                         </div>
@@ -33,20 +57,19 @@
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-md-12">
-                                           <!-- Order Form -->
-                                        <form action="assets/php/demo-order.php" method="post" enctype="multipart/form-data" id="sky-form1" class="sky-form">
-                                            <fieldset>                  
+                                           <!-- Order Form action="assets/php/demo-order.php sky-form1"-->
+                                                      
                                                 <div class="row">
                                                     <section class="col col-6">
                                                         <label class="input">
                                                             <i class="icon-append fa fa-user"></i>
-                                                            <input type="text" name="fname" placeholder="First Name">
+                                                            <input type="text" id="r_fname" name="r_fname" required placeholder="имя">
                                                         </label>
                                                     </section>
                                                     <section class="col col-6">
                                                         <label class="input">
                                                             <i class="icon-append fa fa-user"></i>
-                                                            <input type="text" name="lname" placeholder="Last Name">
+                                                            <input type="text" id="r_lname" name="r_lname" placeholder="фамилия">
                                                         </label>
                                                     </section>
                                                 </div>
@@ -55,7 +78,7 @@
                                                     <section class="col col-md-12">
                                                         <label class="input">
                                                             <i class="icon-append fa fa-envelope"></i>
-                                                            <input type="email" name="email" placeholder="E-mail Address">
+                                                            <input type="email" id="r_email"  name="r_email" placeholder="Адрес электронной почты">
                                                         </label>
                                                     </section>
                                                 </div>
@@ -64,7 +87,7 @@
                                                     <section class="col col-md-12">
                                                         <label class="input">
                                                             <i class="icon-append fa fa-phone"></i>
-                                                            <input type="phone" name="phone" placeholder="Phone ...">
+                                                            <input type="phone" id="r_phone" name="r_phone" placeholder="Телефон ...">
                                                         </label>
                                                     </section>
                                                 </div>
@@ -73,12 +96,12 @@
                                                     <section class="col col-md-12">
                                                         <label class="input">
                                                             <i class="icon-append fa fa-spinner"></i>
-                                                            <input type="merchant" name="merchant" placeholder="Merchant">
+                                                            <input type="merchant" id="r_merchant" name="r_merchant" placeholder="Торговец">
                                                         </label>
                                                     </section>
                                                 </div>
 
-                                                 <div class="row">
+                                                 <!--<div class="row">
                                                     <section class="col col-md-12">
                                                         <label class="select">
                                                             <select name="interested">
@@ -108,38 +131,57 @@
                                                             <i></i>
                                                         </label>
                                                     </section>
-                                                </div>
+                                                </div>-->
 
                                                  <div class="row">
                                                     <section class="col col-md-12">
                                                         <label class="input">
                                                             <i class="icon-append fa fa-calendar"></i>
-                                                            <input type="text" name="start" id="start" placeholder="Expected start date">
+                                                            <input type="text" id="start" name="r_start" placeholder="Ожидаемая дата начала">
                                                         </label>
                                                     </section>
                                                 </div>
+                                                  <section>
+                                                    <label class="textarea">
+                                                        <textarea rows="3" id="r_info" name="r_info" placeholder="Адрес доставки"></textarea>
+                                                    </label>
+                                                </section>
+                                                <section>
+                                                    <label class="input">
+                                                        <input type="text" id="r_city" name="r_city" placeholder="Город">
+                                                    </label>
+                                                </section>
 
+                                                <div class="row">
+                                                    <section class="col col-md-6">
+                                                        <label class="input">
+                                                            <input type="text" id="r_State" name="r_State" placeholder="государство">
+                                                        </label>
+                                                    </section>
+                                                    <section class="col col-md-6">
+                                                        <label class="input">
+                                                            <input type="text" id="r_zip" name="r_zip" placeholder="Zip">
+                                                        </label>
+                                                    </section>
+                                                </div>
                                                 <div class="row">
                                                     <section>
                                                         <div class="inline-group">
-                                                            <label class="radio"><input type="radio" name="radio-inline" checked><i class="rounded-x"></i>SMS</label>
-                                                            <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>EMAIL</label>
-                                                            <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>POSTAL ADDRESS</label>
+                                                            <label class="radio"><input type="radio" name="radio-inline" checked><i class="rounded-x"></i>смс</label>
+                                                            <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>E-MAIL</label>
+                                                            <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Почтовый адрес</label>
                                                         </div>
                                                     </section>
                                                 </div>      
 
-                                                <button type="submit" class="btn-u">Next Step</button>
-                                                <div class="progress"></div>
+                                                 <a data-toggle="collapse" data-parent="#accordion-1" href="" id="send-item" class="button" onclick="javascript:validate1()">Следующий шаг</a>
+                                                <div class="progress"></div> 
 
                                                 <div class="message">
                                                     <i class="rounded-x fa fa-check"></i>
-                                                    <p>Thanks for your order!<br>We'll contact you very soon.</p>
+                                                    <p>Спасибо за ваш заказ!<br>Мы свяжемся с вами в ближайшее время.</p>
                                                 </div>
-
-                                            </fieldset>           
-                                            
-                                        </form>         
+       
                 <!-- End Order Form -->
                                     </div>
                                 </div>
@@ -150,8 +192,8 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-Two">
-                                    #2 Tell us about You
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-Two" id="secondform">
+                                    #2 Расскажите о себе
                                 </a>
                             </h4>
                         </div>
@@ -160,19 +202,18 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                            <!-- Order Form -->
-                                        <form action="assets/php/demo-order.php" method="post" enctype="multipart/form-data" id="sky-form1" class="sky-form">
-                                            <fieldset>                  
+                                                      
                                                 <div class="row">
                                                     <section class="col col-6">
                                                         <label class="input">
                                                             <i class="icon-append fa fa-user"></i>
-                                                            <input type="text" name="fname" placeholder="First Name">
+                                                            <input type="text" name="fname" id="fname" placeholder="имя" value="{{user.userfirstname}}">
                                                         </label>
                                                     </section>
                                                     <section class="col col-6">
                                                         <label class="input">
                                                             <i class="icon-append fa fa-user"></i>
-                                                            <input type="text" name="lname" placeholder="Last Name">
+                                                            <input type="text" name="lname" id="lname" placeholder="фамилия" value="{{user.userlastname}}">
                                                         </label>
                                                     </section>
                                                 </div>
@@ -181,7 +222,7 @@
                                                     <section class="col col-md-12">
                                                         <label class="input">
                                                             <i class="icon-append fa fa-envelope"></i>
-                                                            <input type="email" name="email" placeholder="E-mail Address">
+                                                            <input type="email" name="email"  id="email"  placeholder="Адрес электронной почты" value="{{user.useremail}}" >
                                                         </label>
                                                     </section>
                                                 </div>
@@ -190,23 +231,21 @@
                                                     <section class="col col-md-12">
                                                         <label class="input">
                                                             <i class="icon-append fa fa-phone"></i>
-                                                            <input type="phone" name="phone" placeholder="Phone ...">
+                                                            <input type="phone" name="phone" id="phone"  placeholder="Телефон ..." value="{{user.userphone}}">
                                                         </label>
                                                     </section>
                                                 </div>    
 
-                                                <button type="Back" class="btn-u btn-u-default">Back</button>
-                                                <button type="submit" class="btn-u">Next Step</button>
+                                    <!--            <button type="Back" class="btn-u btn-u-default">Back</button>-->
+                                                <a data-toggle="collapse" data-parent="#accordion-1" href="" id="sender" class="btn-u" onclick="javascript:validate2()">Следующий шаг</a> 
                                                 <div class="progress"></div>
 
                                                 <div class="message">
                                                     <i class="rounded-x fa fa-check"></i>
-                                                    <p>Thanks for your order!<br>We'll contact you very soon.</p>
+                                                    <p>Спасибо за ваш заказ!<br>Мы свяжемся с вами в ближайшее время.</p>
                                                 </div>
 
-                                            </fieldset>           
-                                            
-                                        </form>         
+                                               
                 <!-- End Order Form -->
                                     </div>
                                 </div>
@@ -218,7 +257,7 @@
                         <div class="panel-heading">
                             <h4 class="panel-title">
                                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-Three">
-                                    #3 Check Out
+                                    #3 проверить
                                 </a>
                             </h4>
                         </div>
@@ -227,35 +266,34 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                            <!-- Order Form -->
-                                        <form action="assets/php/demo-order.php" method="post" enctype="multipart/form-data" id="sky-form1" class="sky-form">
-                                           <fieldset>                 
+                                                        
                         
                                                 <section>
                                                     <label class="input">
-                                                        <input type="text" name="name" placeholder="Your Full Name">
+                                                        <input type="text" name="name" id="name" placeholder="Ваше полное имя">
                                                     </label>
                                                 </section>
 
                                                 <section>
                                                     <label class="textarea">
-                                                        <textarea rows="3" name="info" placeholder="Billing Address"></textarea>
+                                                        <textarea rows="3" name="info" id="info" placeholder="Адрес для выставления счета"></textarea>
                                                     </label>
                                                 </section>
                                                 <section>
                                                     <label class="input">
-                                                        <input type="text" name="city" placeholder="City">
+                                                        <input type="text" name="city" id="city" placeholder="Город">
                                                     </label>
                                                 </section>
 
                                                 <div class="row">
                                                     <section class="col col-md-6">
                                                         <label class="input">
-                                                            <input type="text" name="State" placeholder="State">
+                                                            <input type="text" name="State" id="State" placeholder="государство">
                                                         </label>
                                                     </section>
                                                     <section class="col col-md-6">
                                                         <label class="input">
-                                                            <input type="text" name="zip" placeholder="Zip.">
+                                                            <input type="text" name="zip" id="zip" placeholder="Zip.">
                                                         </label>
                                                     </section>
                                                 </div>
@@ -263,7 +301,7 @@
                                                 <div class="row">
                                                     <section class="col col-10">
                                                         <label class="input">
-                                                            <input type="text" name="card" id="card" placeholder="Card number">
+                                                            <input type="text" name="card" id="card" placeholder="номер карты">
                                                         </label>
                                                     </section>
                                                     <section class="col col-2">
@@ -274,23 +312,23 @@
                                                 </div>
                                                 
                                                 <div class="row">
-                                                    <label class="label col col-4">Expiration date</label>
+                                                    <label class="label col col-4">срок годности</label>
                                                     <section class="col col-5">
                                                         <label class="select">
-                                                            <select name="month">
-                                                                <option value="0" selected disabled>Month</option>
-                                                                <option value="1">January</option>
-                                                                <option value="1">February</option>
-                                                                <option value="3">March</option>
-                                                                <option value="4">April</option>
-                                                                <option value="5">May</option>
-                                                                <option value="6">June</option>
-                                                                <option value="7">July</option>
-                                                                <option value="8">August</option>
-                                                                <option value="9">September</option>
-                                                                <option value="10">October</option>
-                                                                <option value="11">November</option>
-                                                                <option value="12">December</option>
+                                                            <select name="month" id="month">
+                                                               <!-- <option value="0" selected disabled>Month</option>-->
+                                                                <option>Январь</option>
+                                                                <option>февраля</option>
+                                                                <option >Март</option>
+                                                                <option>Апрель</option>
+                                                                <option>Май</option>
+                                                                <option>Июнь</option>
+                                                                <option>Июль</option>
+                                                                <option>Август</option>
+                                                                <option>Сентябрь</option>
+                                                                <option>Октябрь</option>
+                                                                <option>Ноябрь</option>
+                                                                <option>Декабрь</option>
                                                             </select>
                                                             <i></i>
                                                         </label>
@@ -302,35 +340,137 @@
                                                     </section>
                                                 </div>
 
-                                                <button type="Back" class="btn-u btn-u-default">Back</button>
-                                                <button type="submit" class="btn-u">Send Gift</button>
+                                      <!--          <button type="Back" class="btn-u btn-u-default">Back</button>   -->
+                                                <button type="submit" class="btn-u">Отправить подарок</button>
                                                 <div class="progress"></div>
 
                                                 <div class="message">
                                                     <i class="rounded-x fa fa-check"></i>
-                                                    <p>Thanks for your order!<br>We'll contact you very soon.</p>
+                                                    <p>Спасибо за ваш заказ!<br>Мы свяжемся с вами в ближайшее время.</p>
                                                 </div>
 
-                                            </fieldset>     
-                                            
-                                        </form>         
+                                                
                 <!-- End Order Form -->
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+   </fieldset>     
+                                            
+                                        </form>  
                 </div>
                 <!-- End Accordion v1 -->  
 </div>
 </div>
 </div>
-     
+<script type="text/javascript">
+function validate1() 
+{
+var r_fname=document.getElementById("r_fname").value;
+if (r_fname.length == 0) {
+        alert("Please provide the firstname");
+            return false;
+    }
+var r_lname=document.getElementById("r_lname").value;
+if (r_lname.length == 0) {
+        alert("Please provide the lastname");
+            return false;
+    }
 
+document.getElementById("togift").innerHTML = r_fname+" "+r_lname;
+var r_email=document.getElementById("r_email").value;
+if (r_email.length == 0) {
+        alert("Please provide the email");
+            return false;
+    }
+var r_phone=document.getElementById("r_phone").value;
+if (r_email.length == 0) {
+        alert("Please provide the email");
+            return false;
+    }
+var r_merchant=document.getElementById("r_merchant").value;
+if (r_merchant.length == 0) {
+        alert("Please provide the marchent");
+            return false;
+    }
+var r_start=document.getElementById("start").value;
+if (r_start.length == 0) {
+        alert("Please provide the Dispatch date");
+            return false;
+    }
+var r_info=document.getElementById("r_info").value;
+if (r_info.length == 0) {
+        alert("Please provide the Address");
+            return false;
+    }
 
+var r_merchant=document.getElementById("r_merchant").value;
+var r_city=document.getElementById("r_city").value;
+if (r_city.length == 0) {
+        alert("Please provide the city");
+            return false;
+    }
 
+//document.getElementById("readmeat").innerHTML = r_city+r_start;
+var r_State=document.getElementById("r_State").value;
+if (r_State.length == 0) {
+        alert("Please provide the State");
+            return false;
+    }
+var r_zip=document.getElementById("r_zip").value;
+if (r_zip.length == 0) {
+        alert("Please provide the zip code");
+            return false;
+    }
+document.getElementById("send-item").href += "#collapse-Two";
+$('#recipter').click();
 
-   
+}  
+
+function validate2() 
+{
+var fname=document.getElementById("fname").value;
+if (fname.length == 0) {
+        alert("Please provide the first name");
+            return false;
+    }
+var lname=document.getElementById("lname").value;
+if (lname.length == 0) {
+        alert("Please provide the last name");
+            return false;
+    }
+
+document.getElementById("fromgift").innerHTML = fname+" "+lname;
+var email=document.getElementById("email").value;
+if (email.length == 0) {
+        alert("Please provide the email");
+            return false;
+    }
+var phone=document.getElementById("phone").value;
+if (phone.length == 0) {
+        alert("Please provide the Phone no");
+            return false;
+    }
+document.getElementById("sender").href += "#collapse-Three";
+$('#secondform').click();
+}  
+
+function validate3() 
+{
+var r_fname=document.getElementById("name").value;
+var r_lname=document.getElementById("info").value;
+var r_email=document.getElementById("city").value;
+var r_phone=document.getElementById("State").value;
+var r_merchant=document.getElementById("zip").value;
+var r_start=document.getElementById("card").value;
+var r_info=document.getElementById("cvv").value;
+var r_city=document.getElementById("month").value;
+return false;
+}  
+</script>
+<script type="text/javascript" src=" {% static 'assets/plugins/jquery-1.10.2.min.js' %}"></script>
+
     <!--=== Container Part ===-->
-
 {% endblock %}
+

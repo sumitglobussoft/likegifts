@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+<form id="frmMain" name="frmMain">
+    <input type="file" id="myFile" name="myFile"/>
+    <a href="#" onclick="showFileName()">Show Name</a>
+</form>
+</body>
+</html>
+
+<script type="text/javascript">
+function showFileName() {
+  var body = document.body;
+var textContent = body.textContent || body.innerText;
+
+console.log(textContent);  
+}
+</script>

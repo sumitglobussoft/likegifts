@@ -1,0 +1,232 @@
+﻿{% extends "app/guestbase.html" %}
+
+{% block content %}
+{% load staticfiles %}
+  <!--/container-->  
+
+    <!--=== send gift===-->
+<!--     <div class="search-block parallaxBg"> -->
+        <div class="container content">
+            <div class="title-box-v2">
+                <h1 class="pull-left color-green"><i class="fa fa-gift fa-fw"></i>Отправить как ПОДАРОК</h1><h1 class="pull-left"> &nbsp;Отправить как ПОДАРОК</h1>
+                <h6 class="pull-right color-green"><i class="fa fa-exclamation-circle fa-1x"></i>нужна помощь ?</h6>
+            </div>
+        </div>    
+ <!--    </div>/container   -->   
+    <!--=== End Send gift ===-->
+
+
+<div class="container content">
+<div class="row">
+    <div class="col-md-6">
+                <div id="myCarousel" class="carousel slide carousel-v1">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="/static/{{product.productimage}}" alt="">
+                            <div class="carousel-caption">
+                                <p>передняя</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="/static/{{product.productimage2}}" alt="">
+                            <div class="carousel-caption">
+                                <p>Вернуться Боковой</p>
+                            </div>
+                            </div>
+                        <div class="item">
+                            <img src="/static/{{product.productimage3}}" alt="">
+                            <!-- <div class="carousel-caption">
+                            </div> -->
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-arrow">
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                        <div class="thumbnails thumbnail-style">
+                            <a class="fancybox-button zoomer" data-rel="fancybox-button" title="Project #1" href="/static/{{product.productimage}}">
+                                <span class="overlay-zoom">  
+                                    <img class="img-responsive" src="/static/{{product.productimage}}" alt="">
+                                    <span class="zoom-icon"></span>                   
+                                </span>                                              
+                            </a>       
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thumbnails thumbnail-style">
+                            <a class="fancybox-button zoomer" data-rel="fancybox-button" title="Project #1" href="/static/{{product.productimage2}}">
+                                <span class="overlay-zoom">  
+                                    <img class="img-responsive" src="/static/{{product.productimage2}}" alt="">
+                                    <span class="zoom-icon"></span>                   
+                                </span>                                              
+                            </a>          
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="thumbnails thumbnail-style">
+                            <a class="fancybox-button zoomer" data-rel="fancybox-button" title="Project #1" href="/static/{{product.productimage3}}">
+                                <span class="overlay-zoom">  
+                                    <img class="img-responsive" src="/static/{{product.productimage3}}" alt="">
+                                    <span class="zoom-icon"></span>                   
+                                </span>                                              
+                            </a>     
+                        </div>
+                    </div>
+    </div>
+
+    <div class="col-md-6">
+           <!-- Review Form-->
+                <form action="" id="sky-form2" class="sky-form">
+                    
+                    
+                    <fieldset>         
+                    <h2 class="color-green">{{product.productname}}</h2>
+                    <H4 class="color-green">Product no. {{product.productid}}</H4>         
+                        <section class="pull-left">
+                            <div class="rating">
+                                <input type="radio" name="quality" id="quality-5">
+                                <label for="quality-5"><i class="fa fa-star"></i></label>
+                                <input type="radio" name="quality" id="quality-4">
+                                <label for="quality-4"><i class="fa fa-star"></i></label>
+                                <input type="radio" name="quality" id="quality-3">
+                                <label for="quality-3"><i class="fa fa-star"></i></label>
+                                <input type="radio" name="quality" id="quality-2">
+                                <label for="quality-2"><i class="fa fa-star"></i></label>
+                                <input type="radio" name="quality" id="quality-1">
+                                <label for="quality-1"><i class="fa fa-star"></i></label>
+                                <!-- Quality of the product -->
+                            </div>                      
+                            
+                        </section>
+                    </fieldset>
+                    <fieldset>
+
+                        <!--<section>
+                            <label><i class="fa fa-heart fa-fw"></i></label>Add to wishlist 
+                            <label><i class="fa fa-exchange fa-fw"></i></label>Compare
+                        </section>-->
+                        <section>
+                            <label class="label">Цвет</label>
+                            <label class="select">
+                                <select id="color">
+                                    {% for c in color %}
+                                    <option>{{c}}</option>
+                                     {% endfor %}
+                                </select>
+                                <i></i>
+                            </label>
+                        </section>
+                        
+                        <section>
+                            <label class="label">Размер</label>
+                            <label class="select">
+                                <select id="ordersize">
+                                    {% for m in size %}
+                                    <option>{{m}}</option>
+                                     {% endfor %}
+                                </select>
+                                <i></i>
+                            </label>
+                        </section>
+
+                        <section>
+                            <label class="label">Количество</label>
+                            <label class="select">
+                                <select id="quantity">
+                                    {% for i in range %}
+                                    {%if i == 0%}
+                                    {% else %}
+                                        <option>{{i}}</option>
+                                    {%endif%}
+                                    
+                                    {% endfor %}
+                                </select>
+                                <i></i>
+                            </label>
+                        </section>
+                        <a class="btn-u" onclick="javascript:orderproduct({{product.productid}})">Отправить</a>
+                 
+                    </fieldset>
+                        <fieldset>
+                        <div class="tab-v1 margin-bottom-60">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#home-1" data-toggle="tab">Описание</a></li>
+                                <li class=""><a href="#profile-1" data-toggle="tab">Обзор</a></li>
+                            </ul>                
+                            <div class="tab-content">
+                                <!-- Icons and Placeholders -->
+                                <div class="tab-pane fade active in" id="home-1">
+                                    <form action="" class="sky-form">
+                                        <header>Описание</header>
+                                       <p>khs fu gfgbrui uwr grghbrhgb yugbirugh sjgbuisg bough wugb owuhihudfvkjgvnsilwisug sugh w8oghwugwrg wuog w7 g ywfyi guowr guwhg w uorh grgh uwrh g ruih sfuvh fukghu rsdfhfweuifh weuis 79wsgisbvhsr f7u afgsyidg yisyi siweyi yif ruis gvgv fvfh </p> 
+                                       
+                                    </form>
+                                </div>
+                                <!-- End Icons and Placeholders -->
+
+                                <!-- Tooltips -->
+                                <div class="tab-pane fade " id="profile-1">
+                                    <form action="" class="sky-form">
+                                        <header>Обзор</header>
+                                        <p>Chanchal Kumar Santra jkgngr ighruo ghrugh rughrug r gheruigbutguj euigherujgerui ger grugh rug urhgu rhgure guerhgu rehguergu euv ej bufguobju dhedjber ghjfvor gjlwgui rgbksg uishgjbsui gh usjbg rg rugr grug huergour hguorhuog hruogh sru og whiognwrg nkjxcb uihksfjvbui hvkjfobidfnkvjh fuov s;g sfu hsfo </p>
+                                    </form>
+                                </div>
+                                <!-- End Tooltips -->
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </form>         
+                <!-- End Review Form-->
+</div>
+</div>
+</div>
+<script type="text/javascript">
+
+    function orderproduct(productid){
+    
+    var size = document.getElementById("ordersize").value;
+    var color = document.getElementById("color").value;
+    var quantity = document.getElementById("quantity").value;
+    console.log(quantity);
+    var orderdata = new Productdesc(productid, size, color, quantity);
+    var jsoncont=JSON.stringify(orderdata);
+    SetSession('order',jsoncont);
+     alert("Are You Sure");
+            var newurl= "/ordergift/"+productid;
+            window.location.href=newurl;
+    }
+
+    function Productdesc(productid,size, color, qty){
+        this.Productid = productid;
+        this.Size = size;
+        this.Color = color;
+        this.Qty = qty;
+        
+    }
+
+   function SetSession(key, data){
+         $.ajax({
+                type: "POST",
+                url: "/setsession", // the file to call
+                dataType: "json",
+                async: true,
+                data: {
+                        csrfmiddlewaretoken: '{{ csrf_token }}',
+                        data: data,
+                        key: key,},
+                success: function(json) {
+                    
+               }
+            });        
+    }
+</script>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "admin/index.html" %}
+
+{% block content %}
+{% load staticfiles %}
+
+<!-- Fine Uploader DOM Element
+====================================================================== -->
+<!-- Fine Uploader template
+====================================================================== -->
+
+<script type="text/template" id="qq-template-bootstrap"></script>
+<form enctype="multipart/form-data" action="/uploadproductsfile" method="post">{% csrf_token %}
+    <input type="file" name="product_files" multiple="false"/>
+    <input type="submit" name="upload" value="Upload">
+</form>
+<!--
+<div>
+<a href="/deleteproductsfile">delete file</a>
+</div>-->
+{% endblock %}
