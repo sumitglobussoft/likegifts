@@ -3,6 +3,7 @@ Definition of models.
 """
 
 from django.db import models
+from django.contrib.auth.models import *
 
 # Create your models here.
 
@@ -13,7 +14,6 @@ class Optiongroups(models.Model):
     optiongroupname = models.CharField(db_column='OptionGroupName', max_length=50, blank=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'optiongroups'
 
 
@@ -23,7 +23,6 @@ class Options(models.Model):
     optionname = models.CharField(db_column='OptionName', max_length=50, blank=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'options'
 
 
@@ -37,7 +36,6 @@ class Orderdetails(models.Model):
     detailquantity = models.IntegerField(db_column='DetailQuantity')  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'orderdetails'
 
 
@@ -53,7 +51,7 @@ class Orders(models.Model):
     orderzip = models.CharField(db_column='OrderZip', max_length=20)  # Field name made lowercase.
     ordercountry = models.CharField(db_column='OrderCountry', max_length=50)  #Field name made lowercase.
     orderphone = models.CharField(db_column='OrderPhone', max_length=20)  # Field name made lowercase.
-    orderfax = models.CharField(db_column='OrderFax', max_length=20)  # Field name made lowercase.
+    orderdesc = models.CharField(db_column='OrderDesc', max_length=100)  # Field name made lowercase.
     ordershipping = models.FloatField(db_column='OrderShipping')  # Field name made lowercase.
     ordertax = models.FloatField(db_column='OrderTax')  # Field name made lowercase.
     orderemail = models.CharField(db_column='OrderEmail', max_length=100)  # Field name made lowercase.
@@ -62,7 +60,6 @@ class Orders(models.Model):
     ordertrackingnumber = models.CharField(db_column='OrderTrackingNumber', max_length=80, blank=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'orders'
 
 
@@ -74,7 +71,6 @@ class Payments(models.Model):
     paymentstatus = models.IntegerField(db_column='PaymentStatus', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'payments'
 
 
@@ -83,7 +79,6 @@ class Productcategories(models.Model):
     categoryname = models.CharField(db_column='CategoryName', max_length=50)  #Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'productcategories'
 
 
@@ -95,7 +90,6 @@ class Productoptions(models.Model):
     optiongroupid = models.IntegerField(db_column='OptionGroupID')  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'productoptions'
 
 
@@ -109,17 +103,21 @@ class Products(models.Model):
     productcartdesc = models.CharField(db_column='ProductCartDesc', max_length=250)  # Field name made lowercase.
     productshortdesc = models.CharField(db_column='ProductShortDesc', max_length=1000)  # Field name made lowercase.
     productlongdesc = models.TextField(db_column='ProductLongDesc')  # Field name made lowercase.
+    productsize = models.CharField(db_column='ProductSize', max_length=100)  # Field name made lowercase.
+    productcolor = models.CharField(db_column='ProductColor', max_length=100)  # Field name made lowercase.
+    productrating = models.IntegerField(db_column='ProductRating', blank=True, null=True)  # Field name made lowercase.
     productthumb = models.CharField(db_column='ProductThumb', max_length=100)  # Field name made lowercase.
     productimage = models.CharField(db_column='ProductImage', max_length=100)  # Field name made lowercase.
+    productimage2 = models.CharField(db_column='ProductImage2', max_length=100)  # Field name made lowercase.
+    productimage3 = models.CharField(db_column='ProductImage3', max_length=100)  # Field name made lowercase.
     productcategoryid = models.IntegerField(db_column='ProductCategoryID', blank=True, null=True)  # Field name made lowercase.
     productupdatedate = models.DateTimeField(db_column='ProductUpdateDate')  # Field name made lowercase.
-    productstock = models.FloatField(db_column='ProductStock', blank=True, null=True)  # Field name made lowercase.
+    productstock = models.IntegerField(db_column='ProductStock', blank=True, null=True)  # Field name made lowercase.
     productlive = models.IntegerField(db_column='ProductLive', blank=True, null=True)  # Field name made lowercase.
     productunlimited = models.IntegerField(db_column='ProductUnlimited', blank=True, null=True)  # Field name made lowercase.
     productlocation = models.CharField(db_column='ProductLocation', max_length=250, blank=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'products'
 
 
@@ -143,5 +141,17 @@ class Users(models.Model):
     useraddress2 = models.CharField(db_column='UserAddress2', max_length=50, blank=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'users'
+
+
+class Layout(models.Model):
+    image = models.FileField(upload_to='')
+
+    class Meta:
+        db_table = 'layout'
+
+class Prolayout(models.Model):
+    productfile = models.FileField(upload_to='')
+
+    class Meta:
+        db_table = 'prolayout'

@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<!--[if !IE]><!--> <html xmlns="http://www.w3.org/1999/xhtml"> <!--<![endif]-->  
 <head>
-    <title>Like Gifts | Welcome...</title>
+    <title>Like Gift |{{title}}</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -12,7 +12,7 @@
     <meta name="author" content="Chanchal Santra">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="favicon.ico">
+    
  {% load staticfiles %}
     <!-- CSS Page Style -->    
     <link rel="stylesheet" href="{% static 'assets/css/pages/page_log_reg_v2.css' %}">    
@@ -31,9 +31,10 @@
     <link rel="stylesheet" href="{% static 'assets/plugins/ladda-buttons/css/custom-lada-btn.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/plugins/hover-effect/css/custom-hover-effects.css' %}">   
     <link rel="stylesheet" href="{% static 'assets/plugins/fancybox/source/jquery.fancybox.css' %}"> 
+  
 
     <!--[if lt IE 9]>
-        <link rel="stylesheet" href="css/sky-forms-ie8.css">
+        <link rel="stylesheet" href="/static/assets/css/sky-forms-ie8.css">
     <![endif]-->
 
     <!-- CSS Page Style -->    
@@ -52,25 +53,11 @@
 <i class="style-switcher-btn fa fa-cogs hidden-xs"></i>
 <div class="style-switcher animated fadeInRight">
     <div class="theme-close"><i class="icon-close"></i></div>
-    <div class="theme-heading">Theme Colors</div>
-    <ul class="list-unstyled">
-        <li class="theme-default theme-active" data-style="default" data-header="light"></li>
-        <li class="theme-blue" data-style="blue" data-header="light"></li>
-        <li class="theme-orange" data-style="orange" data-header="light"></li>
-        <li class="theme-red" data-style="red" data-header="light"></li>
-        <li class="theme-light last" data-style="light" data-header="light"></li>
-
-        <li class="theme-purple" data-style="purple" data-header="light"></li>
-        <li class="theme-aqua" data-style="aqua" data-header="light"></li>
-        <li class="theme-brown" data-style="brown" data-header="light"></li>
-        <li class="theme-dark-blue" data-style="dark-blue" data-header="light"></li>
-        <li class="theme-light-green last" data-style="light-green" data-header="light"></li>
-    </ul>
     <div style="margin-bottom:18px;"></div>
     <div class="theme-heading">Layouts</div>
     <div class="text-center">
         <a href="javascript:void(0);" class="btn-u btn-u-green btn-block active-switcher-btn wide-layout-btn">Wide</a>
-        <a href="#" class="btn-u btn-u-green btn-block boxed-layout-btn">Boxed</a>
+        <a href="javascript:void(0);" class="btn-u btn-u-green btn-block boxed-layout-btn">Boxed</a>
     </div>
 </div><!--/style-switcher-->
 <!--=== End Style Switcher ===-->    
@@ -83,58 +70,66 @@
             <div class="container">
                 <!-- Topbar Navigation -->
                 <ul class="loginbar pull-left">
-                    <li><a href="">24x7 CUSTOMER SUPPORT</a></li>  
+                    <li><a href="mailto:support@likegift.ru">24x7 CUSTOMER SUPPORT</a></li>  
                     <li class="topbar-devider"></li>   
-                    <li><a href=""><i class="fa fa-phone fa-fw"></i>+88124/5678</a></li>  
+                    <li><a href="tel:+88124/5678"><i class="fa fa-phone fa-fw"></i>+88124/5678</a></li>  
                     <li class="topbar-devider"></li>   
-                    <li><a href=""><i class="fa fa-envelope-o fa-fw"></i>support@likegift.ru</a></li>  
+                    <li><a href="mailto:support@likegift.ru"><i class="fa fa-envelope-o fa-fw"></i>support@likegift.ru</a></li>  
                 </ul>
                 <ul class="loginbar pull-right">
-                    <li><a href="">SEND GIFT</a></li>  
+                    <li><a href="/sendgift">Послать подарок</a></li>  
                     <li class="topbar-devider"></li>   
-                    <li><a href="">RECEIVE GIFT</a></li>  
+                    <li><a href="" data-toggle="modal" data-target="#receivegift">ПОЛУЧИТЬ ПОДАРОК</a></li>  
                     <li class="topbar-devider"></li>   
-                    <li><a href="">HOW IT WORKS</a></li>  
+                    <li><a href="/howitworks">КАК ЭТО РАБОТАЕТ</a></li>  
                     <li class="topbar-devider"></li>   
-                    <li><a href="">Browse{{ request.session.user }}</a></li>  
-                    <li class="topbar-devider"></li> 
-                    {%if request.session.user %}  
+                    <li><a href="/gifts">Обзор</a></li>  
+                    <li class="topbar-devider"></li>   
+                   {% if request.session.user %}  
                     <li><i class="fa fa-sign-in fa-fw"></i><a href="/userlogout">LogOut</a></li>  
-                    {%else%} 
-                    <li><i class="fa fa-sign-in fa-fw"></i><a href="/userlogin">LogIn</a></li> 
-                    {% endif %}
+                    {% else %} 
+                    <li><i class="fa fa-sign-in fa-fw"></i><a href="/userlogin">Resiter / Войти</a></li> 
+                    {% endif %}    
                 </ul>
                 <!-- End Topbar Navigation -->
             </div>
-            <div class="container">
+            <div class="container content">
                 <!-- Topbar Navigation -->
-                <ul class="loginbar pull-left">
-                    <li>
+                <ul class="loginbar">
+                    <li class="col-md-offset-3 pull-left">
                         <select class="form-control">
-                            <option value="none" selected disabled>Product</option>
-                            <option value="design">design</option>
-                            <option value="development">development</option>
-                            <option value="illustration">illustration</option>
-                            <option value="branding">branding</option>
-                            <option value="video">video</option>
+                            <option>Все товаров</option>
+                            <option>СПА</option>
+                            <option>РЕСТОРАНЫ</option>
+                            <option>ОДЕЖДА</option>
+                            <option>ОТДЫХ</option>
+                            <option>ХОББИ</option>
+                            <option>ПРИКЛЮЧЕНИЯ</option>
+                            <option>СТИЛЬ ЖИЗНИ</option>
+                            <option>ДОМ</option>
+                            <option>МОДА</option>
+                            <option>ОСОБЫЕ ПОДАРКИ</option>
+                            <option>ДЕТЯМ</option>
+                            <option>СОБЫТИЯ</option>
                         </select>
                     </li>
-                     <!-- Search Block -->
-                        <li>
-                            <i class="search fa fa-search search-btn"></i>
-                            <div class="search-open">
-                                <div class="input-group animated fadeInDown">
-                                    <input type="text" class="form-control" placeholder="Search">
-                                    <span class="input-group-btn">
-                                        <button class="btn-u" type="button">Go</button>
-                                    </span>
-                                </div>
-                            </div>    
-                        </li>
-                        <!-- End Search Block -->  
-                </ul>
-                <ul class="loginbar pull-right">
-                    <button class="btn-u btn-brd rounded-4x btn-u-green btn-u-sm" type="button"><i class="fa fa-shopping-cart"></i> RUB 8800</button>  
+                    <li>
+                        <section class="col col-md-5">
+                            <div class="input-group">
+                                <input type="text" id="SearchWord" class="form-control" placeholder="поиск ...">
+                                <span class="input-group-btn">
+                                    <button  onclick="searchfunction()" class="btn-u" type="button"><i class="fa fa-search"></i></button>
+                                </span>
+                            </div>
+                        </section>
+                    </li>
+                    <li class="pull-right">
+                        <button class="btn-u btn-brd rounded-4x btn-u-green btn-u-sm" type="button" data-toggle="modal" data-target="#receivegift">
+                            <span class="badge badge-green rounded-x">3</span>
+                            <i class="fa fa-shopping-cart"></i> Мои подарки
+                        </button>
+                       
+                    </li>
                 </ul>
                 <!-- End Topbar Navigation -->
             </div>
@@ -142,103 +137,25 @@
         <!-- End Topbar -->
     
         <!-- Navbar -->
-        <div class="navbar navbar-inverse" role="navigation">
+        <div class="navbar navbar-inverse " role="navigation">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                        <span class="sr-only">Toggle navigation</span>
+                        <span class="sr-only">Переключить навигации</span>
                         <span class="fa fa-bars"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">
-                        <i id="logo-header" class="fa fa-home fa-3x active color-light" alt="Logo"></i>
+                    <a class="navbar-brand" href="/">
+                        <img id="logo-header" src="{% static 'assets/img/shop-32.png'%}" alt="LikeGift" style="
+    margin-top: 16px;
+">
                     </a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse navbar-responsive-collapse">
-                    <ul class="nav navbar-nav">
-                        <!-- Home -->
-                        <li class="active">
-                            <a href="/gifts">
-                                SPA
-                            </a>
-                        </li>
-                        <!-- End Home -->
-                        <!-- Pages -->                        
-                        <li>
-                            <a href="/gifts">
-                                DINING
-                            </a>
-                        </li>
-                        <!-- End Pages -->
-                        <!-- Features -->
-                        <li>
-                            <a href="/gifts">
-                                APPAREL
-                            </a>
-                        </li>
-                        <!-- End Features -->
-                        <!-- Portfolio -->
-                        <li>
-                            <a href="/gifts">
-                                GETAWAYS
-                            </a>
-                        </li>
-                        <!-- Ens Portfolio -->
-                        <!-- Blog -->
-                        <li>
-                            <a href="/gifts">
-                                ACTIVITIES
-                            </a>
-                        </li>
-                        <!-- End Blog -->
-                        <!-- Contacts -->
-                        <li>
-                            <a href="/gifts">
-                                ADVENTURE
-                            </a>
-                        </li>   
-                        <li>
-                            <a href="/gifts">
-                                LIFESTYLE
-                            </a>
-                        </li>
-                        <!-- End Home -->
-                        <!-- Pages -->                        
-                        <li>
-                            <a href="/gifts">
-                                HOME
-                            </a>
-                        </li>
-                        <!-- End Pages -->
-                        <!-- Features -->
-                        <li>
-                            <a href="/gifts">
-                                FASHION
-                            </a>
-                        </li>
-                        <!-- End Features -->
-                        <!-- Portfolio -->
-                        <li>
-                            <a href="/gifts">
-                                SPECIAL TREAT
-                            </a>
-                        </li>
-                        <!-- Ens Portfolio -->
-                        <!-- Blog -->
-                        <li>
-                            <a href="/gifts">
-                                KIDS
-                            </a>
-                        </li>
-                        <!-- End Blog -->
-                        <!-- Contacts -->
-                        <li>
-                            <a href="/gifts">
-                                SHOWS
-                            </a>
-                        </li>                  
+                    <ul class="nav navbar-nav" id="all_category">
+                       
                         <!-- End Contacts -->
                     </ul>
                 </div><!--/navbar-collapse-->
@@ -246,7 +163,60 @@
         </div>            
         <!-- End Navbar -->
     </div>
-    <!--=== End Header ===-->    
+    <!--=== End Header ===-->  
+   <div class="modal fade" id="receivegift" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                   
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="headline"><h4>Как получить подарок?</h4></div>
+                                           <p  id="Pdescription">Lorem ipsum dolor. Посетите наш веб-сайт и введите ваш подарочный код. Выберите фирму-продавца или бренд желаемого вами подарка. Сгенерируйте подарочный код для выбранного вами бренда и следуйте инструкциям на экране, чобы получить ваш подарок.<br>
+                                                Для ресторанов, спа и хобби необходимо резервирование. Позвоните нам, чтобы сделать резервацию. Не забудьте взять с собой подарочный сертификат выбранного бренда, чтобы им воспользоваться.</p>
+                                                <h6 class="color-green"><i class="fa fa-exclamation-circle fa-1x"></i>нужна помощь?</h6>
+                                            </div>
+                                 {%if request.session.user %}  
+                                    <div class="col-md-8">
+                                                <h4 class="color-green" style="margin-top: 200px;">Есть подарочная карта?</h4>
+                                                <p>Введите код здесь:</p>
+                                                <p>
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" id="trackcode" placeholder="Введите код здесь">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn-u" type="button" onclick="javascript:receivegift()">ПОДАТЬ</button>
+                                                            </span>
+                                                    </div>
+                                                </p>
+                                                <P>Забыли подарочный сертификат ? Позвоните нам по<span class="color-green">+88124/5678</span></P>
+                                      </div>  
+                                 {%else%} 
+                                     <div class="col-md-8">
+                                                <h4 class="color-green" style="margin-top: 200px;">Получил подарочную карту ?</h4>
+                                                <p>Пожалуйста, зарегистрируйтесь , чтобы прочитать подарок :</p>
+                                                <p>
+                                                    <div class="input-group">
+                                                       <span class="input-group-btn">
+                                                                <a class="btn-u" href="/userlogin">Войти</a>
+                                                            </span>
+                                                    </div>
+                                                </p>
+                                                <P>Забыли подарочный сертификат ? Позвоните нам по<span class="color-green">+88124/5678</span></P>
+                                      </div>  
+                                 {% endif %}  
+                                            
+                                        </div>
+                                    </div>
+                                    <!-- <div class="modal-footer">
+                                        <button type="button" class="btn-u btn-u-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn-u btn-u-primary">Save changes</button>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+  
+
+    </div><!--/container-->   
 {% block content %}{% endblock %}
 
     <!--=== Footer ===-->
@@ -255,20 +225,20 @@
             <div class="row">
                 <div class="col-md-3 md-margin-bottom-40">
                     <!-- About -->
-                    <div class="headline"><h2>More About Like Gift</h2></div>  
+                   <div class="headline"><h2>Больше О такой же дар,</h2></div>  
                     <table class="table">
                         <tbody>
                             <tr>
-                                <td>Company History</td>
+                                <td>История компании</td>
                             </tr>
                             <tr>
-                                <td>Investors Relations</td>
+                                <td>Связи с инвесторами</td>
                             </tr>
                             <tr>
-                                <td>Our Partners</td>
+                                <td>Наши партнеры</td>
                             </tr>
                             <tr>
-                                <td>Press Coverages</td>
+                                <td>Пресс Покрытия</td>
                             </tr>
                         </tbody>
                     </table>
@@ -278,26 +248,26 @@
                   <!--   <div class="headline"><h2></h2></div>   -->
                     <table class="table">
                         <tbody>
+                            <!--<tr>
+                                <td href="#">Merchant registration</td>
+                            </tr>-->
                             <tr>
-                                <td>Merchant registration</td>
+                                <td><a href="/faq">ЧаВО</a></td>
                             </tr>
                             <tr>
-                                <td>FAQ</td>
+                                <td><a href="/aboutus">Вакансии</a></td>
                             </tr>
                             <tr>
-                                <td>Careers</td>
+                                <td><a href="/terms">Условия</a></td>
                             </tr>
                             <tr>
-                                <td>Terms &amp; Conditions</td>
+                                <td><a href="/privacy">Политика конфиденциальности</a></td>
                             </tr>
                             <tr>
-                                <td>Privacy Policy</td>
+                                <td><a href="/contact">Контакты</a></td>
                             </tr>
                             <tr>
-                                <td>Contact Us</td>
-                            </tr>
-                            <tr>
-                                <td>Blog</td>
+                                <td ><a href="/blog">Блог</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -305,12 +275,12 @@
                 
                 <div class="col-md-3 md-margin-bottom-40">
                     <!-- Social Links -->
-                    <div class="headline"><h2>Get Connected</h2></div> 
+                    <div class="headline"><h2>Присоединиться</h2></div> 
                     <form class="footer-subsribe">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Your Email Address">                            
                             <span class="input-group-btn">
-                                <button class="btn-u" type="button">Subscribe</button>
+                                <button class="btn-u" href="/contact" type="button">Подписаться</button>
                             </span>
                         </div>                  
                     </form> 
@@ -328,30 +298,30 @@
 
                 <div class="col-md-3 md-margin-bottom-40">
                     <!-- Contact Us -->
-                    <div class="headline"><h2><i class="fa fa-gift fa-fw"></i>Like Gift's Statistic</h2></div> 
+                    <div class="headline"><h2><i class="fa fa-gift fa-fw"></i>Как Statistic подарок в</h2></div> 
                     <div class="row">
                         <div class="col-sm-6 col-xs-6">
                             <div class="counters">
                                 <span class="counter">10000</span>   
-                                <h4>Members</h4>
+                                <h4>Члены</h4>
                             </div>    
                         </div>
                         <div class="col-sm-6 col-xs-6">
                             <div class="counters">
                                 <span class="counter">8008</span> 
-                                <h4>Merchants</h4>
+                                <h4>Торговые фирмы</h4>
                             </div>    
                         </div>
                         <div class="col-sm-6 col-xs-6">
                             <div class="counters">
                                 <span class="counter">80000</span>
-                                <h4>Gifts for sale</h4>
+                                <h4>Подарки в продаже</h4>
                             </div>    
                         </div>
                         <div class="col-sm-6 col-xs-6">
                             <div class="counters">
                                 <span class="counter">150000</span>
-                                <h4>Gifts sent</h4>
+                                <h4>Отправленные подарки</h4>
                             </div>    
                         </div>
                     </div>          
@@ -370,13 +340,13 @@
             <div class="row">
                 <div class="col-md-6">                      
                     <p class="copyright-space">
-                        Copyright &copy; 2015 <span class="color-green">Like Gift, Ltd.</span> ALL Rights Reserved. 
+                        Copyright &copy; 2015 <span class="color-green">Like Gift, Ltd.</span> Все права защищены. 
                     <br>
-                    No part of this website may be copied, duplicated and/or re-distribcted in anyway.<br>By using this website. you agree with our Terms of Use.</p>
+                    Никакая часть данного веб-сайта не может быть скопирована, дублирована или распространена в какой бы то ни было форме.<br> Используя данный веб-сайт, вы принимаете наши Условия пользования.</p>
                 </div>
                 <div class="col-md-6">  
                     <a href="index.html">
-                        <img id="logo-footer" src="assets/img/logo1-default.png" class="pull-right" alt="" />
+                        <img id="logo-footer" src="/static/assets/img/logo1-default.png" class="pull-right" alt="" />
                     </a>
                 </div>
             </div>
@@ -416,19 +386,162 @@
 <script type="text/javascript" src="{% static 'assets/js/forms/order.js' %}"></script>
 <script type="text/javascript" src="{% static 'assets/js/forms/review.js' %}"></script>
 <script type="text/javascript" src="{% static 'assets/js/forms/checkout.js' %}"></script>
+ <script type="text/javascript" src="{% static 'assets/js/plugins/form-sliders.js' %}"></script>
 
 <script type="text/javascript">
+
+
     jQuery(document).ready(function() {
         App.init();
         App.initCounter();
         App.initParallaxBg();
         OwlCarousel.initOwlCarousel();
         App.initFancybox(); 
-
+        FormSliders.initFormSliders();
         OrderForm.initOrderForm();        
         ReviewForm.initReviewForm();        
         CheckoutForm.initCheckoutForm(); 
     });
+
+$('.lo1').click(function() {
+        $(this).checked;
+        fun1();
+    
+});
+
+$('#slider2-rounded').click(function() {
+        fun1();
+});
+
+
+$('.ca1').click(function() {
+        $(this).checked;
+        fun1();
+        
+});
+function fun1(){
+       //alert('hghg')
+        var chkArray = [];
+
+     
+	
+	    /* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
+	    $(".ca1 input:checked").each(function() {
+        
+		chkArray.push($(this).attr('id'));
+        
+	    });
+	
+	    /* we join the array separated by the comma */
+	    var selected;
+	    selected = "("+chkArray.join(',')+")";
+        //alert(selected);
+        
+
+        var chkArraysec = [];
+	
+	    /* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
+	    $(".lo1 input:checked").each(function() {
+        
+		chkArraysec.push($(this).attr('id'));
+        
+	    });
+	
+	    /* we join the array separated by the comma */
+	    var locselected;
+	    locselected = "(\""+chkArraysec.join('\",\"')+"\")";
+        //alert(locselected);
+        
+        var prc1 = document.getElementById("slider2-value1-rounded").innerHTML;
+        
+        var prc2 = document.getElementById("slider2-value2-rounded").innerHTML;
+        var pricerange=prc1+" and "+prc2;
+        //alert(pricerange);
+        var sortby = document.getElementById("sortby").value;
+        //alert(sortby);
+
+
+	
+	    /* check if there is selected checkboxes, by default the length is 1 as it contains one single comma */
+	    if(selected.length > 1){
+		alert("You have selected " + selected);	
+         $.ajax({
+                type: "POST",
+                url: "/filter", // the file to call
+                dataType: "json",
+                async: true,
+                data: {
+                        csrfmiddlewaretoken: '{{ csrf_token }}',
+                        filterdata: selected,
+                        locationdata: locselected,
+                        pricedata: pricerange,
+                        sortdata: sortby,},
+                success: function(json) { // on success..
+                //alert("ffff");
+                console.log(json.products);
+                var finaldata="";
+                var dict = $.parseJSON(json.products);
+                dict.forEach(function(obj) { console.log(obj);
+                 
+                finaldata = finaldata + "<div class='col-md-3'> <div class='thumbnails thumbnail-style thumbnail-kenburn'><div class='thumbnail-img'><div class='overflow-hidden'><img class='img-responsive' src='/static/"+obj.fields.productimage+"' alt=''></div><a class='btn-more hover-effect' href='/selgift/"+obj.pk+"'>SEND AS GIFT+</a></div><div class='caption'><h3><a class='hover-effect' href='#'>"+obj.fields.productname+"</a></h3><p>"+obj.fields.productprice+"</p></div></div></div>"
+               
+                    
+                 });
+
+                var generateHere = document.getElementById("gifts");
+                generateHere.innerHTML=finaldata;
+           
+                }
+            });
+	    }else{
+		alert("Please at least one of the checkbox");	
+	}
+    
+}
+
+</script>
+<script src="https://raw.githubusercontent.com/kvz/phpjs/master/functions/strings/md5.js"></script>
+<script type="text/javascript">
+
+
+function searchfunction() 
+{
+ var searchKey = document.getElementById("SearchWord").value;
+ if(!searchKey){
+        searchKey  = document.getElementById("SearchWordSecond").value;
+    }
+var url="/search/"+searchKey;
+window.location.href=url;
+}  
+
+function receivegift(){
+    var trackcode = document.getElementById('trackcode').value;
+    //alert(trackcode);
+    $.ajax({
+        type: 'GET',
+        url: '/receivegift',
+        dataType: "json",
+        async: true,
+        data: { trackcode: trackcode
+        },
+        success: function(response){
+                console.log(response);
+                var obj = response;
+                 console.log(obj.result);
+                if(obj.result == "success") {
+                    var sendername = obj.sendername;
+                    var cost = obj.ordercost;
+                    var desc = $.parseJSON(obj.orderdesc);
+                    document.getElementById('Pdescription').innerHTML = 'Sender: '+sendername + '</br>Cost: '+cost + 
+                            '</br>Gift ID: '+ desc.Productid + '</br>Size: '+ desc.Size + '</br>Color: '+ desc.Color +
+                            '</br>Qantity: '+ desc.Qty;
+                } else {
+                    var unauth = obj.result;
+                    document.getElementById('Pdescription').innerHTML = unauth;
+                }
+        }
+    });
+}
 </script>
 <!--[if lt IE 9]>
     <script src="assets/plugins/respond.js"></script>
@@ -440,4 +553,31 @@
     <script src="assets/plugins/sky-forms/version-2.0.1/js/jquery.placeholder.min.js"></script>
 <![endif]-->
 </body>
+<script type="text/javascript">
+
+function get_text(){
+//alert(" Alert inside my_code function");
+    $.ajax({
+        type: 'GET',
+        url: '/getcategories',
+        dataType: "json",
+        async: true,
+        data: {},
+        success: function(response){
+                var cats = $.parseJSON(response.category);
+                var html='';
+                for(var i=0;i<cats.length;i++){
+                html = html+ '<li class="greenhf">'
+                            +'<a href=/catgift/'+(i+1)+'>'+
+                                cats[i].fields.categoryname;
+                            +'</a>'
+                        +'</li>'
+                }
+                document.getElementById('all_category').innerHTML = html
+        }
+    });
+}
+
+window.onload=get_text();
+</script>
 </html> 

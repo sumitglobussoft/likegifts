@@ -1,0 +1,97 @@
+﻿{% extends "app/guestbase.html" %}
+
+{% block content %}
+ {% load staticfiles %}
+<!--     <div class="search-block parallaxBg"> -->
+        <div class="container content">
+             <div class="title-box-v2">
+                <h1 class="pull-left color-green"><i class="fa fa-gift fa-fw"></i>Как это работает </h1><h1 class="pull-left"> &nbsp;Мы делаем подарков простую задачу</h1>
+            </div>
+        </div>    
+ <!--    </div>/container   -->   
+
+        <div class="container content hiw">
+            <div class="row">
+                <div class="col-md-offset-1">
+                    <div class="col-md-3">
+                        <!-- <i class="icon-custom rounded-x icon-blg icon-bg-u btn-u fa fa-pencil fa-5x"></i> -->
+                        <img src="{% static 'assets/img/sliders/greenpencil2.png'%}">
+                    </div>
+                    <div class="col-md-9">
+                        <blockquote>
+                            <h2 class="color-green">Создание подарок</h2>
+                            <p>Выберите продукт/категорию из нашей огромной базы фирм и магазинов. Найдите что-то, что, по вашему мнению, понравится получателю. Вы можете сделать заказ где угодно - дома, в кафе, в школе, в офисе, даже в спальне. От вас потребуется лишь пара нажатий клавиш. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Дарить - значит верить.</p>
+                        </blockquote>
+                    </div>
+                </div>
+                <hr class="devider devider-dotted">
+                <div class="col-md-offset-4">
+                    <div class="col-md-9">
+                        <blockquote class="text-right">
+                            <h2>Выберите Способ доставки</h2>
+                            <p>Выберите, каким методом получателю будет отправлен код:</p>
+                                <label class="checkbox state-disabled"><input type="checkbox" name="checkbox" disabled="" checked=""><i></i>SMS</label>
+                                <label class="checkbox state-disabled"><input type="checkbox" name="checkbox" disabled="" checked=""><i></i>Email</label>
+                                <label class="checkbox state-disabled"><input type="checkbox" name="checkbox" disabled="" checked=""><i></i>Print-out</label>
+                            <p>Consectetur. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias.</p>
+                        </blockquote>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="{% static 'assets/img/sliders/greentruck2.png'%}">
+                    </div>
+                </div>
+                <hr class="devider devider-dotted">
+                <div class="col-md-offset-1">
+                    <div class="col-md-3">
+                        <img src="{% static 'assets/img/sliders/greencard.png'%}">
+                    </div>
+                    <div class="col-md-9">
+                        <blockquote>
+                            <h2>Сделайте Оплата</h2>
+                            <p>Оплачивайте с помощью кредитной карты (это на 100% безопасно).  Lorem ipsum dolor sit amet et consectetur. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. </p>
+                        </blockquote>
+                    </div>
+                </div>
+                <hr class="devider devider-dotted">
+                <div class="col-md-offset-4">
+                    <div class="col-md-9">
+                        <blockquote class="text-right">
+                            <h2>Отправить его !</h2>
+                            <p>Система Like Gift обеспечит получение подарка адресатом. А затем получатель сам вам расскажет, как сильно ему понравился подарок. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
+                        </blockquote>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="{% static 'assets/img/sliders/greenroket2.png'%}">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+     
+
+    <!--=== Parallax Counter ===-->
+    <div class="parallax-counter parallaxBg ">
+<div class="container">
+            <div class="row">
+                <div class="col-md-9 animated fadeInLeft">
+                    <h1 class="color-light">Ну что, вы готовы отправить ваш первый подарок?</h1>
+                   <!--  <hr class="small"> -->
+                    <p class="color-light">Маркетинговый слоган. Хватайте, пока горячо!  Like Gift часто предлагает сезонные скидки.
+                        <br>Только занимает минуту , чтобы зарегистрироваться. Lorem Ipsum Dolor сидеть Амет .</p>
+                </div>            
+                <div class="col-md-3 btn-buy animated fadeInRight">
+                    <a href="#" class="btn btn-block btn-android"><i class="fa fa-gift"></i> Отправить подарок</a>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <!--=== End Parallax Counter ===-->
+
+
+   
+    <!--=== Container Part ===-->
+
+{% endblock %}
