@@ -908,9 +908,20 @@
     <Content Include="app\static\assets\img\demo.jpg" />
     <Content Include="app\static\assets\img\fa.jpg" />
     <Content Include="app\static\assets\img\green_dot.png" />
+<<<<<<< HEAD:Like_gifts/likestore.pyproj
     <Content Include="app\static\assets\img\green_dot.psd" />
     <Content Include="app\static\assets\img\HIW.jpg" />
     <Content Include="app\static\assets\img\HIW.psd" />
+=======
+    <Content Include="app\static\assets\img\HIW.jpg" />
+    <Content Include="app\static\assets\img\icons\social\amazon.png" />
+    <Content Include="app\static\assets\img\icons\social\behance.png" />
+    <Content Include="app\static\assets\img\icons\social\blogger.png" />
+    <Content Include="app\static\assets\img\icons\social\deviantart.png" />
+    <Content Include="app\static\assets\img\icons\social\dribbble.png" />
+    <Content Include="app\static\assets\img\icons\social\dropbox.png" />
+    <Content Include="app\static\assets\img\icons\social\evernote.png" />
+>>>>>>> 2bc8ca8668b8e09e1859131d5391fffbe44d0971:Like_gifts/likestore.pyproj
     <Content Include="app\static\assets\img\icons\social\facebook.png" />
     <Content Include="app\static\assets\img\icons\social\googleplus.png" />
     <Content Include="app\static\assets\img\icons\social\linkedin.png" />
@@ -954,6 +965,7 @@
     <Content Include="app\static\assets\img\mockup\1.png" />
     <Content Include="app\static\assets\img\mockup\iphone.png" />
     <Content Include="app\static\assets\img\mockup\iphone1.png" />
+    <Content Include="app\static\assets\img\navbar.png" />
     <Content Include="app\static\assets\img\new\img1.jpg" />
     <Content Include="app\static\assets\img\new\img10.jpg" />
     <Content Include="app\static\assets\img\new\img11.jpg" />
@@ -989,13 +1001,19 @@
     <Content Include="app\static\assets\img\posts\2.jpg" />
     <Content Include="app\static\assets\img\posts\3.jpg" />
     <Content Include="app\static\assets\img\price-head-bg.png" />
+<<<<<<< HEAD:Like_gifts/likestore.pyproj
     <Content Include="app\static\assets\img\price-head-bg.psd" />
+=======
+>>>>>>> 2bc8ca8668b8e09e1859131d5391fffbe44d0971:Like_gifts/likestore.pyproj
     <Content Include="app\static\assets\img\search.png" />
     <Content Include="app\static\assets\img\shop-32.png" />
     <Content Include="app\static\assets\img\shop.ico" />
     <Content Include="app\static\assets\img\shop.png" />
+<<<<<<< HEAD:Like_gifts/likestore.pyproj
     <Content Include="app\static\assets\img\sliders\circle_browse.png" />
     <Content Include="app\static\assets\img\sliders\circle_browse.psd" />
+=======
+>>>>>>> 2bc8ca8668b8e09e1859131d5391fffbe44d0971:Like_gifts/likestore.pyproj
     <Content Include="app\static\assets\img\sliders\elastislide\1.jpg" />
     <Content Include="app\static\assets\img\sliders\elastislide\10.jpg" />
     <Content Include="app\static\assets\img\sliders\elastislide\11.jpg" />

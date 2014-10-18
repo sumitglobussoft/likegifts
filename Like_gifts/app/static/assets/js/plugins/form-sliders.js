@@ -53,7 +53,11 @@ var FormSliders = function () {
 		      min: 0,
 		      max: 5000,
 		      range: true,
+<<<<<<< HEAD
 		      values: [500, 3000],
+=======
+		      values: [100, 4500],
+>>>>>>> 2bc8ca8668b8e09e1859131d5391fffbe44d0971
 		      slide: function(event, ui)
 		      {
 		        $('#slider2-value1-rounded').text(ui.values[0]);
