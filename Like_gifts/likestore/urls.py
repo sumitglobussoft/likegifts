@@ -62,10 +62,24 @@ urlpatterns = patterns('',
     url(r'^deleteuser/(?P<uid>\w{0,2})$', deleteuser, name='deleteuser'),
     url(r'^uploadimage', uploadimage, name='uploadimage'),
     url(r'^saveproductimage', saveproductimage, name='saveproductimage'),
+<<<<<<< HEAD
     #url(r'^myproducts/(?P<cat>\w{0,2})/$', myproducts, name='myproducts'),
     url(r'^allproducts', allproducts, name='allproducts'),
     url(r'^uploadproducts', uploadproducts, name='uploadproducts'),
     url(r'^uploadproductsfile', uploadproductsfile, name='uploadproductsfile'),
+=======
+<<<<<<< HEAD
+    #url(r'^myproducts/(?P<cat>\w{0,2})/$', myproducts, name='myproducts'),
+    url(r'^allproducts', allproducts, name='allproducts'),
+    url(r'^uploadproducts', uploadproducts, name='uploadproducts'),
+    url(r'^uploadproductsfile', uploadproductsfile, name='uploadproductsfile'),
+=======
+    url(r'^myproducts/(?P<cat>\w{0,2})/$', myproducts, name='myproducts'),
+    url(r'^allproducts', allproducts, name='allproducts'),
+    url(r'^uploadproducts', uploadproducts, name='uploadproducts'),
+    url(r'^productsfile', productsfile, name='productsfile'),
+>>>>>>> 2bc8ca8668b8e09e1859131d5391fffbe44d0971
+>>>>>>> b742ef4d1ab779828b6c0c5afda63f3da987ff03
     url(r'^oneproduct', oneproduct, name='oneproduct'),
     url(r'^updateproduct', updateproduct, name='updateproduct'),
     url(r'^delproduct/(?P<pid>\w{0,2})$', delproduct, name='delproduct'),
