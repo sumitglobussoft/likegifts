@@ -9,10 +9,17 @@
 ====================================================================== -->
 
 <script type="text/template" id="qq-template-bootstrap"></script>
+<<<<<<< HEAD
     <form enctype="multipart/form-data" action="/uploadproductsfile" method="post">{% csrf_token %}
         <input type="file" name="product_files" multiple="false"/>
         <input type="submit" name="upload" value="Upload">
     </form>
+=======
+<form enctype="multipart/form-data" action="/uploadproductsfile" method="post">{% csrf_token %}
+    <input type="file" name="product_files" multiple="false"/>
+    <input type="submit" name="upload" value="Upload">
+</form>
+>>>>>>> 2bc8ca8668b8e09e1859131d5391fffbe44d0971
 <!--
 <div>
 <a href="/deleteproductsfile">delete file</a>
