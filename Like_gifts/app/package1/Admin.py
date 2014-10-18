@@ -219,7 +219,8 @@ def uploadproducts(request):
         }
     )
 
-def productsfile(request):
+@csrf_protect
+def uploadproductsfile(request):
     print('uploading file')
     if request.method == 'POST':
         form = FileUploadForm(request.POST, request.FILES)

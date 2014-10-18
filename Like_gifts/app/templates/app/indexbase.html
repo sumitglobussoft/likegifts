@@ -71,11 +71,11 @@
             <div class="container">
                 <!-- Topbar Navigation -->
                 <ul class="loginbar pull-left">
-                    <li><a href="mailto:support@likegift.ru">24x7 CUSTOMER SUPPORT</a></li>  
+                    <li class="greenhff"><a href="mailto:support@likegift.ru">24x7 CUSTOMER SUPPORT</a></li>  
                     <li class="topbar-devider"></li>   
-                    <li><a href="tel:+88124/5678"><i class="fa fa-phone fa-fw"></i>+88124/5678</a></li>  
+                    <li class="greenhff"><a href="tel:+88124/5678"><i class="fa fa-phone fa-fw"></i>+88124/5678</a></li>  
                     <li class="topbar-devider"></li>   
-                    <li><a href="mailto:support@likegift.ru"><i class="fa fa-envelope-o fa-fw"></i>support@likegift.ru</a></li>  
+                    <li class="greenhff"><a href="mailto:support@likegift.ru"><i class="fa fa-envelope-o fa-fw"></i>support@likegift.ru</a></li>  
                 </ul>
                  <ul class="loginbar pull-right">
                     <li class="greenhff"><a href="/sendgift">Послать подарок</a></li>  
@@ -97,7 +97,10 @@
             <div class="container content">
                 <!-- Topbar Navigation -->
                 <ul class="loginbar">
-                    <li class="col-md-offset-3 pull-left">
+                    <li class="pull-left">
+                        <img src="{% static 'assets/img/logo.png'%}">
+                    </li>
+                    <li class="col-md-offset-1 pull-left">
                         <select class="form-control">
                             <option>Все товаров</option>
                             <option>СПА</option>
@@ -148,20 +151,72 @@
 
 
                         </div>
-
+  <div class="modal fade" id="receivegift" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                            <div class="modal-dialog">
+                                <div class="modal-content"  style="border-radius: 4% !important;">
+                                   
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-4" style="background-color: lightgreen;">
+                                                <div class="headline"><h4>Как получить подарок?</h4></div>
+                                           <p  id="Pdescription">Lorem ipsum dolor. Посетите наш веб-сайт и введите ваш подарочный код. Выберите фирму-продавца или бренд желаемого вами подарка. Сгенерируйте подарочный код для выбранного вами бренда и следуйте инструкциям на экране, чобы получить ваш подарок.<br>
+                                                Для ресторанов, спа и хобби необходимо резервирование. Позвоните нам, чтобы сделать резервацию. Не забудьте взять с собой подарочный сертификат выбранного бренда, чтобы им воспользоваться.</p>
+                                                <h6 class="color-green"><i class="fa fa-exclamation-circle fa-1x"></i>нужна помощь?</h6>
+                                            </div>
+                                 {%if request.session.user %}  
+                                    <div class="col-md-8">
+                                               <img class="img-responsive" src="{% static 'assets/img/logo.png'%}">
+                                                <h3 class="color-green" style="margin-top: 200px;">Есть подарочная карта?</h3>
+                                                <p>Введите код здесь:</p>
+                                                <p>
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" id="trackcode" placeholder="Введите код здесь">
+                                                            <span class="input-group-btn">
+                                                                <button class="btn-u" type="button" onclick="javascript:receivegift()">ПОДАТЬ</button>
+                                                            </span>
+                                                    </div>
+                                                </p>
+                                                <P>Забыли подарочный сертификат ? Позвоните нам по<span class="color-green">+88124/5678</span></P>
+                                      </div>  
+                                 {%else%} 
+                                     <div class="col-md-8">
+                                            <img src="{% static 'assets/img/logo.png'%}">
+                                                <h4 class="color-green" style="margin-top: 200px;">Получил подарочную карту ?</h4>
+                                                <p>Пожалуйста, зарегистрируйтесь , чтобы прочитать подарок :</p>
+                                                <p>
+                                                    <div class="input-group">
+                                                       <span class="input-group-btn">
+                                                                <a class="btn-u" href="/userlogin">Войти</a>
+                                                            </span>
+                                                    </div>
+                                                </p>
+                                                <P>Забыли подарочный сертификат ? Позвоните нам по<span class="color-green">+88124/5678</span></P>
+                                      </div>  
+                                 {% endif %}  
+                                            
+                                        </div>
+                                    </div>
+                                    <!-- <div class="modal-footer">
+                                        <button type="button" class="btn-u btn-u-default" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn-u btn-u-primary">Save changes</button>
+                                    </div> -->
+                                </div>
+                            </div>
+</div>
+<!-- end modal -->
 {% block content %}{% endblock %}
       
 <!--=== Footer ===-->
     <div class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 md-margin-bottom-40">
-                    <!-- About -->
-                    <div class="headline"><h2>Больше О такой же дар,</h2></div>  
+                <div class="col-md-3 md-margin-bottom-40"><h3>Больше О такой же дар,</h3>
+<div class="hr-green" style="margin: 0px;"></div>
+<span><img src="{% static 'assets/img/logo_footer.jpg'%}"></span>
                     <table class="table">
                         <tbody>
                             <tr>
-                                <td>История компании</td>
+                                <td >История компании</td>
                             </tr>
                             <tr>
                                 <td>Связи с инвесторами</td>
@@ -176,7 +231,7 @@
                     </table>
                 </div><!--/col-md-4-->  
 
-                <div class="col-md-3 md-margin-bottom-40">
+               <div class="col-md-3 md-margin-bottom-40" style="margin-top: 85px;">
                   <!--   <div class="headline"><h2></h2></div>   -->
                    <table class="table">
                         <tbody>
@@ -206,9 +261,9 @@
                 </div><!--/col-md-4-->  
                 
                 <div class="col-md-3 md-margin-bottom-40">
-                    <!-- Social Links -->
-                    <div class="headline"><h2>Присоединиться</h2></div> 
-                    <form class="footer-subsribe">
+                    <h3>Присоединиться</h3>
+                     <div class="hr-green" style="margin: 0px;"></div> 
+                    <form class="footer-subsribe" style="margin-top: 30px;">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Your Email Address">                            
                             <span class="input-group-btn">
@@ -229,30 +284,30 @@
                 </div><!--/col-md-4-->
 
                 <div class="col-md-3 md-margin-bottom-40">
-                    <!-- Contact Us -->
-                    <div class="headline"><h2><i class="fa fa-gift fa-fw"></i>Как Statistic подарок в</h2></div> 
+                    <h3><i class="fa fa-gift fa-fw"></i>Как Statistic подарок в</h3>
+                     <div class="hr-green" style="margin: 0px;"></div>
                     <div class="row">
                         <div class="col-sm-6 col-xs-6">
                             <div class="counters">
-                                <span class="counter">10000</span>   
+                                <span>10K</span>   
                                 <h4>Члены</h4>
                             </div>    
                         </div>
                         <div class="col-sm-6 col-xs-6">
                             <div class="counters">
-                                <span class="counter">8008</span> 
+                                <span>8K8</span> 
                                 <h4>Торговые фирмы</h4>
                             </div>    
                         </div>
                         <div class="col-sm-6 col-xs-6">
                             <div class="counters">
-                                <span class="counter">80000</span>
+                                <span>80K</span>
                                 <h4>Подарки в продаже</h4>
                             </div>    
                         </div>
                         <div class="col-sm-6 col-xs-6">
                             <div class="counters">
-                                <span class="counter">150000</span>
+                                <span>1,5K</span>
                                 <h4>Отправленные подарки</h4>
                             </div>    
                         </div>
@@ -275,11 +330,6 @@
                         Copyright &copy; 2015 <span class="color-green">Like Gift, Ltd.</span> Все права защищены. 
                     <br>
                     Никакая часть данного веб-сайта не может быть скопирована, дублирована или распространена в какой бы то ни было форме.<br> Используя данный веб-сайт, вы принимаете наши Условия пользования.</p>
-                </div>
-                <div class="col-md-6">  
-                    <a href="index.html">
-                        <img id="logo-footer" src="assets/img/logo1-default.png" class="pull-right" alt="" />
-                    </a>
                 </div>
             </div>
         </div> 

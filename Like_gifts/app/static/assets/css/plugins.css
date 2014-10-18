@@ -168,7 +168,7 @@
    width: inherit;
    height: inherit;
    position: absolute;
-   background-color: #56bb81;
+   /*background-color: #56bb81;*/
    background-position: 50%;
    background-repeat: no-repeat;
    background-image:url("../img/overlay-icon.png");

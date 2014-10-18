@@ -23,117 +23,91 @@
                     <ul class="nav navbar-nav">
                         <!-- Home -->
                         <li class="topbar-devider"></li>  
-                        <li class="greenhf">
-                            <a href="/search/occation/">
-                                Поводы
+                         <li  class="greenhf">
+                            <a href="" class="dropdown-toggle">
+                                СПА
                             </a>
                         </li>
                         <!-- End Home -->
 
                         <!-- Pages -->                        
                         <li class="greenhf">
-                            <a href="/gifts">
-                                КАТЕГОРИИ
+                            <a >
+                                РЕСТОРАНЫ
                             </a>
                         </li>
                         <!-- End Pages -->
 
                         <!-- Features -->
                         <li class="greenhf">
-                            <a href="/search/men/">
-                                ДЛЯ МУЖЧИН
+                            <a >
+                                ОДЕЖДА
                             </a>
-                        </li href="/search/occation/">
+                        </li>
                         <!-- End Features -->
 
                         <!-- Portfolio -->
                         <li class="greenhf">
-                            <a href="/search/women/">
-                                ДЛЯ ЖЕНЩИНЫ
+                            <a >
+                                ОТДЫХ
                             </a>
-                          
                         </li>
                         <!-- Ens Portfolio -->
 
                         <!-- Blog -->
                         <li class="greenhf">
-                            <a href="/howitworks">
-                                Послать подарок
+                            <a >
+                                ХОББИ
                             </a>
-                         
                         </li>
                         <!-- End Blog -->
 
                         <!-- Contacts -->
                         <li class="greenhf">
-                            <a href="" data-toggle="modal" data-target="#receivegift">
-                                Погасить подарочный
+                            <a >
+                                ПРИКЛЮЧЕНИЯ
                             </a>
-                           
-                        </li>                    
+                        </li>      
+                         <li class="greenhf">
+                            <a >
+                                СТИЛЬ ЖИЗНИ
+                            </a>
+                        </li>                   
+                         <li class="greenhf">
+                            <a >
+                                МОДА
+                            </a>
+                        </li>   
+                         <li class="greenhf">
+                            <a >
+                                ОСОБЫЕ ПОДАРКИ
+                            </a>
+                        </li>     
+                         <li class="greenhf">
+                            <a >
+                                ДЕТЯМ
+                            </a>
+                        </li>     
+                         <li class="greenhf">
+                            <a >
+                                СОБЫТИЯ
+                            </a>
+                        </li>       
+                        <!-- End Contacts -->                   
                       
                     </ul>
                 </div><!--/navbar-collapse-->
             </div>    
         </div>            
         <!-- End Navbar -->
-      <div class="modal fade" id="receivegift" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                   
-                                    <div class="modal-body">
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="headline"><h4>Как получить подарок?</h4></div>
-                                           <p  id="Pdescription">Lorem ipsum dolor. Посетите наш веб-сайт и введите ваш подарочный код. Выберите фирму-продавца или бренд желаемого вами подарка. Сгенерируйте подарочный код для выбранного вами бренда и следуйте инструкциям на экране, чобы получить ваш подарок.<br>
-                                                Для ресторанов, спа и хобби необходимо резервирование. Позвоните нам, чтобы сделать резервацию. Не забудьте взять с собой подарочный сертификат выбранного бренда, чтобы им воспользоваться.</p>
-                                                <h6 class="color-green"><i class="fa fa-exclamation-circle fa-1x"></i>нужна помощь?</h6>
-                                            </div>
-                                 {%if request.session.user %}  
-                                    <div class="col-md-8">
-                                                <h4 class="color-green" style="margin-top: 200px;">Есть подарочная карта?</h4>
-                                                <p>Введите код здесь:</p>
-                                                <p>
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control" id="trackcode" placeholder="Введите код здесь">
-                                                            <span class="input-group-btn">
-                                                                <button class="btn-u" type="button" onclick="javascript:receivegift()">ПОДАТЬ</button>
-                                                            </span>
-                                                    </div>
-                                                </p>
-                                                <P>Забыли подарочный сертификат ? Позвоните нам по<span class="color-green">+88124/5678</span></P>
-                                      </div>  
-                                 {%else%} 
-                                     <div class="col-md-8">
-                                                <h4 class="color-green" style="margin-top: 200px;">Получил подарочную карту ?</h4>
-                                                <p>Пожалуйста, зарегистрируйтесь , чтобы прочитать подарок :</p>
-                                                <p>
-                                                    <div class="input-group">
-                                                       <span class="input-group-btn">
-                                                                <a class="btn-u" href="/userlogin">Войти</a>
-                                                            </span>
-                                                    </div>
-                                                </p>
-                                                <P>Забыли подарочный сертификат ? Позвоните нам по<span class="color-green">+88124/5678</span></P>
-                                      </div>  
-                                 {% endif %}  
-                                            
-                                        </div>
-                                    </div>
-                                    <!-- <div class="modal-footer">
-                                        <button type="button" class="btn-u btn-u-default" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn-u btn-u-primary">Save changes</button>
-                                    </div> -->
-                                </div>
-                            </div>
-</div>
-<!-- end modal -->
+    
    <!--=== Search Block ===-->
     
         <div class="container">
             <div class="col-md-7 col-md-offset-3">
 <div class="slidertransparent">
-                <h1>Добро <span class="color-green">пожаловать в дом подарков</span></h1>
+                <h2 style="color: aliceblue;">ДОБРО <span class="color-green">ПОЖАЛОВАТЬ В ДОМ ПОДАРКОВ</span></h2>
+                     <div class="hr-green"></div>
                 <h4><span class="color-light">Подбирайте и отправляйте подарки друзьям и членам семьи</span></h4>
                 <div class="row plopacity">
                             <section class="col col-md-5">
@@ -155,11 +129,9 @@
                                     <option>Парень</option>
                                 </select>
                             </section>
-                            <div class="input-group">
-                            <span class="input-group-btn">
+                            <span class="input-group-btn" style="height: 32px; width: 40px;">
                                 <button onclick="searchFromSelection()" class="btn-u" type="button"><i class="fa fa-search"></i></button>
                             </span>
-                        </div>
                         </div>
                         
                 <h6>
@@ -191,6 +163,7 @@
                                     <strong>Создать подарок</strong>
                                 </h4>
                                 <p>Выберите продукт / категорию из нашей огромной базы данных купцов / магазине<br>All in your fingertips.</p>
+                                    <div class="hr-green"></div>
                                 <a href="#" class="btn btn-dark" target="_blank">Начните искать и отправлять подарки </a>
                             </div>
                         </div>
@@ -201,7 +174,8 @@
                                     <strong>Выберите метод доставки</strong>
                                 </h4>
                                 <p>Отправьте код по СМС, электронной почте или же распечатайте его. Lorem ipsum dolor sit amet et consectetur.</p>
-                                <a href="#" class="btn btn-dark" target="_blank">Узнать больше о доставке подарков</a>
+                                 <div class="hr-green"></div>
+                                   <a href="#" class="btn btn-dark" target="_blank">Узнать больше о доставке подарков</a>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -211,7 +185,8 @@
                                     <strong>Оплатить</strong>
                                 </h4>
                                 <p>Оплачивайте с помощью кредитной карты (это на 100% безопасно). Lorem ipsum dolor sit amet et consectetur.</p>
-                                <a href="#" class="btn btn-dark" target="_blank">Узнать больше о методах оплаты</a>
+                                 <div class="hr-green"></div>
+                                    <a href="#" class="btn btn-dark" target="_blank">Узнать больше о методах оплаты</a>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6">
@@ -221,6 +196,7 @@
                                     <strong>Отправить!</strong>
                                 </h4>
                                 <p>Система Like Gift обеспечит получение подарка адресатом. А затем получатель сам вам расскажет, как сильно ему понравился подарок.</p>
+                                 <div class="hr-green"></div>
                                 <a href="" class="btn btn-dark">Узнать больше о получении подарка</a>
                             </div>
                         </div>
@@ -262,7 +238,7 @@
         <div class="col-md-3">
         <div class="title-box-v2">
             <h2>Популярные категории <p> искать подарки по категориям</p></h2>
-            <hr class="small">
+             <div class="hr-green"></div>
             <p>Доступны более 2000 товаров.  Lorem ipsum dolor sit amet. Конечно, можно отложить все до завтра, но это самое завтра никогда не наступает. Поэтому просматривайте товары и хватайте, что нравится, пока еще есть время! ,<br><a href="#">browse all</a></p>
         </div>
     </div>
@@ -272,7 +248,7 @@
                         <!-- <div class="thumbnail"> -->
                             <a class="fancybox-button zoomer" data-rel="fancybox-button" title="Project #2" href="{% static 'assets/img/top_categories/img2.png' %}">
                                 <span class="overlay-zoom">  
-                                    <img class="img-responsive img-circle" src="{% static 'assets/img/top_categories/img1.png' %}" alt="" />
+                                    <img class="img-responsive img-circle" src="{% static 'assets/img/top_categories/img1.png' %}" alt="" style="margin: auto;" />
                                     <span class="zoom-icon"></span>                   
                                 </span>                                              
                             </a>                 
@@ -286,7 +262,7 @@
                         <!-- <div class="thumbnail"> -->
                             <a class="fancybox-button zoomer" data-rel="fancybox-button" title="Project #2" href="{% static 'assets/img/top_categories/img2.png' %}">
                                 <span class="overlay-zoom">  
-                                    <img class="img-responsive img-circle" src="{% static 'assets/img/top_categories/img2.png' %}" alt="" />
+                                    <img class="img-responsive img-circle" src="{% static 'assets/img/top_categories/img2.png' %}" alt=""  style="margin: auto;" />
                                     <span class="zoom-icon"></span>                   
                                 </span>                                              
                             </a>                   
@@ -300,7 +276,7 @@
                         <!-- <div class="thumbnail"> -->
                             <a class="fancybox-button zoomer" data-rel="fancybox-button" title="Project #2" href="{% static 'assets/img/top_categories/img2.png' %}">
                                 <span class="overlay-zoom">  
-                                    <img class="img-responsive img-circle" src="{% static 'assets/img/top_categories/img3.png' %}" alt="" />
+                                    <img class="img-responsive img-circle" src="{% static 'assets/img/top_categories/img3.png' %}" alt=""  style="margin: auto;" />
                                     <span class="zoom-icon"></span>                   
                                 </span>                                              
                             </a>                     
@@ -314,7 +290,7 @@
                         <!-- <div class="thumbnail"> -->
                             <a class="fancybox-button zoomer" data-rel="fancybox-button" title="Project #2" href="{% static 'assets/img/top_categories/img2.png' %}">
                                 <span class="overlay-zoom">  
-                                    <img class="img-responsive img-circle" src="{% static 'assets/img/top_categories/img2.png' %}" alt="" />
+                                    <img class="img-responsive img-circle" src="{% static 'assets/img/top_categories/img2.png' %}" alt=""  style="margin: auto;" />
                                     <span class="zoom-icon"></span>                   
                                 </span>                                              
                             </a>                     
@@ -328,7 +304,7 @@
                         <!-- <div class="thumbnail"> -->
                             <a class="fancybox-button zoomer" data-rel="fancybox-button" title="Project #2" href="{% static 'assets/img/top_categories/img2.png' %}">
                                 <span class="overlay-zoom">  
-                                    <img class="img-responsive img-circle" src="{% static 'assets/img/top_categories/img2.png' %}" alt="" />
+                                    <img class="img-responsive img-circle" src="{% static 'assets/img/top_categories/img2.png' %}" alt=""  style="margin: auto;" />
                                     <span class="zoom-icon"></span>                   
                                 </span>                                              
                             </a>                     
@@ -342,7 +318,7 @@
                         <!-- <div class="thumbnail"> -->
                             <a class="fancybox-button zoomer" data-rel="fancybox-button" title="Project #2" href="{% static 'assets/img/top_categories/img2.png' %}">
                                 <span class="overlay-zoom">  
-                                    <img class="img-responsive img-circle" src="{% static 'assets/img/top_categories/img2.png' %}" alt="" />
+                                    <img class="img-responsive img-circle" src="{% static 'assets/img/top_categories/img2.png' %}" alt=""  style="margin: auto;" />
                                     <span class="zoom-icon"></span>                   
                                 </span>                                              
                             </a>                       
@@ -362,7 +338,7 @@
             <div class="row">
                 <div class="col-md-3 animated fadeInLeft">
                     <span>Самые популярные поисковые запросы</span>
-                   <!--  <hr class="small"> -->
+                   <div class="hr-green" style="margin: 0px;"></div>
                     <p>происходит сейчас</p>
                 </div>            
                 <div class="col-md-9 btn-buy animated fadeInRight">
