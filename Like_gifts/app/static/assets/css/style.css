@@ -79,15 +79,17 @@
 
 .topbar ul.loginbar > li {
 	display: inline;
+	text-decoration: none;
 	list-style: none;
 	position: relative;
-	padding-bottom: 15px;
+	padding-bottom: 2px;
 }
 
 .topbar ul.loginbar > li > a, 
 .topbar ul.loginbar > li > a:hover {
 	color: #7c8082;
 	font-size: 11px;
+	text-decoration: none;
 	text-transform: uppercase;
 }
 
@@ -1034,7 +1036,7 @@
 	font-size: 14px;
 } 
 .footer p {
-	color: #dadada;
+	color: #d6d6d5;
 } 
 
 .footer a {
@@ -1101,7 +1103,7 @@
 }
 
 .copyright p {
-	color: #dadada;
+	color: #bbbbbb;
 	margin-top: 12px;
 }
 

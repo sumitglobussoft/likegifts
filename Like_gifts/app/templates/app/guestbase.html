@@ -76,7 +76,7 @@
                     <li class="topbar-devider"></li>   
                     <li class="greenhff"><a href="mailto:support@likegift.ru"><i class="fa fa-envelope-o fa-fw"></i>support@likegift.ru</a></li>  
                 </ul>
-                <ul class="loginbar pull-right">
+                <ul class="loginbar pull-righ t">
                     <li class="greenhff"><a href="/sendgift">Послать подарок</a></li>  
                     <li class="topbar-devider"></li>   
                     <li class="greenhff"><a href="" data-toggle="modal" data-target="#receivegift">ПОЛУЧИТЬ ПОДАРОК</a></li>  
@@ -100,7 +100,8 @@
                     <li class="pull-left">
                         <img src="{% static 'assets/img/logo.png'%}">
                     </li>
-                    <li class="col-md-offset-1 pull-left">
+                    <li class="col-md-offs   et-1 pull-left">   
+
                         <select class="form-control">
                             <option>Все товаров</option>
                             <option>СПА</option>
@@ -161,7 +162,7 @@
                     <ul class="nav navbar-nav" id="all_category">
                        <li class="topbar-devider"></li>  
                          <li  class="greenhf">
-                            <a href="" class="dropdown-toggle">
+                            <a href="/catgift/1">
                                 СПА
                             </a>
                         </li>
@@ -169,7 +170,7 @@
 
                         <!-- Pages -->                        
                         <li class="greenhf">
-                            <a >
+                            <a href="/catgift/2">
                                 РЕСТОРАНЫ
                             </a>
                         </li>
@@ -177,7 +178,7 @@
 
                         <!-- Features -->
                         <li class="greenhf">
-                            <a >
+                            <a href="/catgift/3">
                                 ОДЕЖДА
                             </a>
                         </li>
@@ -185,7 +186,7 @@
 
                         <!-- Portfolio -->
                         <li class="greenhf">
-                            <a >
+                            <a href="/catgift/4">
                                 ОТДЫХ
                             </a>
                         </li>
@@ -193,7 +194,7 @@
 
                         <!-- Blog -->
                         <li class="greenhf">
-                            <a >
+                            <a href="/catgift/5">
                                 ХОББИ
                             </a>
                         </li>
@@ -201,32 +202,32 @@
 
                         <!-- Contacts -->
                         <li class="greenhf">
-                            <a >
+                            <a href="/catgift/6">
                                 ПРИКЛЮЧЕНИЯ
                             </a>
                         </li>      
                          <li class="greenhf">
-                            <a >
+                            <a href="/catgift/7">
                                 СТИЛЬ ЖИЗНИ
                             </a>
                         </li>                   
                          <li class="greenhf">
-                            <a >
+                            <a href="/catgift/8">
                                 МОДА
                             </a>
                         </li>   
                          <li class="greenhf">
-                            <a >
+                            <a href="/catgift/9">
                                 ОСОБЫЕ ПОДАРКИ
                             </a>
                         </li>     
                          <li class="greenhf">
-                            <a >
+                            <a href="/catgift/10">
                                 ДЕТЯМ
                             </a>
                         </li>     
                          <li class="greenhf">
-                            <a >
+                            <a href="/catgift/11">
                                 СОБЫТИЯ
                             </a>
                         </li>       
@@ -536,7 +537,7 @@ function fun1(){
 	
 	    /* check if there is selected checkboxes, by default the length is 1 as it contains one single comma */
 	    if(selected.length > 1){
-		alert("You have selected " + selected);	
+		//alert("You have selected " + selected);	
          $.ajax({
                 type: "POST",
                 url: "/filter", // the file to call

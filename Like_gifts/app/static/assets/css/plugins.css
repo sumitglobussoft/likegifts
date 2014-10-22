@@ -138,7 +138,7 @@
 
 /*FancyBox Hover Effect*/
 .zoomer:hover .overlay-zoom .zoom-icon{
-   opacity:0.4;   
+   opacity:0.9;   
    -webkit-transform: scale(1);
    -moz-transform: scale(1);
    -o-transform: scale(1);

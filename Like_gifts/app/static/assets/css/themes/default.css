@@ -1,4 +1,4 @@
-f/* 
+/* 
 * Version: 1.4
 * Default Color 	  : #72c02c;
 * Default Hover Color : #5fb611;
@@ -217,7 +217,8 @@ blockquote:hover {
 .copyright a,
 .footer a:hover,
 .copyright a:hover {
-	color: #ddd;
+	color: #d6d6d5;
+	text-decoration: none;
 }
 
 /*Footer Blog*/

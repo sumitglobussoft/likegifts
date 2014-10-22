@@ -7,10 +7,63 @@
    font-weight: 400;
    padding: 2px 9px;
    position: relative;
-   background: #72c02c;
+   background: #4cc62f;
    display: inline-block;
    text-decoration: none;
-   border-radius: 10% !important;
+   border-radius: 4px !important;
+}
+
+.btn-o-lightgreen {
+   border: 0;
+   color: #fff;
+   font-size: 12px;
+   cursor: pointer;
+   font-weight: 400;
+   padding: 2px 9px;
+   position: relative;
+   background: #72bf44;
+   display: inline-block;
+   text-decoration: none;
+   border-radius: 4px !important;
+}
+.btn-o-lightgreen-o {
+   border: 0;
+   color: #fff;
+   font-size: 12px;
+   cursor: pointer;
+   font-weight: 400;
+   padding: 2px 9px;
+   position: relative;
+   background: #7de241;
+   display: inline-block;
+   text-decoration: none;
+   border-radius: 4px !important;
+}
+.btn-o-lightgreen:hover {
+   border: 0;
+   color: #fff;
+   font-size: 12px;
+   cursor: pointer;
+   font-weight: 400;
+   padding: 2px 9px;
+   position: relative;
+   background: #26ad5e;
+   display: inline-block;
+   text-decoration: none;
+   border-radius: 4px !important;
+}
+.btn-o-lightgreen-o:hover {
+   border: 0;
+   color: #fff;
+   font-size: 12px;
+   cursor: pointer;
+   font-weight: 400;
+   padding: 2px 9px;
+   position: relative;
+   background: #2ecd71;
+   display: inline-block;
+   text-decoration: none;
+   border-radius: 4px !important;
 }
 .navtransparent{
    margin-top: -81px;
@@ -32,6 +85,12 @@ padding: 20px 20px 20px 50px;
 background-color: #3C8440;
 border-bottom: 2px solid #3BA842;
 }
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus{
+     color: #fff;
+background-color: #3C8440;
+border-bottom: 2px solid #3BA842;
+}
+
 
 .greenhff:hover, .greenhff:focus{
    color: #fff;
@@ -59,7 +118,8 @@ height: 34px;
 padding: 6px 12px;
 font-size: 14px;
 line-height: 1.428571429;
-color: #FFFFFF;  
+color: #FFFFFF;
+opacity: 0.5;
 background-color: #453C3C;
 background-image: none;
 border: 1px solid #FFF;
@@ -80,7 +140,7 @@ position: relative;
 
 .parallaxBggift{
 padding: 60px 0;
-background: url(../img/bg/giftbox.png) 50% 0 no-repeat fixed;
+background: url(../img/bg/giftbox.png) 50% 0 no-repeat center;
 }
 
 .yellowbg{
@@ -107,15 +167,15 @@ border-radius: 4% !important;
 .price-head{
  display:block;
   position:relative; 
-  top:-69px;
+  top:-70px;
  background:url(../img/price-head-bg.png) no-repeat top;
  width:231px;
  height:45px;
  margin:0 auto;
- font:bold 20px Arial, Helvetica, sans-serif;
+ font: 18px Lato, Arial, Helvetica, sans-serif;
  color:#cbc8b9;
  text-align:center;
- padding-top:8px;
+ padding-top:10px;
  text-shadow:0px 0px 3px #000000;}
 
  .hr-green {
@@ -123,4 +183,23 @@ border-radius: 4% !important;
   width: 35px;
 background-color: #7bbf53;
 padding: 2px 0px 0px 0px;
+}
+
+ .hr-darkgreen {
+  margin: auto;
+  width: 35px;
+background-color: #37b36b;
+padding: 2px 0px 0px 0px;
+}
+
+ .hr-white {
+ margin-bottom: 10px;
+width: 35px;
+background-color: #fff;
+padding: 1px 0px 0px 0px;
+}
+
+.hr-white-u {
+ margin: 20px 0;
+ background-color: #ddd;
 }
