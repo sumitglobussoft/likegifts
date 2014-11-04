@@ -1,6 +1,6 @@
 /*Import Google Font*/
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400);
-
+@import url(http://fonts.googleapis.com/css?family=Lato:100,100italic,light,lightitalic,regular,regularitalic,bold,bolditalic,900,900italic);
 /*Reset Styles
 ------------------------------------*/
 * {
@@ -11,6 +11,7 @@ body {
    color: #333; 
    font-size: 13px;
    line-height: 1.6;
+   font-family: 'Lato', sans-serif; 
 }
 
 p, 

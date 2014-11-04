@@ -13,7 +13,7 @@
                         <span class="sr-only">Переключить навигации</span>
                         <span class="fa fa-bars"></span>
                     </button>
-                    <a class="navbar-brand" href="/">
+                    <a class="navbar-brand" href="/" style="margin-top: -5px;">
                         <img id="logo-header" src="{% static 'assets/img/shop-32.png'%}" alt="LikeGift">
                     </a>
                 </div>
@@ -22,72 +22,55 @@
                 <div class="collapse navbar-collapse navbar-responsive-collapse pull-left">
                     <ul class="nav navbar-nav">
                         <!-- Home -->
-                        <li class="topbar-devider"></li>  
-                         <li  class="greenhf">
-                            <a href="" class="dropdown-toggle">
-                                СПА
+                        <li class="topbar-devider"></li>
+                         <li>
+                            <a href="/search/occation/">
+                                ПОВОД
                             </a>
                         </li>
                         <!-- End Home -->
 
-                        <!-- Pages -->                        
-                        <li class="greenhf">
-                            <a >
-                                РЕСТОРАНЫ
+                        <!-- Pages -->
+                        <li>
+                            <a href="/gifts">
+                                КАТЕГОРИИ
                             </a>
                         </li>
                         <!-- End Pages -->
 
                         <!-- Features -->
-                        <li class="greenhf">
-                            <a >
-                                ОДЕЖДА
+                        <li>
+                            <a href="/search/men/">
+                                ДЛЯ ЧЕЛОВЕКА
                             </a>
-                        </li>
+                        </li href="/search/occation/">
                         <!-- End Features -->
 
                         <!-- Portfolio -->
-                        <li class="greenhf">
-                            <a >
-                                ОТДЫХ
+                        <li>
+                            <a href="/search/women/">
+                                ДЛЯ ЖЕНЩИНЫ
                             </a>
+
                         </li>
                         <!-- Ens Portfolio -->
 
                         <!-- Blog -->
-                        <li class="greenhf">
-                            <a >
-                                ХОББИ
+                        <li>
+                            <a href="/howitworks">
+                                Отправить подарок
                             </a>
+
                         </li>
                         <!-- End Blog -->
 
                         <!-- Contacts -->
-                        <li class="greenhf">
-                            <a >
-                                ПРИКЛЮЧЕНИЯ
+                        <li>
+                            <a href="" data-toggle="modal" data-target="#receivegift">
+                                Погасить ПОДАРОК
                             </a>
-                        </li>      
-                         <li class="greenhf">
-                            <a >
-                                СТИЛЬ ЖИЗНИ
-                            </a>
-                        </li>                   
-                         <li class="greenhf">
-                            <a >
-                                МОДА
-                            </a>
-                        </li>   
-                         <li class="greenhf">
-                            <a >
-                                ОСОБЫЕ ПОДАРКИ
-                            </a>
-                        </li>     
-                         <li class="greenhf">
-                            <a >
-                                ДЕТЯМ
-                            </a>
-                        </li>         
+
+                        </li> 
                         <!-- End Contacts -->                   
                       
                     </ul>
@@ -106,7 +89,7 @@
                 <h4><span class="color-light">Подбирайте и отправляйте подарки друзьям и членам семьи</span></h4>
                 <div class="row plopacity">
                             <section class="col col-md-5">
-                                <select id="Occassion" class="form-control form-control-transparent">
+                                <select id="Occassion" class="form-control form-control-transparent" style="font-family: Lato; font-style: normal; font-weight: 400;">
                                     <option>Поводы</option>
                                     <option>День рождения</option>
                                     <option>Годовщина</option>
@@ -115,7 +98,7 @@
                                 </select>
                             </section>
                             <section class="col col-md-5">
-                                <select id="Relationship" class="form-control form-control-transparent">
+                                <select id="Relationship" class="form-control form-control-transparent" style="font-family: Lato; font-style: normal; font-weight: 400;">
                                     <option>Кем вам приходится получатель…</option>
                                     <option>Брат</option>
                                     <option>Член семьи</option>
@@ -144,9 +127,9 @@
     <div class="container content">
         <!-- Begin Service Block -->
                <div class="title-box-v2">
-            <h1><b>Как это работает</b></h1>
+            <h1  style="font-family: Lato; font-style: normal; font-weight: 300;">Home это работает</h1>
  <div class="hr-green"></div>
-            <p>Благодаря нам покупать подарки стало просто</p>
+            <p style="font-family: Lato; font-style: normal; font-weight: 400; font-size: initial;">we make Благодаря нам покупать подарки стало просто</p>
         </div>
         <div class="row margin-bottom-40">
             <div class="row text-center">
@@ -155,9 +138,7 @@
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <img src="{% static 'assets/img/sliders/greenpencil.png'%}">
-                                <h4>
-                                    <strong>Создать подарок</strong>
-                                </h4>
+                                <h4 style="font-family: Lato; font-style: normal; font-weight: 300; font-size: x-large;">Создать подарок</h4>
                                 <p>Выберите продукт / категорию из нашей огромной базы данных купцов / магазине<br>All in your fingertips.</p>
                                     <div class="hr-green"></div>
                                 <a href="#" class="btn btn-dark" target="_blank">Начните искать и отправлять подарки </a>
@@ -166,9 +147,7 @@
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <img src="{% static 'assets/img/sliders/greentruck.png'%}">
-                                <h4>
-                                    <strong>Выберите метод доставки</strong>
-                                </h4>
+                                <h4 style="font-family: Lato; font-style: normal; font-weight: 300; font-size: x-large;">Выберите метод доставки </h4>
                                 <p>Отправьте код по СМС, электронной почте или же распечатайте его. Lorem ipsum dolor sit amet et consectetur.</p>
                                  <div class="hr-green"></div>
                                    <a href="#" class="btn btn-dark" target="_blank">Узнать больше о доставке подарков</a>
@@ -177,9 +156,7 @@
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                  <img src="{% static 'assets/img/sliders/greenmoney.png'%}">
-                                <h4>
-                                    <strong style="color: #37b36b;">Оплатить</strong>
-                                </h4>
+                                <h4 style="font-family: Lato; font-style: normal; font-weight: 300; color: #37b36b; font-size: x-large;">Оплатить</h4>
                                 <p>Оплачивайте с помощью кредитной карты (это на 100% безопасно). Lorem ipsum dolor sit amet et consectetur.</p>
                                  <div class="hr-darkgreen"></div>
                                     <a href="#" class="btn btn-dark" target="_blank" style="color: #37b36b;">Узнать больше о методах оплаты</a>
@@ -188,9 +165,7 @@
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                  <img src="{% static 'assets/img/sliders/greenroket.png'%}">
-                                <h4>
-                                    <strong>Отправить!</strong>
-                                </h4>
+                                <h4  style="font-family: Lato; font-style: normal; font-weight: 300; font-size: x-large;">Отправить!</h4>
                                 <p>Система Like Gift обеспечит получение подарка адресатом. А затем получатель сам вам расскажет, как сильно ему понравился подарок.</p>
                                  <div class="hr-green"></div>
                                 <a href="" class="btn btn-dark">Узнать больше о получении подарка</a>
@@ -211,13 +186,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9 animated fadeInLeft">
-                    <span>Скидки 60% - время летней распродажи!</span>
+                    <span style="font-family: Lato; font-style: normal; font-weight: 700;">Скидки 60% - время летней <small style="font-family: Lato; font-style: normal; font-weight: 300;">распродажи!</small></span>
                    <div class="hr-white"></div>
                     <p>Маркетинговый слоган. Хватайте, пока горячо!  Like Gift часто предлагает сезонные скидки.
                         <br>Регистрация занимает всего минуту. Lorem ipsum dolor sit amet.</p>
                 </div>            
                 <div class="col-md-3 btn-buy animated fadeInRight">
-                    <a href="/usersignup" class="btn-u btn-u-lg btn-white" style="border: solid 2px #fff;"><i class="fa fa-sign-in"></i> Зарегистрироваться</a>
+                    <a href="/usersignup" class="btn-u btn-u-lg btn-white" style="border: solid 2px #fff; font-family: Lato; font-style: normal; font-weight: 700;"><i class="fa fa-sign-in"></i> Зарегистрироваться</a>
                 </div>
             </div>
         </div>
@@ -233,7 +208,7 @@
     <div class="container content margin-bottom-20">
         <div class="col-md-3">
         <div class="title-box-v2" style="text-align: left;">
-            <h4>Популярные категории <p> искать подарки по категориям</p></h4>
+            <h4>Популярные категории <p style="font-size: x-small;"> искать подарки по категориям</p></h4>
              <div class="hr-green" style="margin-bottom: 8px;  margin-left: 0px;"></div>
             <p>Доступны более 2000 товаров.  Lorem ipsum dolor sit amet. Конечно, можно отложить все до завтра, но это самое завтра никогда не наступает. Поэтому просматривайте товары и хватайте, что нравится, пока еще есть время! ,<br><a href="#">browse all</a></p>
         </div>
@@ -242,13 +217,13 @@
         <div class="row">
                     <div class="col-md-4">
                         <!-- <div class="thumbnail"> -->
-                            <a class="fancybox-button zoomer" data-rel="fancybox-button" title="Project #2" href="{% static 'assets/img/top_categories/img2.png' %}">
+                            <a class="fancybox-button zoomer" data-rel="fancybox-button" href="{% static 'assets/img/top_categories/img2.png' %}">
                                 <span class="overlay-zoom">  
                                     <img class="img-responsive img-circle" src="{% static 'assets/img/top_categories/img1.png' %}" alt="" style="margin: auto;" />
                                     <span class="zoom-icon"></span>                   
                                 </span>                                              
                             </a>                 
-                            <div class="caption">
+                            <div class="caption" style="text-align: center;  font-weight: 100;  font-style: normal;">
                                 <h3>Для автомобилей</h3>
                                 <a class="hover-effect" href="#">Автозапчасти, автоосвежители и др.</a>
                             </div>
@@ -256,13 +231,13 @@
                     </div>
                     <div class="col-md-4">
                         <!-- <div class="thumbnail"> -->
-                            <a class="fancybox-button zoomer" data-rel="fancybox-button" title="Project #2" href="{% static 'assets/img/top_categories/img2.png' %}">
+                            <a class="fancybox-button zoomer" data-rel="fancybox-button"  href="{% static 'assets/img/top_categories/img2.png' %}">
                                 <span class="overlay-zoom">  
                                     <img class="img-responsive img-circle" src="{% static 'assets/img/top_categories/img2.png' %}" alt=""  style="margin: auto;" />
                                     <span class="zoom-icon"></span>                   
                                 </span>                                              
                             </a>                   
-                            <div class="caption">
+                            <div class="caption" style="text-align: center;  font-weight: 100;  font-style: normal;">
                                 <h3>Развлечения</h3>
                                 <a class="hover-effect" href="#">Музыка, фильмы, книги, другие товары</a>
                             </div>
@@ -270,13 +245,13 @@
                     </div>
                     <div class="col-md-4">
                         <!-- <div class="thumbnail"> -->
-                            <a class="fancybox-button zoomer" data-rel="fancybox-button" title="Project #2" href="{% static 'assets/img/top_categories/img2.png' %}">
+                            <a class="fancybox-button zoomer" data-rel="fancybox-button"  href="{% static 'assets/img/top_categories/img2.png' %}">
                                 <span class="overlay-zoom">  
                                     <img class="img-responsive img-circle" src="{% static 'assets/img/top_categories/img3.png' %}" alt=""  style="margin: auto;" />
                                     <span class="zoom-icon"></span>                   
                                 </span>                                              
                             </a>                     
-                            <div class="caption">
+                            <div class="caption" style="text-align: center;  font-weight: 100;  font-style: normal;">
                                 <h3>Развлечения</h3>
                                 <a class="hover-effect" href="#">Музыка, фильмы, книги, другие товары</a>
                             </div>
@@ -284,13 +259,13 @@
                     </div>
                     <div class="col-md-4">
                         <!-- <div class="thumbnail"> -->
-                            <a class="fancybox-button zoomer" data-rel="fancybox-button" title="Project #2" href="{% static 'assets/img/top_categories/img2.png' %}">
+                            <a class="fancybox-button zoomer" data-rel="fancybox-button" href="{% static 'assets/img/top_categories/img2.png' %}">
                                 <span class="overlay-zoom">  
                                     <img class="img-responsive img-circle" src="{% static 'assets/img/top_categories/img2.png' %}" alt=""  style="margin: auto;" />
                                     <span class="zoom-icon"></span>                   
                                 </span>                                              
                             </a>                     
-                            <div class="caption">
+                            <div class="caption" style="text-align: center;  font-weight: 100;  font-style: normal;">
                                 <h3>Развлечения</h3>
                                 <a class="hover-effect" href="#">Музыка, фильмы, книги, другие товары</a>
                             </div>
@@ -298,13 +273,13 @@
                     </div>
                     <div class="col-md-4">
                         <!-- <div class="thumbnail"> -->
-                            <a class="fancybox-button zoomer" data-rel="fancybox-button" title="Project #2" href="{% static 'assets/img/top_categories/img2.png' %}">
+                            <a class="fancybox-button zoomer" data-rel="fancybox-button" href="{% static 'assets/img/top_categories/img2.png' %}">
                                 <span class="overlay-zoom">  
                                     <img class="img-responsive img-circle" src="{% static 'assets/img/top_categories/img2.png' %}" alt=""  style="margin: auto;" />
                                     <span class="zoom-icon"></span>                   
                                 </span>                                              
                             </a>                     
-                            <div class="caption">
+                            <div class="caption" style="text-align: center;  font-weight: 100;  font-style: normal;">
                                 <h3>Развлечения</h3>
                                 <a class="hover-effect" href="#">Музыка, фильмы, книги, другие товары</a>
                             </div>
@@ -312,13 +287,13 @@
                     </div>
                     <div class="col-md-4">
                         <!-- <div class="thumbnail"> -->
-                            <a class="fancybox-button zoomer" data-rel="fancybox-button" title="Project #2" href="{% static 'assets/img/top_categories/img2.png' %}">
+                            <a class="fancybox-button zoomer" data-rel="fancybox-button"  href="{% static 'assets/img/top_categories/img2.png' %}">
                                 <span class="overlay-zoom">  
                                     <img class="img-responsive img-circle" src="{% static 'assets/img/top_categories/img2.png' %}" alt=""  style="margin: auto;" />
                                     <span class="zoom-icon"></span>                   
                                 </span>                                              
                             </a>                       
-                            <div class="caption">
+                            <div class="caption" style="text-align: center;  font-weight: 100;  font-style: normal;">
                                 <h3>Развлечения</h3>
                                 <a class="hover-effect" href="#">Музыка, фильмы, книги, другие товары</a>
                             </div>
@@ -342,16 +317,16 @@
                
                 <div class="row brand-page margin-bottom-40">
                     <div class="ladda-btn">
-                        <a rel="shrink" href="/catgift/1" class="btn-u btn-o-lightgreen shrink btn-o">Lego Marvel PS312<button class="btn-u btn-o-lightgreen-o btn-o" type="button"><i class="fa fa-search">12</i></button></a>
-                         <a rel="shrink" href="/catgift/2" class="btn-u btn-o-lightgreen shrink btn-o">Одежда12<button class="btn-u btn-o-lightgreen-o btn-o" type="button"><i class="fa fa-search">12</i></button></a>
-                          <a rel="shrink" href="/catgift/3" class="btn-u btn-o-lightgreen shrink btn-o">Lorem Ipsum12<button class="btn-u btn-o-lightgreen-o btn-o" type="button"><i class="fa fa-search">12</i></button></a>
-                           <a rel="shrink" href="/catgift/4" class="btn-u btn-o-lightgreen shrink btn-o">Lorem Ipsum<button class="btn-u btn-o-lightgreen-o btn-o" type="button"><i class="fa fa-search">12</i></button></a>
-                            <a rel="shrink" href="/catgift/5" class="btn-u btn-o-lightgreen shrink btn-o">Lego Marvel PS3<button class="btn-u btn-o-lightgreen-o btn-o" type="button"><i class="fa fa-search">12</i></button></a>
-                          <a rel="shrink" href="/catgift/6" class="btn-u btn-o-lightgreen shrink btn-o">Одежда<button class="btn-u btn-o-lightgreen-o btn-o" type="button"><i class="fa fa-search">1k2</i></button></a>
-                          <a rel="shrink" href="/catgift/7" class="btn-u btn-o-lightgreen shrink btn-o">Рыба маска <button class="btn-u btn-o-lightgreen-o btn-o" type="button"><i class="fa fa-search">1k2</i></button></a>
-                          <a rel="shrink" href="/catgift/8" class="btn-u btn-o-lightgreen shrink btn-o">Lorem Ipsum<button class="btn-u btn-o-lightgreen-o btn-o" type="button"><i class="fa fa-search">1k2</i></button></a>
-                          <a rel="shrink" href="/catgift/9" class="btn-u btn-o-lightgreen shrink btn-o">Lego Marvel PS3<button class="btn-u btn-o-lightgreen-o btn-o" type="button"><i class="fa fa-search">1k2</i></button></a>
-                          <a rel="shrink" href="/catgift/10" class="btn-u btn-o-lightgreen shrink btn-o">Односпальный матрас Airsprung Evanton Memory Single Matress<button class="btn-u btn-u-green btn-o" type="button"><i class="fa fa-search">1k2</i></button></a>
+                        <a rel="shrink" href="/catgift/1" class="btn-u btn-o-lightgreen shrink btn-o"  style="font-family: Lato; font-style: normal; font-weight: 700;">Lego Marvel PS312<button class="btn-u btn-o-lightgreen-o btn-o" type="button" style="font-family: Lato; font-style: normal; font-weight: 900;"><i class="fa fa-search">12</i></button></a>
+                         <a rel="shrink" href="/catgift/2" class="btn-u btn-o-lightgreen shrink btn-o"  style="font-family: Lato; font-style: normal; font-weight: 700;">Одежда12<button class="btn-u btn-o-lightgreen-o btn-o" type="button" style="font-family: Lato; font-style: normal; font-weight: 900;"><i class="fa fa-search">12</i></button></a>
+                          <a rel="shrink" href="/catgift/3" class="btn-u btn-o-lightgreen shrink btn-o"  style="font-family: Lato; font-style: normal; font-weight: 700;">Lorem Ipsum12<button class="btn-u btn-o-lightgreen-o btn-o" type="button" style="font-family: Lato; font-style: normal; font-weight: 900;"><i class="fa fa-search">12</i></button></a>
+                           <a rel="shrink" href="/catgift/4" class="btn-u btn-o-lightgreen shrink btn-o"  style="font-family: Lato; font-style: normal; font-weight: 700;">Lorem Ipsum<button class="btn-u btn-o-lightgreen-o btn-o" type="button" style="font-family: Lato; font-style: normal; font-weight: 900;"><i class="fa fa-search">12</i></button></a>
+                            <a rel="shrink" href="/catgift/5" class="btn-u btn-o-lightgreen shrink btn-o"  style="font-family: Lato; font-style: normal; font-weight: 700;">Lego Marvel PS3<button class="btn-u btn-o-lightgreen-o btn-o" type="button" style="font-family: Lato; font-style: normal; font-weight: 900;"><i class="fa fa-search">12</i></button></a>
+                          <a rel="shrink" href="/catgift/6" class="btn-u btn-o-lightgreen shrink btn-o"  style="font-family: Lato; font-style: normal; font-weight: 700;">Одежда<button class="btn-u btn-o-lightgreen-o btn-o" type="button" style="font-family: Lato; font-style: normal; font-weight: 900;"><i class="fa fa-search">1k2</i></button></a>
+                          <a rel="shrink" href="/catgift/7" class="btn-u btn-o-lightgreen shrink btn-o"  style="font-family: Lato; font-style: normal; font-weight: 700;">Рыба маска <button class="btn-u btn-o-lightgreen-o btn-o" type="button" style="font-family: Lato; font-style: normal; font-weight: 900;"><i class="fa fa-search">1k2</i></button></a>
+                          <a rel="shrink" href="/catgift/8" class="btn-u btn-o-lightgreen shrink btn-o"  style="font-family: Lato; font-style: normal; font-weight: 700;">Lorem Ipsum<button class="btn-u btn-o-lightgreen-o btn-o" type="button" style="font-family: Lato; font-style: normal; font-weight: 900;"><i class="fa fa-search">1k2</i></button></a>
+                          <a rel="shrink" href="/catgift/9" class="btn-u btn-o-lightgreen shrink btn-o"  style="font-family: Lato; font-style: normal; font-weight: 700;">Lego Marvel PS3<button class="btn-u btn-o-lightgreen-o btn-o" type="button" style="font-family: Lato; font-style: normal; font-weight: 900;"><i class="fa fa-search">1k2</i></button></a>
+                          <a rel="shrink" href="/catgift/10" class="btn-u btn-o-lightgreen shrink btn-o"  style="font-family: Lato; font-style: normal; font-weight: 700;">Односпальный матрас Airsprung Evanton Memory Single Matress<button class="btn-u btn-o-lightgreen-o btn-o" type="button" style="font-family: Lato; font-style: normal; font-weight: 900;"><i class="fa fa-search">1k2</i></button></a>
                     </div>
                 </div>                
                 <!--Inversed and Rounded Buttons-->
@@ -364,8 +339,45 @@
 
     <!--=== Parallax Counter ===-->
     <div class="parallax-counter parallaxBg ">
-<!-- Owl Carousel v2 --> <div class="price-head">Our Top Merchents</div>
-                <div class="owl-carousel-v2 owl-carousel-style-v1 margin-bottom-50">
+<!-- Owl Carousel v2 --> <div class="price-head" style="font-family: Lato; font-style: normal; font-weight: 700;">Our Top Merchents</div>
+<section class="container-fluid slider">
+        <div class="flexslider carousel">
+          <ul class="slides">
+            <li>
+                <img class="img-responsive"  src="{% static 'assets/img/clients/cisco_grey.png' %}" />
+                </li>
+                <li>
+                <img class="img-responsive"  src="{% static 'assets/img/clients/cocacola_grey.png' %}" />
+                </li>
+                <li>
+                <img class="img-responsive"  src="{% static 'assets/img/clients/aztec_grey.png' %}" />
+                </li>
+                <li>
+                <img class="img-responsive" src="{% static 'assets/img/clients/everyday_grey.png' %}" />
+                </li>
+                <li>
+                <img class="img-responsive" src="{% static 'assets/img/clients/gamescast_grey.png' %}"  />
+                </li>
+                <li>
+                <img class="img-responsive" src="{% static 'assets/img/clients/everyday_grey.png' %}" />
+                </li>
+                <li>
+                <img class="img-responsive" src="{% static 'assets/img/clients/hp_grey.png' %}"/>
+                </li>
+                <li>
+                <img class="img-responsive" src="{% static 'assets/img/clients/igneus_grey.png' %}"/>
+                </li>
+                <li>
+                <img class="img-responsive" src="{% static 'assets/img/clients/motogp_grey.png' %}" />
+                </li>
+                <li>
+                <img class="img-responsive" src="{% static 'assets/img/clients/natural_grey.png' %}" />
+                </li>
+          </ul>
+        </div>
+      </section>
+
+                <!-- <div class="owl-carousel-v2 owl-carousel-style-v1 margin-bottom-50">
                    <div class="owl-slider-v2">
                         <div class="item">
                             <img class="img-responsive" src="{% static 'assets/img/clients/cisco_grey.png' %}" alt="">
@@ -401,25 +413,27 @@
                             <a class="owl-btn rounded-4x prev-v2"><i class="fa fa-angle-left"></i></a>
                             <a class="owl-btn rounded-4x next-v2"><i class="fa fa-angle-right"></i></a>
                         </div>
-                    </div><!--/navigation-->              
-                </div>    
+                    </div>             
+                </div>    -->
                 <!-- End Owl Carousel v2 --> 
     </div>    
     <!--=== End Parallax Counter ===-->
 <script type="text/javascript">
 function searchFromSelection() 
 {
+var url = "/gifts";
 var searchKey = document.getElementById("Occassion").value;
  if(searchKey=='By Occassions'){
         searchKey  = document.getElementById("Relationship").value;
         if(searchKey=='Select Relationship ...'){return false;}
+        url="/search/"+searchKey;
     }
 //alert(searchKey)
-var url="/search/"+searchKey;
+
 window.location.href=url;
 }  
 </script>
 
-   
+
     <!--=== Container Part ===-->
 {% endblock %}

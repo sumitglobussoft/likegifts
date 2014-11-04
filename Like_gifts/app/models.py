@@ -155,3 +155,35 @@ class Prolayout(models.Model):
 
     class Meta:
         db_table = 'prolayout'
+
+class Htmlpages(models.Model):
+    slno = models.IntegerField(db_column='slno', primary_key=True)
+    htmlpage = models.CharField(db_column='HtmlPage', max_length=50)
+    htmlcode = models.CharField(db_column='HtmlCode', max_length=4294967295)
+
+    class Meta:
+        db_table = 'htmlpages'
+
+class Blogs(models.Model):
+    slno = models.IntegerField(db_column='slno', primary_key=True)
+    blogtitle = models.CharField(db_column='BlogTitle', max_length=100)
+    image = models.CharField(db_column='Image', max_length=100)
+    pubdate = models.DateTimeField(db_column='PublishedDate')
+    technology = models.CharField(db_column='Technology', max_length=100)
+    shortdesc = models.CharField(db_column='ShortDescription', max_length=50)
+    longdesc = models.CharField(db_column='LongDescription', max_length=4294967295)
+
+    class Meta:
+        db_table = 'blogs'
+
+class AboutUs(models.Model):
+    slno = models.IntegerField(db_column='slno', primary_key=True)
+    name = models.CharField(db_column='Name', max_length=50)
+    shortdesc = models.CharField(db_column='shortDesc', max_length=500)
+    longdesc = models.CharField(db_column='longDesc', max_length=4294967295)
+    quote = models.CharField(db_column='quote', max_length=500)
+    quoteby = models.CharField(db_column='quoteby', max_length=100)
+    imagepic = models.CharField(db_column='imagepic', max_length=100)
+
+    class Meta:
+        db_table = 'aboutus'

@@ -1,4 +1,17 @@
 /* Add here all your css styles (customizations) */
+/*@font-face { font-family: 'Lato-Black'; src: url('assets/fonts/lato/Lato-Black.ttf'); }
+@font-face { font-family: 'Lato-Bold'; src: url('assets/fonts/lato/Lato-Bold.ttf'); }
+@font-face { font-family: 'Lato-Light'; src: url('assets/fonts/lato/Lato-Light.ttf'); }
+@font-face { font-family: 'Lato-Regular'; src: url('assets/fonts/lato/Lato-Regular.ttf'); }
+@font-face { font-family: 'Lato-Thin'; src: url('assets/fonts/lato/Lato-Thin.ttf'); }
+*/
+@font-face { font-family: 'PTSans'; src: url('assets/fonts/PT-Sans/PTN57F.ttf'); }
+@import url(http://fonts.googleapis.com/css?family=Lato:100,100italic,light,lightitalic,regular,regularitalic,bold,bolditalic,900,900italic);
+body,h1, h2, h3 { font-family: 'Lato-Black', sans-serif, 'PTSans', sans-serif; }
+
+p{
+  font-family: 'PTSans', sans-serif, 'Lato-Regular', 'Tagesschrift', 'Georgia', serif; 
+}
 .btn-o {
    border: 0;
    color: #fff;
@@ -130,14 +143,45 @@ box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
 transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 
+.hiw
+{
+  display: table;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(../../assets/img/HIW.jpg) no-repeat 0 0 scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+.hiw1
+{
+  display: table;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(../../assets/img/white_box.png) no-repeat 0 0 scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
 .parallaxBgWhitebox{
-  background: repeat-x url(../img/bg/whitebox.png) 0 0;
+  background: repeat-x url(../img/white_box.png) 0 0;
 background-position-x: 1px;
 height: 16px;
 margin: -35px;
 position: relative;
 }
 
+.parallaxBgWhiteboxDown{
+  background: repeat-x url(../img/bg/down_white.png) 0 0;
+background-position-x: 1px;
+height: 16px;
+margin: -3px;
+position: relative;
+}
 .parallaxBggift{
 padding: 60px 0;
 background: url(../img/bg/giftbox.png) 50% 0 no-repeat center;
@@ -167,7 +211,7 @@ border-radius: 4% !important;
 .price-head{
  display:block;
   position:relative; 
-  top:-70px;
+  top:-10px;
  background:url(../img/price-head-bg.png) no-repeat top;
  width:231px;
  height:45px;
@@ -202,4 +246,32 @@ padding: 1px 0px 0px 0px;
 .hr-white-u {
  margin: 20px 0;
  background-color: #ddd;
+}
+
+.gsri_a {
+background: url(data:image/gif;base64,R0lGODlhHAAmAKIHAKqqqsvLy0hISObm5vf394uLiwAAAP///yH5B…EoqQqJKAIBaQOVKHAXr3t7txgBjboSvB8EpLoFZywOAo3LFE5lYs/QW9LT1TRk1V7S2xYJADs=) no-repeat center;
+background-size: 14px 19px;
+display: inline-block;
+height: 23px;
+width: 17px;
+}
+
+.gsst_e {
+vertical-align: middle;
+opacity: 0.6;
+}
+
+.btn.search-over{
+  height: 30px;
+margin-left: -41px !important;
+background-color: transparent;
+margin-top: 1px;
+}
+
+
+.btn.env-over{
+  height: 30px;
+margin: 0px 10px -45px -5px;
+background-color: transparent;
+margin-top: 1px;
 }

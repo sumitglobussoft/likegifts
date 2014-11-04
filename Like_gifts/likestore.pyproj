@@ -151,15 +151,20 @@
     <Folder Include="app\static\assets\css\plugins\hover-effect\scss\" />
     <Folder Include="app\static\assets\css\plugins\hover-effect\scss\effects\" />
     <Folder Include="app\static\assets\css\themes\" />
+    <Folder Include="app\static\assets\fonts\" />
+    <Folder Include="app\static\assets\fonts\lato\" />
+    <Folder Include="app\static\assets\fonts\PT-Sans\" />
     <Folder Include="app\static\assets\img\" />
     <Folder Include="app\static\assets\img\bg\" />
     <Folder Include="app\static\assets\img\blur\" />
+    <Folder Include="app\static\assets\img\clients2\" />
     <Folder Include="app\static\assets\img\clients\" />
     <Folder Include="app\static\assets\img\icons\" />
     <Folder Include="app\static\assets\img\icons\social\" />
     <Folder Include="app\static\assets\img\job\" />
     <Folder Include="app\static\assets\img\main\" />
     <Folder Include="app\static\assets\img\mockup\" />
+    <Folder Include="app\static\assets\img\new\" />
     <Folder Include="app\static\assets\img\patterns\" />
     <Folder Include="app\static\assets\img\posts\" />
     <Folder Include="app\static\assets\img\sliders\" />
@@ -168,6 +173,8 @@
     <Folder Include="app\static\assets\img\sliders\revolution\" />
     <Folder Include="app\static\assets\img\sliders\revolution\thumbs\" />
     <Folder Include="app\static\assets\img\team\" />
+    <Folder Include="app\static\assets\img\testimonials\" />
+    <Folder Include="app\static\assets\img\timeline\" />
     <Folder Include="app\static\assets\img\top_categories\" />
     <Folder Include="app\static\assets\js\" />
     <Folder Include="app\static\assets\js\forms\" />
@@ -317,8 +324,8 @@
     <Folder Include="app\static\assets\plugins\vector-map\tests\" />
     <Folder Include="app\static\assets\plugins\vector-map\tests\assets\" />
     <Folder Include="app\templates\" />
-    <Folder Include="app\templates\app\" />
     <Folder Include="app\templates\admin\" />
+    <Folder Include="app\templates\app\" />
     <Folder Include="likestore\" />
   </ItemGroup>
   <ItemGroup>
@@ -771,6 +778,7 @@
     <Content Include="app\static\assets2\plugins\xcharts\xcharts.min.js" />
     <Content Include="app\static\assets\css\app.css" />
     <Content Include="app\static\assets\css\custom.css" />
+    <Content Include="app\static\assets\css\demo.css" />
     <Content Include="app\static\assets\css\pages\blog.css" />
     <Content Include="app\static\assets\css\pages\blog_magazine.css" />
     <Content Include="app\static\assets\css\pages\feature_timeline1.css" />
@@ -873,6 +881,20 @@
     <Content Include="app\static\assets\css\themes\orange.css" />
     <Content Include="app\static\assets\css\themes\purple.css" />
     <Content Include="app\static\assets\css\themes\red.css" />
+    <Content Include="app\static\assets\fonts\lato\Lato-Black.ttf" />
+    <Content Include="app\static\assets\fonts\lato\Lato-Bold.ttf" />
+    <Content Include="app\static\assets\fonts\lato\Lato-Light.ttf" />
+    <Content Include="app\static\assets\fonts\lato\Lato-Regular.ttf" />
+    <Content Include="app\static\assets\fonts\lato\Lato-Thin.ttf" />
+    <Content Include="app\static\assets\fonts\PT-Sans\Paratype PT Sans Free Font License.txt" />
+    <Content Include="app\static\assets\fonts\PT-Sans\PTC55F.ttf" />
+    <Content Include="app\static\assets\fonts\PT-Sans\PTC75F.ttf" />
+    <Content Include="app\static\assets\fonts\PT-Sans\PTN57F.ttf" />
+    <Content Include="app\static\assets\fonts\PT-Sans\PTN77F.ttf" />
+    <Content Include="app\static\assets\fonts\PT-Sans\PTS55F.ttf" />
+    <Content Include="app\static\assets\fonts\PT-Sans\PTS56F.ttf" />
+    <Content Include="app\static\assets\fonts\PT-Sans\PTS75F.ttf" />
+    <Content Include="app\static\assets\fonts\PT-Sans\PTS76F.ttf" />
     <Content Include="app\static\assets\img\bg-black.png" />
     <Content Include="app\static\assets\img\bg-black1.png" />
     <Content Include="app\static\assets\img\bg-green.png" />
@@ -894,6 +916,8 @@
     <Content Include="app\static\assets\img\bg\9.jpg" />
     <Content Include="app\static\assets\img\bg\clients.png" />
     <Content Include="app\static\assets\img\bg\dovana.jpg" />
+    <Content Include="app\static\assets\img\bg\down_white.png" />
+    <Content Include="app\static\assets\img\bg\down_white.psd" />
     <Content Include="app\static\assets\img\bg\giftbox.png" />
     <Content Include="app\static\assets\img\bg\giftbox.psd" />
     <Content Include="app\static\assets\img\bg\whitebox.png" />
@@ -902,6 +926,34 @@
     <Content Include="app\static\assets\img\blur\img2.jpg" />
     <Content Include="app\static\assets\img\blur\License.txt" />
     <Content Include="app\static\assets\img\breadcrumbs.png" />
+    <Content Include="app\static\assets\img\clients2\austrian-airlines.png" />
+    <Content Include="app\static\assets\img\clients2\baderbrau.png" />
+    <Content Include="app\static\assets\img\clients2\bellfield.png" />
+    <Content Include="app\static\assets\img\clients2\clarks.png" />
+    <Content Include="app\static\assets\img\clients2\co-wheels.png" />
+    <Content Include="app\static\assets\img\clients2\corepreserves.png" />
+    <Content Include="app\static\assets\img\clients2\cropped.png" />
+    <Content Include="app\static\assets\img\clients2\district-karaoke.png" />
+    <Content Include="app\static\assets\img\clients2\dragnfly.png" />
+    <Content Include="app\static\assets\img\clients2\ea-canada.png" />
+    <Content Include="app\static\assets\img\clients2\emirates.png" />
+    <Content Include="app\static\assets\img\clients2\fddw.png" />
+    <Content Include="app\static\assets\img\clients2\finals.png" />
+    <Content Include="app\static\assets\img\clients2\fred-perry.png" />
+    <Content Include="app\static\assets\img\clients2\general-electric.png" />
+    <Content Include="app\static\assets\img\clients2\getapp.png" />
+    <Content Include="app\static\assets\img\clients2\getaround.png" />
+    <Content Include="app\static\assets\img\clients2\grifting-tree.png" />
+    <Content Include="app\static\assets\img\clients2\hermes.png" />
+    <Content Include="app\static\assets\img\clients2\hotiron.png" />
+    <Content Include="app\static\assets\img\clients2\inspiring.png" />
+    <Content Include="app\static\assets\img\clients2\jaguar.png" />
+    <Content Include="app\static\assets\img\clients2\marianos.png" />
+    <Content Include="app\static\assets\img\clients2\much-more.png" />
+    <Content Include="app\static\assets\img\clients2\national-geographic.png" />
+    <Content Include="app\static\assets\img\clients2\qantas-airways.png" />
+    <Content Include="app\static\assets\img\clients2\starbucks.png" />
+    <Content Include="app\static\assets\img\clients2\ucweb.png" />
     <Content Include="app\static\assets\img\clients\aztec.png" />
     <Content Include="app\static\assets\img\clients\aztec_grey.png" />
     <Content Include="app\static\assets\img\clients\cisco.png" />
@@ -930,12 +982,17 @@
     <Content Include="app\static\assets\img\clients\walmart_grey.png" />
     <Content Include="app\static\assets\img\demo.jpg" />
     <Content Include="app\static\assets\img\doted-overlay.png" />
+    <Content Include="app\static\assets\img\fa.jpg" />
     <Content Include="app\static\assets\img\green_dot.png" />
+    <Content Include="app\static\assets\img\green_dot.psd" />
     <Content Include="app\static\assets\img\HIW.jpg" />
+    <Content Include="app\static\assets\img\HIW.png" />
+    <Content Include="app\static\assets\img\HIW.psd" />
     <Content Include="app\static\assets\img\icons\social\facebook.png" />
     <Content Include="app\static\assets\img\icons\social\googleplus.png" />
     <Content Include="app\static\assets\img\icons\social\linkedin.png" />
     <Content Include="app\static\assets\img\icons\social\twitter.png" />
+    <Content Include="app\static\assets\img\img.jpg" />
     <Content Include="app\static\assets\img\job\1.jpg" />
     <Content Include="app\static\assets\img\job\high-rated-job-1.1.jpg" />
     <Content Include="app\static\assets\img\job\high-rated-job-1.2.jpg" />
@@ -955,7 +1012,29 @@
     <Content Include="app\static\assets\img\job\high-rated-job-5.3.jpg" />
     <Content Include="app\static\assets\img\job\slider.jpg" />
     <Content Include="app\static\assets\img\logo.png" />
+    <Content Include="app\static\assets\img\logo.psd" />
+    <Content Include="app\static\assets\img\logo1-aqua.png" />
+    <Content Include="app\static\assets\img\logo1-blue.png" />
+    <Content Include="app\static\assets\img\logo1-brown.png" />
+    <Content Include="app\static\assets\img\logo1-dark-blue.png" />
+    <Content Include="app\static\assets\img\logo1-default.png" />
+    <Content Include="app\static\assets\img\logo1-light-green.png" />
+    <Content Include="app\static\assets\img\logo1-light.png" />
+    <Content Include="app\static\assets\img\logo1-orange.png" />
+    <Content Include="app\static\assets\img\logo1-purple.png" />
+    <Content Include="app\static\assets\img\logo1-red.png" />
+    <Content Include="app\static\assets\img\logo2-aqua.png" />
+    <Content Include="app\static\assets\img\logo2-blue.png" />
+    <Content Include="app\static\assets\img\logo2-brown.png" />
+    <Content Include="app\static\assets\img\logo2-dark-blue.png" />
+    <Content Include="app\static\assets\img\logo2-default.png" />
+    <Content Include="app\static\assets\img\logo2-light-green.png" />
+    <Content Include="app\static\assets\img\logo2-light.png" />
+    <Content Include="app\static\assets\img\logo2-orange.png" />
+    <Content Include="app\static\assets\img\logo2-purple.png" />
+    <Content Include="app\static\assets\img\logo2-red.png" />
     <Content Include="app\static\assets\img\logo_footer.jpg" />
+    <Content Include="app\static\assets\img\logo_footer.psd" />
     <Content Include="app\static\assets\img\main\1.jpg" />
     <Content Include="app\static\assets\img\main\10.jpg" />
     <Content Include="app\static\assets\img\main\11.jpg" />
@@ -972,6 +1051,21 @@
     <Content Include="app\static\assets\img\mockup\1.png" />
     <Content Include="app\static\assets\img\mockup\iphone.png" />
     <Content Include="app\static\assets\img\mockup\iphone1.png" />
+    <Content Include="app\static\assets\img\new\img1.jpg" />
+    <Content Include="app\static\assets\img\new\img10.jpg" />
+    <Content Include="app\static\assets\img\new\img11.jpg" />
+    <Content Include="app\static\assets\img\new\img12.jpg" />
+    <Content Include="app\static\assets\img\new\img13.jpg" />
+    <Content Include="app\static\assets\img\new\img14.jpg" />
+    <Content Include="app\static\assets\img\new\img15.jpg" />
+    <Content Include="app\static\assets\img\new\img2.jpg" />
+    <Content Include="app\static\assets\img\new\img3.jpg" />
+    <Content Include="app\static\assets\img\new\img4.jpg" />
+    <Content Include="app\static\assets\img\new\img5.jpg" />
+    <Content Include="app\static\assets\img\new\img6.jpg" />
+    <Content Include="app\static\assets\img\new\img7.jpg" />
+    <Content Include="app\static\assets\img\new\img8.jpg" />
+    <Content Include="app\static\assets\img\new\img9.jpg" />
     <Content Include="app\static\assets\img\overlay-icon.png" />
     <Content Include="app\static\assets\img\patterns\1.png" />
     <Content Include="app\static\assets\img\patterns\10.png" />
@@ -992,8 +1086,11 @@
     <Content Include="app\static\assets\img\posts\2.jpg" />
     <Content Include="app\static\assets\img\posts\3.jpg" />
     <Content Include="app\static\assets\img\price-head-bg.png" />
+    <Content Include="app\static\assets\img\price-head-bg.psd" />
     <Content Include="app\static\assets\img\search.png" />
     <Content Include="app\static\assets\img\shop-32.png" />
+    <Content Include="app\static\assets\img\shop.ico" />
+    <Content Include="app\static\assets\img\shop.png" />
     <Content Include="app\static\assets\img\sliders\circle_browse.png" />
     <Content Include="app\static\assets\img\sliders\circle_browse.psd" />
     <Content Include="app\static\assets\img\sliders\elastislide\1.jpg" />
@@ -1071,6 +1168,19 @@
     <Content Include="app\static\assets\img\team\team1.jpg" />
     <Content Include="app\static\assets\img\team\team2.jpg" />
     <Content Include="app\static\assets\img\team\team3.jpg" />
+    <Content Include="app\static\assets\img\testimonials\img1.jpg" />
+    <Content Include="app\static\assets\img\testimonials\img2.jpg" />
+    <Content Include="app\static\assets\img\testimonials\img3.jpg" />
+    <Content Include="app\static\assets\img\testimonials\img4.jpg" />
+    <Content Include="app\static\assets\img\testimonials\img5.jpg" />
+    <Content Include="app\static\assets\img\testimonials\img6.jpg" />
+    <Content Include="app\static\assets\img\testimonials\user.jpg" />
+    <Content Include="app\static\assets\img\timeline\img1.1.jpg" />
+    <Content Include="app\static\assets\img\timeline\img1.2.jpg" />
+    <Content Include="app\static\assets\img\timeline\img1.3.jpg" />
+    <Content Include="app\static\assets\img\timeline\img1.4.jpg" />
+    <Content Include="app\static\assets\img\timeline\img1.5.jpg" />
+    <Content Include="app\static\assets\img\timeline\img1.6.jpg" />
     <Content Include="app\static\assets\img\top_categories\img1.png" />
     <Content Include="app\static\assets\img\top_categories\img1.psd" />
     <Content Include="app\static\assets\img\top_categories\img2.png" />
@@ -1079,7 +1189,10 @@
     <Content Include="app\static\assets\img\top_categories\img6.png" />
     <Content Include="app\static\assets\img\up.png" />
     <Content Include="app\static\assets\img\user.jpg" />
+    <Content Include="app\static\assets\img\white_box.png" />
+    <Content Include="app\static\assets\img\white_box.psd" />
     <Content Include="app\static\assets\js\app.js" />
+    <Content Include="app\static\assets\js\demo.js" />
     <Content Include="app\static\assets\js\forms\checkout.js" />
     <Content Include="app\static\assets\js\forms\comment.js" />
     <Content Include="app\static\assets\js\forms\contact.js" />
@@ -1978,18 +2091,19 @@
     <Content Include="app\templates\app\exp.html" />
     <Content Include="app\templates\app\faq.html" />
     <Content Include="app\templates\app\guestbase.html" />
+    <Content Include="app\templates\app\how_it_works.html" />
+    <Content Include="app\templates\app\index.html" />
     <Content Include="app\templates\app\indexbase.html" />
+    <Content Include="app\templates\app\navbase.html" />
+    <Content Include="app\templates\app\ordersuccess.html" />
     <Content Include="app\templates\app\page_login.html" />
     <Content Include="app\templates\app\page_registration.html" />
+    <Content Include="app\templates\app\payment.html" />
     <Content Include="app\templates\app\privacy.html" />
     <Content Include="app\templates\app\product.html" />
     <Content Include="app\templates\app\send_gift.html" />
-    <Content Include="app\templates\app\how_it_works.html" />
-    <Content Include="app\templates\app\ordersuccess.html" />
-    <Content Include="app\templates\app\payment.html" />
     <Content Include="app\templates\app\terms.html" />
     <Content Include="requirements.txt" />
-    <Content Include="app\templates\app\index.html" />
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.mht">
@@ -2008,6 +2122,9 @@
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
       <Architecture>X86</Architecture>
     </Interpreter>
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="{2af0f10d-7135-4994-9156-5d01c9c11b7e}\2.7" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
   <!-- Specify pre- and post-build commands in the BeforeBuild and 
