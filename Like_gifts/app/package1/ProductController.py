@@ -249,7 +249,7 @@ def receivegift(request):
 
 def getcategories(request):
     if (request.is_ajax()):
-        categories = Productcategories.objects.raw('SELECT * FROM Productcategories')
+        categories = Productcategories.objects.raw('SELECT * FROM productcategories')
         category = serializers.serialize("json",categories)
         data = {'category': category}
     return HttpResponse(json.dumps(data), content_type="application/json")

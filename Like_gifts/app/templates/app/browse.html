@@ -3,14 +3,15 @@
 {% block content %}
 {% load staticfiles %}
 <!--     <div class="search-block parallaxBg"> -->
-         <div class="container content">
-             <div class="title-box-v2">
+         <div class="container">
+             <div class="title-box-v2" style="margin: 25px 10px;">
                 <div class="row">
                 <div class="col-md-9 animated fadeInLeft">
-                    <h2 class="pull-left color-green"><i class="fa fa-search fa-fw"></i>Просмотреть ПОДАРКИ </h2><h1 class="pull-left"> &nbsp;Найти лучший из наших продавцов</h1>
+                    <h1 class="pull-left color-green" style="font-family: Lato; font-style: normal; font-weight: 300;"><i class="fa fa-search fa-fw"></i>Просмотреть ПОДАРКИ </h1>
+                    <h1 class="pull-left" style="font-family: Lato; font-style: normal; font-weight: 300;"> &nbsp;Найти лучший из наших продавцов</h1>
                 </div>            
                 <div class="col-md-3 btn-buy animated fadeInRight">
-                    <a href="/gifts" class="btn btn-lg btn-android btn-u"><i class="fa fa-lightbulb-o"></i> Случайная </a>
+                    <a href="/gifts" class="btn btn-lg btn-android btn-u rounded"><i class="fa fa-lightbulb-o"></i> Случайная </a>
                 </div>
             </div>
             </div>
@@ -18,7 +19,7 @@
  <!--    </div>/container   -->   
 
         <div class="container content hiw">
-            <div class="row">
+           
                 <div class="col-md-2">
                     <div class="headline"><h2><i class="fa fa-sliders fa-fw"></i>Фильтр Результат</h2></div>  
                     <section>
@@ -49,7 +50,7 @@
         <!-- Rounded Slider Forms -->
         <form action="" id="sky-form" class="sky-form label-rounded">
             <div id="slider2-rounded"></div>
-            <label class="label rounded-x">ЦЕНА руб (<span id="slider2-value1-rounded">0</span> - <span id="slider2-value2-rounded">5000</span>)
+            <label class="label rounded-x">ЦЕНА руб (<span id="slider2-value1-rounded">500</span> - <span id="slider2-value2-rounded">3000</span>)
             </label>  
         </form>
         <!-- End Rounded Slider Forms -->
@@ -59,14 +60,16 @@
                 <div class="row">
 <section class="col col-md-8">
             <div class="input-group">
-                <input type="text" id="SearchWordSecond" class="form-control" placeholder="Введите слово ...">
+               
                     <span class="input-group-btn">
-                        <button onclick="searchfunction()" class="btn-u" type="button"><i class="fa fa-search"></i></button>
+ <input type="text" id="SearchWordSecond" class="form-control rounded" placeholder="Введите слово ...">
+                        <button onclick="searchfunction()" class="btn-u" type="button" style="background-color: transparent; margin-left: -35px;color: darkgray;
+"><i class="fa fa-search"></i></button>
                     </span>
                 </div>
         </section>
         <section class="col col-md-4">
-            <select class="form-control" id="sortby">
+            <select class="form-control rounded" id="sortby">
                 <option>Sort result by ...</option>
                 <option onclick="fun1()">Price H-L</option>
                 <option onclick="fun1()">Price L-H</option>
@@ -94,11 +97,11 @@
 </div>
 </div>
 <div class="col-md-offset-3 col-md-6 text-center">
-            <button type="button" class="btn-u btn-u-lg btn-block btn-brd btn-brd-hover btn-u"><i class="fa fa-refresh fa-fw"></i>Load More</button>
+            <button type="button" class="btn-u btn-u-lg btn-block btn-u"><i class="fa fa-refresh fa-fw"></i>Load More</button>
         </div>
                 
                 </div>
-            </div>
+      
         </div>
 
 

@@ -52,12 +52,20 @@ em {font-style: italic;}
 /* GEO - Regular */
  @font-face {font-family: 'Geogrotesque-Regular';src: url('../fonts/webfonts/geo-regular/eot/11014B_0.eot');src: url('../fonts/webfonts/geo-regular/eot/11014B_0.eot?#iefix') format('embedded-opentype'),url('../fonts/webfonts/geo-regular/woff/11014B_0.woff') format('woff'),url('../fonts/webfonts/geo-regular/ttf/11014B_0.ttf') format('truetype'),url('../fonts/webfonts/geo-regular/svg/11014B_0.svg#wf') format('svg');}
 
+@font-face {
+  font-family: 'lato';
+  src: url('assets/fonts/lato/Lato-Thin.ttf');
+}
 
+@font-face {
+  font-family: 'PTSans';
+  src: url('assets/fonts/PT-Sans/PTN57F.ttf');
+}
 
 /* General
 ***********************/
 body {
-	background: #fff; font-size: 14px; font-family: Helvetica, 'Arial', sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+	background: #fff; font-size: 14px; font-family: lato,'djsans', Helvetica, 'Arial', sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
 	height: auto;
 	background: rgb(113,153,183); /* Old browsers */
 	background: -moz-radial-gradient(top, ellipse cover,  rgba(113,153,183,1) 0%, rgba(48,100,148,1) 100%); /* FF3.6+ */

@@ -70,13 +70,13 @@
             <div class="container">
                 <!-- Topbar Navigation -->
                 <ul class="loginbar pull-left">
-                    <li class="greenhff"><a href="mailto:support@likegift.ru">24x7 CUSTOMER SUPPORT</a></li>  
+                    <li class="greenhff"><a href="mailto:support@likegift.ru" style="font-family: Lato; font-style: normal;">24x7 CUSTOMER SUPPORT</a></li>  
                     <li class="topbar-devider"></li>   
-                    <li class="greenhff"><a href="tel:+88124/5678"><i class="fa fa-phone fa-fw"></i>+88124/5678</a></li>  
+                    <li class="greenhff"><b><a href="tel:+88124/5678" style="text-decoration: none;"><i class="fa fa-phone fa-fw"></i>+88124/5678</a></b></li>  
                     <li class="topbar-devider"></li>   
-                    <li class="greenhff"><a href="mailto:support@likegift.ru"><i class="fa fa-envelope-o fa-fw"></i>support@likegift.ru</a></li>  
+                    <li class="greenhff"><b><a href="mailto:support@likegift.ru"style="text-decoration: none;"><i class="fa fa-envelope-o fa-fw"></i>support@likegift.ru</a></b></li>  
                 </ul>
-                <ul class="loginbar pull-righ t">
+                 <ul class="loginbar pull-right">
                     <li class="greenhff"><a href="/sendgift">Послать подарок</a></li>  
                     <li class="topbar-devider"></li>   
                     <li class="greenhff"><a href="" data-toggle="modal" data-target="#receivegift">ПОЛУЧИТЬ ПОДАРОК</a></li>  
@@ -86,23 +86,22 @@
                     <li class="greenhff"><a href="/gifts">Обзор</a></li>  
                     <li class="topbar-devider"></li>   
                    {% if request.session.user %}  
-                    <li class="greenhff"><i class="fa fa-sign-in fa-fw"></i><a href="/userlogout">LogOut</a></li>  
+                    <li class="greenhff"><i class="fa fa-sign-in fa-fw"></i><a href="/userlogout">ВЫХОД</a></li>  
                     {% else %} 
-                    <li class="greenhff"><i class="fa fa-sign-in fa-fw"></i><a href="/userlogin">Resiter / Войти</a></li> 
+                    <li class="greenhff"><i class="fa fa-sign-in fa-fw"></i><a href="/userlogin">РЕЕСТР / Войти</a></li> 
                     {% endif %}    
                 </ul>
                 <!-- End Topbar Navigation -->
+ <hr style="margin: 20px 0;">
             </div>
             <div class="container content">
                 <!-- Topbar Navigation -->
                 <ul class="loginbar">
-
                     <li class="pull-left">
                         <img src="{% static 'assets/img/logo.png'%}">
                     </li>
-                    <li class="col-md-offs   et-1 pull-left">   
-
-                        <select class="form-control">
+                    <li class="col-md-offset-1 pull-left">
+                        <select class="form-control rounded">
                             <option>Все товаров</option>
                             <option>СПА</option>
                             <option>РЕСТОРАНЫ</option>
@@ -121,28 +120,32 @@
                     <li>
                         <section class="col col-md-5">
                             <div class="input-group">
-                                <input type="text" id="SearchWord" class="form-control" placeholder="поиск ...">
+                               
                                 <span class="input-group-btn">
-                                    <button  onclick="searchfunction()" class="btn-u" type="button"><i class="fa fa-search"></i></button>
+ <input type="text" id="SearchWord" class="form-control rounded" placeholder="поиск ...">
+                                    <button  onclick="searchfunction()" class="btn search-over" type="button"><i class="fa fa-search"></i></button>
                                 </span>
                             </div>
                         </section>
                     </li>
                     <li class="pull-right">
-                        <button class="btn-u btn-brd rounded-4x btn-u-green btn-u-sm" type="button" data-toggle="modal" data-target="#receivegift">
-                            <span class="badge badge-green rounded-x">3</span>
-                            <i class="fa fa-shopping-cart"></i> Мои подарки
+                        <button class="btn-u btn-brd rounded-3x btn-u-sm" type="button" data-toggle="modal" data-target="#receivegift" style="border: solid 3px #9bdc61;">
+                            <span class="badge badge-u rounded-x">3</span>
+                            <i class="fa fa-shopping-cart"></i> Мои подарки 
                         </button>
                        
                     </li>
                 </ul>
                 <!-- End Topbar Navigation -->
+
+              
+
             </div>
+
         </div>
         <!-- End Topbar -->
-    
-        <!-- Navbar -->
-        <div class="navbar navbar-inverse " role="navigation">
+ <!-- Navbar -->
+        <div class="navbar navbar-inverse" role="navigation">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -150,24 +153,23 @@
                         <span class="sr-only">Переключить навигации</span>
                         <span class="fa fa-bars"></span>
                     </button>
-                    <a class="navbar-brand" href="/">
-                        <img id="logo-header" src="{% static 'assets/img/shop-32.png'%}" alt="LikeGift" style="
-    margin-top: 16px;
-">
+                    <a class="navbar-brand" href="/" style="margin-top: 20px;">
+                        <img id="logo-header" src="{% static 'assets/img/shop-32.png'%}" alt="LikeGift">
                     </a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse navbar-responsive-collapse">
-                    <ul class="nav navbar-nav" id="all_category">
-                       <li class="topbar-devider"></li>  
+                <div class="collapse navbar-collapse navbar-responsive-collapse pull-left">
+                    <ul class="nav navbar-nav">
+                        <!-- Home -->
+                        <li class="topbar-devider"></li>  
+                      
                          <li  class="greenhf">
-                            <a href="/catgift/1">
+                            <a href="/catgift/1" class="dropdown-toggle">
                                 СПА
                             </a>
                         </li>
                         <!-- End Home -->
-
                         <!-- Pages -->                        
                         <li class="greenhf">
                             <a href="/catgift/2">
@@ -194,7 +196,7 @@
 
                         <!-- Blog -->
                         <li class="greenhf">
-                            <a href="/catgift/5">
+                            <a href=/catgift/5>
                                 ХОББИ
                             </a>
                         </li>
@@ -212,48 +214,50 @@
                             </a>
                         </li>                   
                          <li class="greenhf">
-                            <a href="/catgift/8">
+                            <a href=/catgift/5>
                                 МОДА
                             </a>
                         </li>   
                          <li class="greenhf">
-                            <a href="/catgift/9">
+                            <a href="/catgift/8">
                                 ОСОБЫЕ ПОДАРКИ
                             </a>
                         </li>     
                          <li class="greenhf">
-                            <a href="/catgift/10">
+                            <a href="/catgift/9">
                                 ДЕТЯМ
                             </a>
-                        </li>     
-                         <li class="greenhf">
-                            <a href="/catgift/11">
-                                СОБЫТИЯ
-                            </a>
-                        </li>       
-                        <!-- End Contacts -->
+                        </li>         
+                        <!-- End Contacts -->                   
+                      
+
                     </ul>
                 </div><!--/navbar-collapse-->
             </div>    
         </div>            
         <!-- End Navbar -->
+ </div>
     </div>
-    <!--=== End Header ===-->  
-     <div class="modal fade" id="receivegift" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <!--=== End Header ===-->    
+
+
+
+                        </div>
+  <div class="modal fade" id="receivegift" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                             <div class="modal-dialog">
                                 <div class="modal-content"  style="border-radius: 4% !important;">
                                    
                                     <div class="modal-body">
                                         <div class="row">
-                                            <div class="col-md-4" style="background-color: lightgreen;">
-                                                <div class="headline"><h4>Как получить подарок?</h4></div>
+                                            <div class="col-md-4" style="background-color: #72c02c;">
+                                                <h4>Как получить подарок?</h4>
                                            <p  id="Pdescription">Lorem ipsum dolor. Посетите наш веб-сайт и введите ваш подарочный код. Выберите фирму-продавца или бренд желаемого вами подарка. Сгенерируйте подарочный код для выбранного вами бренда и следуйте инструкциям на экране, чобы получить ваш подарок.<br>
                                                 Для ресторанов, спа и хобби необходимо резервирование. Позвоните нам, чтобы сделать резервацию. Не забудьте взять с собой подарочный сертификат выбранного бренда, чтобы им воспользоваться.</p>
                                                 <h6 class="color-green"><i class="fa fa-exclamation-circle fa-1x"></i>нужна помощь?</h6>
                                             </div>
                                  {%if request.session.user %}  
                                     <div class="col-md-8">
-                                               <img src="{% static 'assets/img/logo.png'%}">
+                                               <img class="img-responsive" src="{% static 'assets/img/logo.png'%}">
                                                 <h3 class="color-green" style="margin-top: 200px;">Есть подарочная карта?</h3>
                                                 <p>Введите код здесь:</p>
                                                 <p>
@@ -268,7 +272,7 @@
                                       </div>  
                                  {%else%} 
                                      <div class="col-md-8">
-   <img src="{% static 'assets/img/logo.png'%}">
+                                            <img src="{% static 'assets/img/logo.png'%}">
                                                 <h4 class="color-green" style="margin-top: 200px;">Получил подарочную карту ?</h4>
                                                 <p>Пожалуйста, зарегистрируйтесь , чтобы прочитать подарок :</p>
                                                 <p>
@@ -292,34 +296,21 @@
                             </div>
 </div>
 <!-- end modal -->
-  
-
-    </div><!--/container-->   
 {% block content %}{% endblock %}
+
 
 <!--=== Footer ===-->
     <div class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 md-margin-bottom-40"><h3>Больше О такой же дар,</h3>
+                <div class="col-md-3 md-margin-bottom-40">
+<h3 style="font-style: normal; font-weight: 300;">Больше О такой же дар,</h3>
 <div class="hr-green" style="margin: 0px;"></div>
 <span><img src="{% static 'assets/img/logo_footer.jpg'%}"></span>
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td style="color: #ddd;">История компании</td>
-                            </tr>
-                            <tr>
-                                <td style="color: #ddd;">Связи с инвесторами</td>
-                            </tr>
-                            <tr>
-                                <td style="color: #ddd;">Наши партнеры</td>
-                            </tr>
-                            <tr>
-                                <td style="color: #ddd;">Пресс Покрытия</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <p>История компании</p>
+                     <p>Связи с инвесторами</p>
+                      <p>Наши партнеры</p>
+                      <a href=""><p>Пресс Покрытия</p></a>
                 </div><!--/col-md-4-->  
 
                <div class="col-md-3 md-margin-bottom-40" style="margin-top: 85px;">
@@ -329,9 +320,7 @@
                             <!--<tr>
                                 <td href="#">Merchant registration</td>
                             </tr>-->
-                            <tr>
-                                <td><a href="/faq">ЧаВО</a></td>
-                            </tr>
+                                <p><a href="/faq">ЧаВО</a></p>
                             <tr>
                                 <td><a href="/aboutus">Вакансии</a></td>
                             </tr>
@@ -352,15 +341,16 @@
                 </div><!--/col-md-4-->  
                 
                 <div class="col-md-3 md-margin-bottom-40">
-                    <h3>Присоединиться</h3>
+                    <h3 style="font-style: normal; font-weight: 300;">Присоединиться</h3>
                      <div class="hr-green" style="margin: 0px;"></div> 
                     <form class="footer-subsribe" style="margin-top: 30px;">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Your Email Address">                            
+                            <button class="btn env-over" type="button"><i class="fa fa-envelope-o fa-fw fa-fw"></i></button>
+                            <input type="text" class="form-control rounded" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;your email address">    
+                        </div>                                          
                             <span class="input-group-btn">
-                                <button class="btn-u" href="/contact" type="button">Подписаться</button>
+                                <button class="btn-u btn-u-sm rounded" href="/contact" type="button" style="margin-top: 10px;">Подписаться</button>
                             </span>
-                        </div>                  
                     </form> 
                     <ul class="social-icons" style="margin-top: 15px;">
                         <!-- <li><a href="#" data-original-title="Feed" class="social_rss"></a></li> -->
@@ -375,36 +365,36 @@
                 </div><!--/col-md-4-->
 
                 <div class="col-md-3 md-margin-bottom-40">
-                    <h3><i class="fa fa-gift fa-fw"></i>Как Statistic подарок в</h3>
+                    <h3 style="font-style: normal; font-weight: 300;"><i class="fa fa-gift fa-fw"></i>Как Statistic подарок в</h3>
                      <div class="hr-green" style="margin: 0px;"></div>
-                    <div class="row">
+                    <div class="row" style="margin-top: 20px;">
                         <div class="col-sm-6 col-xs-6">
                             <div class="counters">
-                                <span>10K</span>   
-                                <h4>Члены</h4>
+                                 <h2 style="font-size: 50px; text-align: left; color: #bfbfbf;"><b>10K</b></h2>    
+                                <h4 style="text-align: left; font-weight: 100;">Члены</h4>
                             </div>    
                         </div>
                         <div class="col-sm-6 col-xs-6">
                             <div class="counters">
-                                <span>8K8</span> 
-                                <h4>Торговые фирмы</h4>
+                                 <h2 style="font-size: 50px; text-align: left; color: #bfbfbf;"><b>8K8</b></h2> 
+                                <h4 style="text-align: left; font-weight: 100;">Торговые фирмы</h4>
                             </div>    
                         </div>
                         <div class="col-sm-6 col-xs-6">
                             <div class="counters">
-                                <span>80K</span>
-                                <h4>Подарки в продаже</h4>
+                                <h2 style="font-size: 50px;text-align: left; color: #bfbfbf;"><b>80K</b></h2>
+                                <h4 style="text-align: left; font-weight: 100;">Подарки в продаже</h4>
                             </div>    
                         </div>
                         <div class="col-sm-6 col-xs-6">
                             <div class="counters">
-                                <span>1,5K</span>
-                                <h4>Отправленные подарки</h4>
+                                <h2 style="font-size: 50px;text-align: left; color: #bfbfbf;"><b>1,5M</b></h2>
+                                <h4 style="text-align: left; font-weight: 100;">Отправленные подарки</h4>
                             </div>    
                         </div>
                     </div>           
                     <!-- End Contact Us -->
-
+                         <span style="color: #63a13f">and still counting...</span>
                     
                 </div><!--/col-md-4-->
             </div>
@@ -417,7 +407,7 @@
         <div class="container">
             <div class="row">
                  <div class="col-md-6">                      
-                    <p class="copyright-space">
+                    <p class="copyright-space" style="font-size: 10px;line-height: 1.2;">
                         Copyright &copy; 2015 <span class="color-green">Like Gift, Ltd.</span> Все права защищены. 
                     <br>
                     Никакая часть данного веб-сайта не может быть скопирована, дублирована или распространена в какой бы то ни было форме.<br> Используя данный веб-сайт, вы принимаете наши Условия пользования.</p>
@@ -427,6 +417,7 @@
     </div> 
     <!--=== End Copyright ===-->
 </div><!--/End Wrapepr-->
+
 
 <!-- JS Global Compulsory -->        
 <script type="text/javascript" src=" {% static 'assets/plugins/jquery-1.10.2.min.js' %}"></script>
@@ -579,11 +570,16 @@ function fun1(){
 
 function searchfunction() 
 {
+var url = "/gifts";
  var searchKey = document.getElementById("SearchWord").value;
- if(!searchKey){
-        searchKey  = document.getElementById("SearchWordSecond").value;
+ if(searchKey){
+       url="/search/"+searchKey;
+    }else{
+     searchKey  = document.getElementById("SearchWordSecond").value;
+        if(searchKey){
+            url="/search/"+searchKey;
+        }
     }
-var url="/search/"+searchKey;
 window.location.href=url;
 }  
 
@@ -628,8 +624,8 @@ function receivegift(){
 </body>
 <script type="text/javascript">
 
-function get_text(){
-//alert(" Alert inside my_code function");
+function getcategory(){
+alert(" Alert inside my_code function");
     $.ajax({
         type: 'GET',
         url: '/getcategories',
@@ -639,10 +635,10 @@ function get_text(){
         success: function(response){
                 var cats = $.parseJSON(response.category);
                 var html='';
-                for(var i=0;i<cats.length;i++){
+                for(var i=1;i<=cats.length;i++){
                 html = html+ '<li class="greenhf">'
-                            +'<a href=/catgift/'+(i+1)+'>'+
-                                cats[i].fields.categoryname;
+                            +'<a href=/catgift/'+(i)+'>'+
+                                cats[i].fields.categoryid;
                             +'</a>'
                         +'</li>'
                 }
@@ -651,6 +647,6 @@ function get_text(){
     });
 }
 
-//window.onload=get_text();
+//window.onload=getcategory();
 </script>
 </html> 

@@ -190,7 +190,6 @@ def uploadimage(request):
         'admin/image_uploader.html',
         
         {
-            'title':'About',
             'message':'Your application description page.',
         }
     )
@@ -219,9 +218,8 @@ def uploadproducts(request):
         }
     )
 
-@csrf_protect
 def uploadproductsfile(request):
-    print('uploading file')
+    #print('uploading file')
     if request.method == 'POST':
         form = FileUploadForm(request.POST, request.FILES)
         if form.is_valid():

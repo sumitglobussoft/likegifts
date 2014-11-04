@@ -2,7 +2,8 @@
 """
 Definition of views.
 """
-
+from BeautifulSoup import BeautifulSoup
+import HTMLParser
 from django.shortcuts import render
 from django.http import HttpResponseRedirect,HttpRequest, HttpResponse
 from django.template import loader,RequestContext
@@ -44,30 +45,29 @@ def contact(request):
             'message':'Your contact page.',
             'year':datetime.now().year,
         }
+    #    htmlpages = Htmlpages.objects.raw('SELECT * FROM htmlpages WHERE slno = 3')[0]    
+    #value= htmlpages.htmlcode
+    #htmlml = str(value)
+    #template = loader.get_template("app/contact.html")
+    #rc = RequestContext(request,{'bshtml':htmlml,'title':'Contact'})
+    #return HttpResponse(template.render(rc)
     )
 
 def aboutus(request):
     """Renders the about page."""
-    assert isinstance(request, HttpRequest)
-    return render(
-        request,
-        'app/about_us.html',
-        
-        {
-            'title':'About',
-        }
+    aboutcontent = AboutUs.objects.raw('SELECT * FROM aboutus WHERE slno = 1')[0]
+    template = loader.get_template("app/about_us.html")
+    rc = RequestContext(request,{'aboutcontent':aboutcontent,'title':'About Us'})
+    return HttpResponse(template.render(rc)
     )
 
 def blog(request):
     """Renders the about page."""
-    assert isinstance(request, HttpRequest)
-    return render(
-        request,
-        'app/blog.html',
-        
-        {
-            'title':'About',
-        }
+    allblogs = Blogs.objects.raw('SELECT * FROM blogs ORDER BY Blogs.PublishedDate DESC')
+    recentblogs = Blogs.objects.raw('SELECT * FROM blogs ORDER BY Blogs.PublishedDate DESC LIMIT 2')
+    template = loader.get_template("app/blog.html")
+    rc = RequestContext(request,{'allblogs':allblogs,'recentblogs':recentblogs,'title':'Blogs'})
+    return HttpResponse(template.render(rc)
     )
 
 
@@ -86,33 +86,31 @@ def faq(request):
     )
 
 
+
+
 def privacy(request):
     """Renders the about page."""
-    assert isinstance(request, HttpRequest)
-    return render(
-        request,
-        'app/privacy.html',
-        
-        {
-            'title':'About',
-            'message':'Your application description page.',
-            'year':datetime.now().year,
-        }
+   
+    htmlpages = Htmlpages.objects.raw('SELECT * FROM htmlpages WHERE slno = 2')[0]    
+    value= htmlpages.htmlcode
+    htmlml = str(value)
+    #h = HTMLParser.HTMLParser()
+    #html= h.unescape(htmlml)
+    #bsvalue = BeautifulSoup((value),convertEntities=BeautifulSoup.HTML_ENTITIES)
+    template = loader.get_template("app/privacy.html")
+    rc = RequestContext(request,{'bshtml':htmlml,'title':'Privacy'})
+    return HttpResponse(template.render(rc)
     )
 
 
 def terms(request):
     """Renders the about page."""
-    assert isinstance(request, HttpRequest)
-    return render(
-        request,
-        'app/terms.html',
-        
-        {
-            'title':'About',
-            'message':'Your application description page.',
-            'year':datetime.now().year,
-        }
+    htmlpages = Htmlpages.objects.raw('SELECT * FROM htmlpages WHERE slno = 1')[0]    
+    value= htmlpages.htmlcode
+    htmlml = str(value)
+    template = loader.get_template("app/terms.html")
+    rc = RequestContext(request,{'bshtml':htmlml,'title':'Terms'})
+    return HttpResponse(template.render(rc)
     )
 
 
